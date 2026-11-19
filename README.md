@@ -1,55 +1,47 @@
-# ASIC Silicon Tapeout — Khóa học Thiết kế Vi mạch RTL to GDSII (SkyWater 130nm)
+# ASIC Silicon Tapeout — Hành Trình Từ RTL Đến GDSII (SkyWater 130nm)
 
-> 🌐 **Xem Web Báo Cáo Trực Tiếp (Vercel):** **https://asic-tapeout-web-report.vercel.app**
+> *"Trên Silicon không có nút Ctrl+Z."*  
+> Điều gì thực sự diễn ra khi biến những dòng code Verilog trừu tượng thành một con chip vật lý sẵn sàng gửi đi xưởng đúc (Foundry)?
 
-Kho lưu trữ tài liệu học tập, bài Lab thực hành và báo cáo kỹ thuật cho hành trình thiết kế vi mạch số **RTL-to-GDSII** trên tiến trình **SkyWater 130nm (`sky130A` / `sky130_fd_sc_hd`)** bằng chuỗi công cụ EDA mã nguồn mở (**CTW SEMI / LibreLane**).
-
----
-
-## 🎯 Mục tiêu khóa học
-
-Xâu chuỗi bản chất vật lý bán dẫn và kỹ năng thực chiến qua toàn bộ dây chuyền từ mã nguồn Verilog tới file mặt nạ quang khắc **GDSII** sẵn sàng Tape-out:
-* Làm chủ mô phỏng Front-End, tổng hợp logic (Synthesis), ràng buộc thời gian (SDC) và phân tích thời gian tĩnh đa góc PVT (STA).
-* Điều khiển, chẩn đoán và sửa lỗi Physical Design (Floorplan, Placement, CTS, Routing, DRC/LVS) qua **OpenROAD GUI/TCL**.
-* Kiểm định mạch sau bố trí (Post-Layout Signoff) với trích xuất ký sinh **SPEF/SDF**, mô phỏng **CVC64 Gate-Level Simulation** và đo đạc **GTKWave** ở thang picosecond.
+🔗 **Đọc báo cáo tương tác trực tuyến:** [**asic-tapeout-web-report.vercel.app**](https://asic-tapeout-web-report.vercel.app)  
+👤 **Thực hiện:** Trương Công Việt Hoàng · **Công nghệ:** SkyWater 130nm (`sky130A`) · **EDA:** OpenROAD / LibreLane (CTW SEMI)
 
 ---
 
-## 📚 Lộ trình nội dung (5 Buổi · Lab 0 – Lab 3)
+## 💡 Bạn sẽ tìm thấy gì trong báo cáo này?
 
-| Buổi | Thư mục | Chủ đề trọng tâm | Mạch thực hành & Công cụ |
-| :--- | :--- | :--- | :--- |
-| **Buổi 1** | [`Buoi_1/`](./Buoi_1) | Nhập môn RTL-to-GDSII, Testbench & Waveform, Floorplanning và truy vết lỗi Placement (`DPL-0036`). | `counter.v` (8-bit Counter) · `iverilog`, GTKWave, CTW SEMI |
-| **Buổi 2** | [`buoi_2/`](./buoi_2) | Logic Synthesis (`Yosys + ABC`), cấu trúc thư viện Standard Cell & Liberty (`.lib`), đánh đổi Area vs Delay. | Bộ cộng 8-bit RCA (`AREA` / `DELAY` strategies) |
-| **Buổi 3** | [`buoi_3/`](./buoi_3) | Ràng buộc **SDC**, Static Timing Analysis (Setup/Hold, 9 góc PVT), Timing Closure qua DSE vs RTL Pipelining. | `mult.v` (8-bit Registered Multiplier) · OpenSTA |
-| **Buổi 4 & 5** | [`buoi_4+5/`](./buoi_4+5) | Giải phẫu `.odb` & dây chuyền PnR, OpenROAD GUI/TCL, tối ưu Hold/Congestion (`cpu8bit @ 50 MHz`), Post-Layout GLS/SDF & bảo toàn Delay Line (`TinyTDC`). *(Đang hoàn thiện GĐ 4)* | `cpu8bit` (`tt_um_dvxf_dj8`), `TinyTDC` · OpenROAD, CVC64, GTKWave, Magic, KLayout |
+Không dừng ở lý thuyết sách vở hay chạy tool kiểu "hộp đen", kho tài liệu này là nhật ký thực chiến giải phẫu tận gốc bản chất vật lý bán dẫn qua từng công đoạn làm chip:
+
+* **Khi code hóa thành phần cứng:** Trình tổng hợp (`Yosys + ABC`) dựa vào đâu trong thư viện `.lib` để chọn từng bóng bán dẫn và đánh đổi giữa **Diện tích (Area)** với **Tốc độ (Delay)**?
+* **Cuộc chiến ở thang đo Picosecond:** Vì sao lỗi *Setup* chỉ làm chip chạy chậm, nhưng lỗi *Hold* lại biến chip thành "cục gạch" vĩnh viễn? Cách khóa ràng buộc **SDC** và săn lùng đường găng (**Critical Path**) qua 9 góc vận hành khắc nghiệt (**PVT Corners**).
+* **Giải cứu chip trên mặt phẳng vật lý:** Chuyện gì xảy ra khi thuật toán sửa timing làm "nổ mật độ cell" gây tắc nghẽn dây kim loại, hoặc khi công cụ tối ưu vô tình xóa mất các mắt trễ chức năng của mạch?
+* **Chốt chặn cuối trước giờ Tape-out:** Cách đọc cơ sở dữ liệu `.odb`, điều khiển **OpenROAD GUI/TCL**, trích xuất ký sinh dây dẫn thực tế (`SPEF/SDF`) và kiểm chứng sóng sau bố trí bằng **CVC64 & GTKWave**.
 
 ---
 
-## 🗂️ Cấu trúc thư mục chính
+## 🗺️ Lộ trình 5 Buổi (Lab 0 – Lab 3)
 
-```text
-Tapeout_chip/
-├── Buoi_1/                      # Bài giảng, Lab 0, mã nguồn counter & ghi chép Buổi 1
-├── buoi_2/                      # Bài giảng, Lab 1 & tài liệu Logic Synthesis / Liberty
-├── buoi_3/                      # Bài giảng, Lab 2, giáo trình STA/SDC & kinh nghiệm Timing Closure
-├── buoi_4+5/                    # Bài giảng, Lab 3, cẩm nang PnR & báo cáo tổng hợp OpenROAD/GLS
-├── CTW_SEMI_Huong_dan_chay.docx # Hướng dẫn cài đặt & vận hành môi trường CTW SEMI
-└── my_first_constraints.sdc     # File ràng buộc thời gian SDC mẫu
+* **Buổi 01 · [`Buoi_1/`](./Buoi_1) — Nhập môn RTL-to-GDSII & Floorplanning:** Mô phỏng kiểm thử Front-End, vận hành dây chuyền PnR và bắt bệnh tràn mật độ bố trí vật lý (`counter.v`, Lab 0).
+* **Buổi 02 · [`buoi_2/`](./buoi_2) — Logic Synthesis & Standard Cells:** Giải mã cỗ máy ánh xạ công nghệ, đọc hiểu tệp Liberty (`.lib`) và thực nghiệm chiến lược tổng hợp trên mạch số (RCA 8-bit, Lab 1).
+* **Buổi 03 · [`buoi_3/`](./buoi_3) — Static Timing Analysis (STA) & Timing Closure:** Thiết lập khế ước thời gian SDC, phân tích đa góc PVT và bứt phá giới hạn tần số bằng cải tiến kiến trúc RTL (`mult.v`, Lab 2).
+* **Buổi 04 & 05 · [`buoi_4+5/`](./buoi_4+5) — Physical Design, ODB & Post-Layout Signoff:** Giải phẫu 72+ bước PnR trên **CPU 8-bit** (`tt_um_dvxf_dj8`) và chip đo thời gian tinh **TinyTDC** — từ xử lý nghẽn định tuyến đến mô phỏng Gate-Level sau đi dây (CVC64 + GTKWave, Lab 3).
+
+---
+
+## 🖥️ Trải nghiệm trên Web Report
+
+Truy cập trực tiếp bản web tương tác tại **[https://asic-tapeout-web-report.vercel.app](https://asic-tapeout-web-report.vercel.app)**:
+
+* **3 góc nhìn trong 1 trang:** *Giáo trình Lý thuyết* · *Hướng dẫn Thực hành Lab* · *Báo cáo Nghiệm thu*.
+* **Soi chi tiết bản vẽ Silicon:** Tích hợp **Lightbox phóng đại $0.4\times - 6.0\times$** cho sơ đồ kiến trúc, bản đồ nhiệt (Heatmap), layout OpenROAD và giản đồ xung GTKWave.
+* **Tra cứu kỹ thuật tức thì:** Tìm kiếm nhanh toàn văn theo hiện tượng vật lý, mã lỗi EDA hoặc kịch bản lệnh (`Verilog`, `SDC`, `TCL`).
+
+---
+
+## 🚀 Tải toàn bộ kho tài liệu học tập (Local)
+
+```bash
+git clone https://github.com/VietHoang0605/ASIC-Tapeout-Web-Report.git
+cd ASIC-Tapeout-Web-Report
 ```
-
----
-
-## 🛠️ Công nghệ & Chuỗi công cụ EDA
-
-* **PDK & Standard Cell Library:** SkyWater 130nm (`sky130A`), thư viện mật độ cao `sky130_fd_sc_hd`.
-* **Nền tảng thực thi:** CTW SEMI Web Cockpit (LibreLane / OpenROAD Flow trong Docker trên WSL2 Ubuntu).
-* **Công cụ chuyên biệt:** Icarus Verilog (`iverilog`), Yosys + ABC, OpenROAD, OpenSTA, CVC64 (Post-Layout GLS + SDF), GTKWave, Magic & KLayout (DRC / LVS / GDSII).
-
----
-
-## 🌐 Xem báo cáo trực quan trên Web (Vercel)
-
-Toàn bộ giáo trình, bài Lab, bảng số liệu và sơ đồ trực quan của khóa học được triển khai trực tuyến tại:
-
-👉 **https://asic-tapeout-web-report.vercel.app**
+Kho lưu trữ bao gồm toàn bộ tài liệu Markdown, slide bài giảng (`.pptx`), đề Lab (`.pdf`), mã nguồn RTL/SDC, báo cáo timing, ảnh minh chứng thực hành từ [`Buoi_1/`](./Buoi_1) đến [`buoi_4+5/`](./buoi_4+5), cùng tài liệu hướng dẫn môi trường [`CTW_SEMI_Huong_dan_chay.docx`](./CTW_SEMI_Huong_dan_chay.docx) *(các video ghi hình dung lượng lớn được lược bỏ để tối ưu kho lưu trữ)*.
