@@ -3,8 +3,11 @@
 > *"Trên Silicon không có nút Ctrl+Z."*  
 > Điều gì thực sự diễn ra khi biến những dòng code Verilog trừu tượng thành một con chip vật lý sẵn sàng gửi đi xưởng đúc (Foundry)?
 
+> ### 🎓 Người Hướng Dẫn Khóa Học: **HUỲNH QUANG HUY** *(CTW SEMI · SILK-FPGA)*
+> Toàn bộ chương trình đào tạo, tài liệu lý thuyết, bộ bài Lab thực hành và định hướng chuyên môn Physical Design được giảng dạy và dẫn dắt trực tiếp bởi **Thầy Huỳnh Quang Huy** tại lớp [**SILK-FPGA/RTL2GDS_CLASS**](https://github.com/SILK-FPGA/RTL2GDS_CLASS).
+
 🔗 **Đọc báo cáo tương tác trực tuyến:** [**asic-tapeout-web-report.vercel.app**](https://asic-tapeout-web-report.vercel.app)  
-👤 **Thực hiện:** Trương Công Việt Hoàng · **Công nghệ:** SkyWater 130nm (`sky130A`) · **EDA:** OpenROAD / LibreLane (CTW SEMI)
+👤 **Học viên thực hiện:** Trương Công Việt Hoàng · **Công nghệ:** SkyWater 130nm (`sky130A`) · **EDA:** OpenROAD / LibreLane (CTW SEMI)
 
 ---
 
