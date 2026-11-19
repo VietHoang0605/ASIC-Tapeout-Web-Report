@@ -1,0 +1,247 @@
+Total pages: 21
+=== PAGE 1 ===
+LAB 1: Synthesis và standard cells
+CTW SEMI  |  Lab 1                                     Trang 1
+
+
+=== PAGE 2 ===
+1 Mục tiêu bài lab
+Sau bài lab, hojc viên phải giải thích được vì sao hai lần tổng hợp cùng một RTL có thể tạo ra các tập 
+standard cell khác nhau, đồng thời phân biệt việc định hướng mapper với việc ép một cell cụ thể.
+2 Câu hỏi trung tâm
+ABC chọn cell dựa vào đâu và người thiết kế có thể tự chọn cell hay không
+Câu trả lời ngắn: ABC ánh xạ các mạng logic tổ hợp sang những cell hợp lệ trong Liberty. Cost chính 
+thường là area và delay theo script đang chạy. Kết quả còn chịu ảnh hưởng bởi delay target, driving 
+cell, output load, cell bị đánh dấu dont_use (không dùng) và cấu trúc logic sau optimization. Người 
+thiết kế có thể định hướng hoặc giới hạn lựa chọn. Muốn bảo đảm đúng một cell cụ thể, có thể 
+instantiate trực tiếp cell đó, nhưng thiết kế sẽ phụ thuộc công nghệ và tool mất bớt quyền tối ưu.
+3 ABC thực sự nhìn thấy gì
+Thông tin
+ABC sử dụng như thế nào
+                                    Boolean function
+Xác định cell hoặc tổ hợp cell nào có thể thực hiện cùng 
+chức năng, có thể tự tối ưu hàm boolean.
+Area
+Là diện tích của cell trong Liberty và được dùng khi tối 
+ưu area.
+Timing arcs
+Ước lượng delay qua cell theo input, output và slew 
+hoặc load.
+                                      Pin capacitance
+ Ảnh hưởng tải mà tầng trước phải điều khiển.
+Driving cell
+Mô hình hóa khả năng lái của nguồn tại đầu vào.
+Output load
+Mô hình hóa điện dung mà đầu ra phải điều khiển
+                                    Allowed cell set
+Cell dont_use hoặc cell không có trong library sẽ không 
+được chọn
+ABC ở bước synthesis chưa biết wirelength (chiều dài dây dẫn) và parasitic (ký sinh của tụ, trở) sau 
+PnR một cách chính xác. Do đó cell được chọn là nghiệm tốt theo mô hình trước layout, không phải 
+lời giải signoff cuối cùng. Sau đó OpenROAD vẫn có thể resize cell, thay cell tương đương hoặc chèn 
+buffer để sửa timing, capacitance và fanout.
+ABC mặc định không phải bộ tối ưu power hoàn chỉnh. Liberty có dữ liệu power, nhưng mapping 
+thông thường chủ yếu tối ưu area và timing. Không nên kết luận rằng netlist có area nhỏ nhất cũng 
+có power thấp nhất.
+CTW SEMI  |  Lab 1                                     Trang 2
+
+
+=== PAGE 3 ===
+CTW SEMI  |  Lab 1                                     Trang 3
+
+
+=== PAGE 4 ===
+4 Chuẩn bị môi trường
+1.
+Tải thư mục sky130xamples.zip về máy, giải nén vào thư mục ctwsemi-data.
+2.
+Vào thư mục Sky130Examples 
+ Mở file 
+→
+capnhatctwsemi.txt, ctrl + A toàn bộ nội dung và copy 
+vào cửa sổ dòng lệnh trên Ubuntu WSL.
+CTW SEMI  |  Lab 1                                     Trang 4
+
+
+=== PAGE 5 ===
+3.
+Tạo thư mục tên Lab1, cấu trúc thư mục bên trong chứa 2 file rca.v và fa.v, 2 file này nằm trong 
+thư mục verilog_files
+CTW SEMI  |  Lab 1                                     Trang 5
+
+
+=== PAGE 6 ===
+CTW SEMI  |  Lab 1                                     Trang 6
+
+
+=== PAGE 7 ===
+4.   Khởi động CTW SEMI, vào Setup 
+ Browse. Trỏ tới đường dẫn Lab1. Kiểm tra thấy đầy đủ 2 file
+→
+ 
+như trong hình. Chọn Use this folder.
+CTW SEMI  |  Lab 1                                     Trang 7
+
+
+=== PAGE 8 ===
+5.   Chọn Auto-generate config, để tool tự tạo file cấu hình mặc đinh.
+6. Đặt tên cho run, chạy Run flow lần đầu, sửa như Lab0, chọn FP_CORE_UTIL = 40, chọn 
+SYNTH_SHOW, chạy 1 mạch không báo lỗi tới khi ra là GDS là ok.
+CTW SEMI  |  Lab 1                                     Trang 8
+
+
+=== PAGE 9 ===
+5 Khảo sát Ripple Carry Adder
+1.
+Chức năng của bộ cộng RCA (Ripple Carry Adder). Đây là một mạch điện tử số, thực hiện chức 
+năng cộng. Được cấu tạo bởi các bộ cộng toàn phần FA (Full Adder). Các bit nhớ (bit carry) được 
+lan truyền vào trong mạch từ Cin tới Cout. Bộ cộng phía sau ở vị trí bit cao hơn phải chờ cho kết 
+quả ở bit trước đó tính xong.
+CTW SEMI  |  Lab 1                                     Trang 9
+
+
+=== PAGE 10 ===
+2.
+Mở RTL IDE, chọn biểu Schematic để xem dạng tổng hợp mạch của rca.v
+CTW SEMI  |  Lab 1                                     Trang 10
+
+
+=== PAGE 11 ===
+Nhận xét mạch tổng hợp: Đây là mạch cộng rca cho 2 số có đầu vào 8 bit là num1 và num2, kết quả 
+của phép cộng là sum 9 bit (gồm 8 bit kết quả và 1 bit carry ở MSB). Do đó số lượng các bộ fa (Full 
+Adder) được tạo ra là 8, tương ứng cho 8 bit đầu vào.  Mỗi bộ fa nhận vào 1 bit đầu vào a, 1 bit đầu 
+vào b, 1 bit carry đầu vào c, kết quả tạo ra 1 bit carry đầu ra co, 1 bit kết quả sum. 
+6 Thí nghiệm 1 
+Ở lần chạy đầu tiên: rca-run-base, ta bấm vào runs 
+ chọn đúng lần chạy này để xem các cấu hình 
+→
+mà ABC nhận được để chọn cell và các chiến thuật tổng hợp.
+CTW SEMI  |  Lab 1                                     Trang 11
+
+
+=== PAGE 12 ===
+4.
+Config.json cho ta biết cấu hình mặc định của librelane cho synthesis. Cấu hình này được ghi đè 
+khi có sự thay đổi trong CTW SEMI (configuration & constraint), hoặc tự viết config.json cho dự 
+án.
+      Mở vào bên trong config.json
+CTW SEMI  |  Lab 1                                     Trang 12
+
+
+=== PAGE 13 ===
+Khi synthesis, tool Yosys tự chọn 1 corner trong 9 corner dùng cho STA để đại diện và chọn các 
+cell để tổng hợp. Nhưng sau này, khi xét STA thì cả 9 corner đều phải pass thì chip mới chạy.
+Tiếp tục, ta xem các quyết định quan trọng, như hình dưới đây. 
+CTW SEMI  |  Lab 1                                     Trang 13
+
+
+=== PAGE 14 ===
+- ý nghĩa các biến quan trọng.
+Tên biến
+Tham số
+Ý nghĩa
+SYNTH_STRATEGY
+AREA 0
+ABC dùng strategy thiên về 
+diện tích
+SYNTH_HIERARCHY_MODE
+Flatten
+Xóa nhòa ranh giới giữa các 
+module phân cấp 
+SYNTH_SHARE_RESOURCE
+True
+Cho phép gộp logic dùng 
+chung
+CTW SEMI  |  Lab 1                                     Trang 14
+
+
+=== PAGE 15 ===
+5.
+Kiểm tra kết quả của ABC, chọn file rca.nl.v để xem kết quả tổng hợp dưới dạng các standard cell
+Vì chọn SYNTH_HIERARCHY_MODE = “flatten”, do đó khi ta tìm sẽ không thấy các module con tên 
+full adder trong file. Mặc dầu có con cell chuyên cho bộ full adder, nhưng ABC lại không dùng để 
+tổng hợp, vì ranh giới giữa các module phân cấp như full adder đã bị xóa bỏ. ABC chọn các con 
+cell khác thay thế. Dĩ nhiên vẫn đảm bảo chức năng y hệt như full adder.
+CTW SEMI  |  Lab 1                                     Trang 15
+
+
+=== PAGE 16 ===
+6.
+Tiếp đến, ta mở file yosys-synthesis.log, để xem kết quả của ABC như các loại standard cell, tổng 
+số cell của thiết kế, diện tích,…
+CTW SEMI  |  Lab 1                                     Trang 16
+
+
+=== PAGE 17 ===
+CTW SEMI  |  Lab 1                                     Trang 17
+
+
+=== PAGE 18 ===
+Nhận xét: ABC tuy báo cáo là 37 cells logic (14 + 1 + 1 + 6 + 7 + 8), nhưng kết quả cuối cùng lại báo 32 
+cells logic (41 cell – 9 cell sky130_fd_sc_hd_buf_2, đây là 9 con cell output tương ứng với 9 bit đầu ra). 
+Lý do là vì ABC mapping chưa phải bước cuối cùng. Sau đó Yosys làm 1 loạt các bước rút gọn, truyền 
+tham số, tối ưu để chốt kết quả cuối cùng trong nl.v là 41 cell và tính ra diện tích sơ bộ. Thời gian 
+delay là 2.8 ns (2879 ps), đây là thời gian trước khi PnR nên sẽ không chính xác, nhưng có thể làm 
+điểm tham chiếu giữa các strategy khác nhau.
+ Synthesis bảo toàn hàm logic, không bảo toàn số cell trung gian. Muốn đảm bảo đúng. Ta thường 
+→
+thực hiện GLS (Gate level netlist simulation) để đảm bảo khớp chức năng giữa RTL netlist và GL 
+netlist.
+Thực hiện bảng báo cáo với các strategy khác nhau khi synthesis
+Run
+Số 
+cell
+Area
+Delay ABC
+Area ABC
+Nhận xét
+baseline
+SYNTH_STRATEGY = 
+AREA 3
+CTW SEMI  |  Lab 1                                     Trang 18
+
+
+=== PAGE 19 ===
+Run
+Số 
+cell
+Area
+Delay ABC
+Area ABC
+Nhận xét
+SYNTH_STRATEGY = 
+DELAY 0
+SYNTH_HIERACHY_MODE 
+= keep
+Ví dụ với cách chỉnh như hình dưới:
+7 Thí nghiệm 2
+Trong trường hợp ta không muốn tool chọn, mà muốn sử dụng chính xác con cell mà ta muốn. Thì 
+làm như hình dưới:
+CTW SEMI  |  Lab 1                                     Trang 19
+
+
+=== PAGE 20 ===
+Lúc này ta đã khóa chặt tool vào duy nhất cho 1 công nghệ là sky130, không thể dùng cho các 
+công nghệ khác. Cách viết này chỉ thực sự khuyến nghị khi ta hiểu rõ về đặc tính của cell.
+7.
+Kết quả sau khi chạy:
+CTW SEMI  |  Lab 1                                     Trang 20
+
+
+=== PAGE 21 ===
+ Tài liệu tham khảo
+
+YosysHQ documentation. Technology mapping and abc command. 
+https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/index_passes_techmap.html
+
+LibreLane documentation. Built in steps and synthesis configuration variables. 
+https://librelane.readthedocs.io/en/latest/reference/step_config_vars.html
+
+LibreLane documentation. Synthesis Exploration flow. 
+https://librelane.readthedocs.io/en/latest/reference/flows.html
+
+SkyWater PDK documentation. Standard cell libraries and process design kit information. 
+https://skywater-pdk.readthedocs.io/
+CTW SEMI  |  Lab 1                                     Trang 21
+
+

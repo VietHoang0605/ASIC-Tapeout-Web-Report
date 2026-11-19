@@ -1,0 +1,3380 @@
+
+4. Physical_Design_24_10_2026.mkv
+Gemini
+
+
+
+0:10
+/
+1:20:21
+Bản chép lời
+Tìm trong bản chép lời
+0:55
+Thôi mình bắt đầu các bạn. Mở cái slide
+1:59
+Tụi em thấy slide không? Ok, bữa hôm nay thì mình sẽ học về
+2:08
+ờ bắt đầu mình học về BD nha. Thì mấy hôm trước là mình học từ ATL cho
+2:15
+tới synthesis rồi. Thì từ cái khúc mà synthesis đổi xuống á thì mình sẽ bắt
+2:22
+đầu đi vô cái phần VD tức là cái phần thiết kế vật lý ha. Thì cái tool mà mình
+2:27
+sẽ sử dụng là Open Draw GUI. Đó thì cái open draw này là cái tool mà gần như là
+2:32
+nó tốn nhiều thời gian nhất đó. Và nó cũng là cái tool mà mình sẽ cần phải làm
+2:37
+quen để mình làm ha. Thì à cái khi mà tụi em học cái tool này
+2:42
+đó thì sẽ có một số cái kiến thức mà tụi em có thể dùng được ờ khi mà tụi em dùng
+2:48
+cho các cái tool công nghiệp khác. Đó cho nên là nó cũng nó cũng na né nhau.
+2:54
+Thì ở trong cái ví dụ này á thì anh gửi cho tụi em là một cái khối là fuller.
+2:59
+Thì cái fuller này á mình sẽ coi là đầu tiên là ờ mình sẽ viết cái cái ATL cho
+3:05
+nó. thì mình viết ATL cho nó thì mình sẽ viết theo kiểu là ở đây thì anh đang
+3:09
+viết theo cái kiểu là logic gate luôn. Nghĩa là anh đang biểu diễn các cái đầu
+3:15
+ra của cái này nè theo cái dạng là các cái hàm bullin theo đầu vào đó. Thì thay
+3:22
+vì mà anh viết theo cái kiểu mà a + b cộng với lại c in thì anh viết theo cái
+3:27
+biểu thức luôn. Đó thì trước tiên là mình xem thử là có bao nhiêu con sale.
+3:32
+Thì ở đây thì em thấy rằng là đối với biểu thức này đó thì nó sẽ có là ờ 1 2 3
+3:36
+4 5 6 7 bảy con sale đúng không?
+3:42
+Thì bảy con sale này đó thì khi mà mình mình synthesis ra á thì mình phải coi
+3:47
+thử là nó xem là những con sale này là nó có sử dụng đúng những con sale này
+3:52
+hay không hay là nó dùng những con sale khác. Tại vì có những con sale mà nó gợp
+3:56
+lại từ hai con sale đó. gọi là sale phức hợp. Đó thì ở đây là mình sẽ sử dụng một
+4:02
+cái gọi là à một cái khối thiết kế ở phía trên. Đó thì cái khối thiết kế này
+4:09
+đó anh gọi là khối thiết kế theo kiểu là ờ mình sẽ gửi đi tab out ha. Gửi đi tab
+4:16
+out. Thì để gửi đi tab out được á thì mình sẽ cần thiết kế nó sao cho nó phù
+4:20
+hợp với lại cái yêu cầu của tab out ha. Thì để làm được á thì đầu tiên là mình
+4:25
+sẽ có là các cái gọi là các cái bọt ha. Các cái bọt thì bọt của mình á là mình
+4:31
+có bọt bọt có cái dấu mũi tên này là bọt vào nè. Bọt cái dấu mũi tên này đi đi ra
+4:36
+thì là bọt ra. Đó thì mình sẽ có cái cái bọt in vào ra rồi có cái cái bọt vừa vào
+4:42
+vừa ra luôn. Đó thì ví dụ như anh có là mình sẽ có một cái bọt là bọt ui in này
+4:47
+thì nó sẽ đi vào đó. Thì cái bọt u inin này là nó có 8 bit nha. Đó thì cái bọt
+4:53
+UIN này á thì nó sẽ đi vào đâu? Thì hiện tại là anh có ba cái đầu vào là A B với
+4:58
+lại C in nha. A B C in là cái đầu vào của cái con Fader này. Thì bây giờ anh
+5:03
+sẽ cấp vào đây là ba cái ch ba cái bit đó. Ba cái bit là bit 0, bit 1 và bit số
+5:07
+2 đúng không? Thì ba cái bit này đó thì anh làm đầu vào cho cái A, B và C in
+5:14
+này. Đó thì với cái bài hôm trước á mình đã làm về cái Lab số 2 rồi á thì tụi em
+5:20
+sẽ thấy rằng là ờ việc mà mình chèn các cái thanh ghi ở đầu vào á nó sẽ giúp cho
+5:25
+cái STA mình nó sẽ đẹp hơn. Đó, nó sẽ dễ thỏa cái setup hơn. Thì mình sẽ truyền
+5:29
+vào đây ba cái thanh ghi đầu vào ở đây. Thì ở đây là mình sẽ ờ cho một cái thanh
+5:35
+ghi để nó lưu chữ và nó chốt cái ngõ vào A, B và C in. Đó thì mình sẽ có ba cái
+5:39
+thanh ghi cho đầu vào. Rồi còn cao với lại sum đó, C với Sum đó thì anh sẽ ờ
+5:46
+gán nó ra ngõ ra. Đó thì cái bọt ra của mình nó sẽ là UO out. Đó, nó là 8 bit
+5:52
+ha. 8 bit thì ở đây mình sẽ có là 2 bit ngõ ra. Đó, hai bit ngõ ra.
+5:57
+Tại vì ở đây mình là fuller 1 bit cho nên là tất cả các bit này đều là bit đều
+6:01
+là 1 bit hết. Đó cho nên là anh sẽ sử dụng là hai con fip lop ở đây để anh lưu
+6:06
+trữ là bit c và bitsum. Đó anh lưu trữ nó thì anh sẽ gán nó vào hai cái bit
+6:14
+0 và bit 1 của cái U này. Thì ở đây em thấy rằng là khi mà mình gán vào đó thì
+6:20
+đối với cái đầu vào đó nếu mà tụi em không có sử dụng gọi là hết tất cả các
+6:25
+đầu vào tức là hết tất cả các bit á ví dụ như ở đây em có là 8 bit mà ở đây em
+6:29
+sử dụng có 3 bit thôi thì các bit còn lại là em không dùng thì em có thể là em
+6:34
+không gán cái gì ra cũng được em không gán cái gì vào cũng được đó em tức là ở
+6:38
+đây là từ b số 3 cho tới b số 7 đó anh không dùng còn ở đây á là em thấy rằng
+6:42
+là mặc dù là b số 2 tới bí số 7 của cái ngõ re này nè anh không dùng nhưng mà
+6:47
+anh bắt bắt buộc phải gán nó là bit 0. Được chưa? Bắt buộc phải gán nó là bit
+6:50
+0. Rồi ở đây mình sẽ có những cái chân này
+6:54
+là những chân gọi là u out nghĩa là u in out nghĩa là những chân này là những
+7:00
+chân mà vừa vừa vào và vừa ra. Đó thì những chân này mình sẽ không dùng. Đó in
+7:04
+này là mình không dùng. Thì trong cái bài này mình chỉ sử dụng là à một cái
+7:08
+bọt vào và một bọt ra thôi. Ờ cái reset này thì ờ là một cái reset tích cực thấp
+7:15
+nha. Thì để mình tap out được đối với TP out á thì bắt buộc là phải dùng reset
+7:19
+tích cực thấp nha tụi em. Reset tích cực thấp. Clock đó. Clock thì nó sẽ chốt
+7:24
+theo cạnh lên. Đó thì đây là những cái bọt mà người ta gọi là các cái bọt theo
+7:29
+cái yêu cầu để mình tch out. Thì đối với cái công nghệ BD BDK 130 đó
+7:37
+thì nó sẽ có một cái người ta gọi là process start. Tức là cái mặt CT lớp ha.
+7:43
+cái mặt các lớp theo chiều cao, theo chiều dọc á
+7:48
+tức là cái mặt cắt 3D của cái của cái con con gọi là con con á thì một cái con
+7:55
+most á thì nó sẽ nằm ở phía dưới cùng đây nè nằm dưới cùng đây. đó thì nó nằm
+8:00
+ở dưới cùng và nó được cấu tạo bởi các cái lớp lớp
+8:04
+licon nè đó rồi well nè diffusion nè đó rồi bas substract nè đó thì đây là cái
+8:12
+con silicon của mình được không transistor của mình đó còn cái lớp ở
+8:17
+phía trên này nè cái lớp ở phía trên ví dụ như là lớp li này nè li này thì nó là
+8:22
+local interconnect đó thì local interconnect này thì nó cũng dùng như là
+8:27
+một cái cái kết nối bản thân của con con transistor này nó
+8:32
+cũng dùng để nó kết nối các cái cổng của nó. Thì cái li này nó cũng là một cái
+8:37
+cũng là một cái thành phần cấu tạo nên con transistor. Từ cái metal này trở đi
+8:42
+á tức là từ cái những cái chỗ mà nó ghi là metal 1, metal 2, metal 3, metal 4,
+8:46
+metal 5 nè. Thì những cái này người ta gọi là các cái nét ha. Các cái nét đó.
+8:52
+Thì cái nét á nó là tụi em hiểu nó như là các cái dây dẫn vậy đó. Thì cái cái
+8:56
+nét này á nó sẽ là nhiệm vụ là nó sẽ truyền dẫn tín hiệu ờ từ các cái con
+9:02
+transistor này tới các con transistor khác. Đó và nó lấy tín hiệu từ bên ngoài
+9:08
+vào. Đó thì những cái dây metal 1, metal 2, metal 3 này á tới metal 5 đó thì nó
+9:13
+nối với nhau bằng cách nào? Đó ví dụ như là em muốn nối từ met 1 mà em muốn nối
+9:18
+với metal 2 đó thì em không thể nào mà em nối từ met 1 kéo qua metal 2 được. Em
+9:23
+phải dùng một cái va đó. Thì cái này là nó giống như là để nó xuyên lớp nó xuyên
+9:28
+nó xuyên xuyên giữa các cái metal á thì từ met 1 mà muốn kết nối metal 2 thì
+9:33
+phải có va 1. Được chưa? Rồi tương tự là các cái va khác á là nó giúp hỗ trợ để
+9:38
+nó kết nối với lại cái metal cao hơn. Đó metal ở lớp cao hơn đó thì mình sẽ có là
+9:44
+năm lớp metal chưa? Thì đối với lại mà Ty tap out á, tức là cái nền tảng mà
+9:50
+mình sẽ dùng để tab á thì nó chỉ routing tối đa tới metal 4 thôi. Được chưa?
+9:55
+Nghĩa là routing nghĩa là mình đi dây á mình đi dây tới metal 4 thôi. Nghĩa là
+9:58
+mình tất cả các cái thiết kế của mình các cái cổng logic này kia khi mà mình
+10:02
+kết nối lại với nhau thì tới metal 4 là hết rồi. Metal 5 là sẽ dùng cho nguồn
+10:06
+nha. Đó metal 4 là là tối đa của mình rồi. Thì nó cũng là một cái giới hạn.
+10:11
+Có một số công nghệ khác á thì số metal nó sẽ nhiều hơn. Đó, ví dụ như từ metal
+10:16
+1 cho tới metal 7 lận. Thì khi mà các cái lớp metal mà càng nhiều đó thì tụi
+10:21
+em dây nó sẽ dễ hơn. Đó, nó đi dây sẽ dễ hơn và nó nó không có bị cái trường hợp
+10:27
+là ờ nó nó khó đi dây. Tại vì khi mà số lớp mà càng nhiều thì em có thể xuyên nó
+10:33
+lên một cái ví dụ như mà khi mà mình dàn ở phía dưới 2D mà mình đã dàn hết chỗ
+10:37
+rồi á thì mình có thể dựng lên một cái lớp cao hơn đúng không? và dựng theo
+10:40
+kiểu 3D đó để mình mình đi dây ở ở cái phía trên như thế này nè thì nó sẽ dễ
+10:45
+hơn. Đó cho nên là cái routing của cái của cái này nó sẽ bị giới hạn. Cho nên
+10:50
+là cái phần mà BD á ở khúc này open suột nó hơi khó là ở cái chỗ đó tại vì nó bị
+10:56
+giới hạn cái lớp Nal này. Đó. Ờ thì mấy cái mấy cái design ru tức là cái cái
+11:03
+kích thước giữa các cái gọi là các cái con rồi ví dụ như là cái chiều cao giữa
+11:08
+từ đây tới đây rồi cái kích thước giữa các cái gọi là gì? À các cái fel poli nè
+11:15
+rồi các cái lớp vật liệu á thì cái chỗ này nó người ta gọi là design to check
+11:18
+ha. Thì khi mà ở cái bước mình check cái design của thiết kế thì mình sẽ quan tâm
+11:24
+tới cái những thông số này. Đó thì hiện tại mình chưa chưa có quan tâm tới cái
+11:28
+thông số này nha tụi em. Thì đối với một cái con mod á thì nó sẽ
+11:36
+được cấu tạo ờ là như thế này. Thấy không? Nó sẽ có ba cực. Đó có ba cực đó
+11:41
+ba cực. Nhưng mà thường thường á khi mà tụi em vẽ vẽ cái thiết kế C mode á thì
+11:46
+tụi em sẽ thấy rằng là người ta chỉ vẽ có ba cực thôi. Một hai và ba cực thôi.
+11:50
+Thực ra là nó có bốn cực lật. Nếu mà vẽ đúng ra thì nó có bốn cực lực. Nó có một
+11:54
+cái cực body ở đây nữa. Cái cực body này là để nó nối ra nguồn hoặc là nối xuống
+11:58
+đất. Đó nên là anh vẽ ở đây thì nó sẽ có thêm một cái cực ở ở đây nữa. Còn bình
+12:03
+thường là nó chỉ có cực gọi là cực cực get. Cực get là cái cực
+12:07
+cổng á. Rồi cực suột và cực rồi thường là ta sẽ vẽ hai cực thôi. Đó thì con này
+12:12
+là con Code Inver được chưa? Code nó là sao? Nó là kết hợp giữa hai cái con mode
+12:19
+nó bù nhau không? Con Bm và con inm thì hai con này nó có tính chất đối lập
+12:23
+nhau. Một con thì khi mà có mức logic 1 á tức là có cấp vào đầu vào của mình là
+12:30
+là điện áp mà mức một á thì nó sẽ bật. Còn con này cấp mức không thì nó sẽ tắt
+12:34
+thì hai con nó đối ngược nhau thôi. Đó thì thường thường á là tất cả mọi cái
+12:38
+đặc tính về nguồn app này kia á thì nó của tất cả các con sale khác nhau á thì
+12:43
+nó đều dựa trên con simode inverter này. Con simode inverter nó như là cái chuẩn
+12:47
+vậy đó. Nó nó dùng để nó đo đạt và cái tính chất của nó thì nó sẽ đại diện cho
+12:51
+những con khác luôn. Đó thì bây giờ mình có thể tự tạo cái standard sale của mình
+12:56
+bằng magic ha. Thì buổi sau mình sẽ nói về cái này. Thì đối với cái việc mà mình
+13:00
+đi thiết kế những con này đó thì mình sẽ gọi là đi thiết kế standard sale. Và nó
+13:04
+thường không phải là công việc của BD ha. Ờ tại vì các cái standard sale này
+13:09
+là mình đã có sẵn trong cái thư viện chấm lipp rồi đó.
+13:13
+Ờ đây là một số cái đặc tính của của standard sale.
+13:19
+Đó thì em thấy rằng là khi mà người ta đi routing á thì em sẽ thấy rằng là ví
+13:24
+dụ như là cái lớp gọi là VDD với gọi là VSS á tức là cái VTD là cái nguồn nè còn
+13:32
+VSS là nó là đất á thì người ta sẽ cách ly ra so với lại cái lớp cái lớp phía
+13:38
+dưới là cái lớp local interconnect nghĩa là cái nguồn người ta sẽ cách ly ra.
+13:42
+Thường là vậy ha. Thường là ta sẽ cách ly ra. Thì cái màu xanh này nè, cái màu
+13:46
+xanh nước biển này n thì là cái lớp metal 1 á tụi em. Cái lớp metal 1 á. Còn
+13:50
+từ cái chỗ màu vàng này trở xuống nè thì nó là local interconnect. Được chưa? Cái
+13:55
+lớp li á và các cái va bên trong đó. Đó. Rồi cái màu đỏ đỏ ở giữa đây nè. Thì nó
+14:01
+là cái lớp poli. Đó. màu đỏ này nè nó ly rồi thì bây giờ á khi mà mình thiết kế
+14:08
+để mình tab out chip á thì mình phải follow theo các cái ru ờ người ta gọi là
+14:13
+các cái ru mà bên nhà máy người ta đã người ta đã gọi là quy định thì ví dụ ví
+14:17
+dụ như bây giờ khi mà mình tab out thì mình sẽ cần có một cái vùng diện tích đó
+14:22
+mà mình muốn để mình đặt cái con chip của mình vào thì cái vùng diện tích đó
+14:26
+là anh gọi nó là cái di area được chưa thì cái di area này nó là cái vùng giới
+14:31
+hạn và vật lý của mình. Đó, ví dụ như bây giờ anh đang muốn là anh chọn một
+14:36
+cái ô gọi là 1 x 1. 1 x 1 nghĩa là một cái ô của anh á nó sẽ tương ứng với kích
+14:42
+thước là như thế này. Đây là 161 với lại 111,52 thì đây là kích thước của một ô
+14:47
+đó. Thì một ô đó nó sẽ là cái vị trí giới hạn. Đó, đó là cái giới hạn vật lý
+14:54
+giống như em đi mua đất vậy á. Thì giả sử như là đây là cái đơn vị của một ô
+14:58
+nha. Một ô của mình là có kích thước như thế này. Em muốn mua nhiều hơn, ví dụ
+15:01
+như em muốn mua một cái ô là 2 x 2 chẳng hạn thì nó sẽ nhân đôi cái số này lên
+15:07
+ha. Còn hiện tại là đối với cái bài này thì anh đang
+15:11
+làm với 1 x 1 đó. 1 x 1 thì cái này là nó sẽ nằm trong một cái file chấm dep.
+15:16
+Thì cái file chấm dep này đó nó quy định các cái tính chất vật lý của cái gọi là
+15:23
+cái cái block 1 x1 này. Về cái thứ nhất là về kích thước của các cái của các cái
+15:29
+metal đó. Rồi các cái quy định về cái chiều dài của một cái một cái đai rồi
+15:36
+chiều rộng của một cái đai rồi các cái ô mà để mình đặt cái standard sale vào thì
+15:40
+nó nằm trong cái file. Đó thì cái file này là nó giống như cái file vật lý vậy
+15:43
+á. Thì hai hai cái này thì nó sẽ là cái cái template nó có sẵn. Mình chỉ lấy vào
+15:49
+thôi. Nhưng cái số này anh không có tự chế ra ha. Rồi tiếp theo là clock. Clock
+15:54
+thì mình sẽ chọn ờ cái chu kỳ clock cho thích hợp thôi. Đó thì cái này ban đầu
+16:00
+mình cứ cho nó là một cái con số nào đó ờ theo cái yêu cầu của bài toán ha.
+16:07
+Ờ tiếp theo là các cái ví dụ như các cái số các cái thông số này ví dụ như là
+16:13
+BL target density này á thì nó là mật độ sắp xếp đó. Mật độ sắp xếp nghĩa là khi
+16:17
+mà mình cho cái con số này mà nó càng lớn á thì nó sẽ rãi cái con sale mà nó
+16:23
+càng nằm gần nhau nhất có thể ha. Tức là cái này là cái mậc độ sắ xếp của các con
+16:27
+sale nè. Thì số này càng lớn thì nó sẽ đặt cái con sale càng gần. Được chưa?
+16:32
+Đó. Còn nếu mà số này nó nhỏ á, số này nó nhỏ thì nó sẽ vàng ra, nó sẽ vàng
+16:36
+trải ra. Rồi tiếp theo thì mình sẽ có là ví dụ như là ờ các cái chân đất và
+16:43
+nguồn. Đây đất và nguồn. Thì những chân này để nó nối vào cái cực body của con
+16:47
+transistor đó. Cực body là cái cực nằm ở nằm ở đây nè.
+16:52
+Đó cực body là cái cực này nè tụi em. Đó thì cực body là cái cực
+16:57
+dùng để nối các cái chân Vower với lại VGND. Đó. Đó.
+17:01
+Rồi, ở đây là routing max layer, nghĩa là cái cho phép tối đa của mình đã được
+17:07
+routing là metal 4 thôi. Đó. Ờ ở đây thì nó sẽ có một số cái những
+17:12
+cái thông số gọi là ờ mình có thể mình giữ nguyên ha. Tức là mình có thể dùng
+17:17
+cho mọi dự án khác nhau. Ờ trong cái quá trình mà mình làm á thì mình có thể tùy
+17:21
+chỉnh các cái thông số này tùy theo cái đặc tính về cái BBA của mình hoặc là khi
+17:26
+mà tool nó báo lỗi á thì mình sẽ sửa những cái thông số này. Ờ ví dụ như cái
+17:30
+này thì mình đang sửa là mình đang thêm cái biên đó tức là mình thêm cái biên an
+17:35
+toàn cho cái h đó nghĩa là mình sẽ làm sao đó mà để cho tool á nó sửa cái h này
+17:42
+một cách gọi là cực đoan hay là ít cực đoan. Nếu mà em muốn cho tool này nó sửa
+17:46
+một cách quá đà á, tức là nó chèn buffer nhiều á thì em sẽ tăng cái số này lên
+17:51
+ha. Tăng cái số này lên. Cái số này nó giống như là em tạo một cái biên độ an
+17:55
+toàn vậy đó. Thì ví dụ như là à cái cái cái h của em nó đã dương rồi. Cái h nó
+18:01
+đã dương rồi mà em lại tăng cái số này thêm thì nó sẽ càng làm cho nó dương
+18:05
+hơn. Đó. Ờ mấy cái này ví dụ như là ờ FB sizing này là gì? Là cái flow plan của
+18:13
+mình á. Nếu mà mình để kích thước là à mình tính theo cái đai này nè, tính theo
+18:17
+cái đai nè và mình tức là mình dựa vào cái đai này nè, mình tính được cái ờ đâu
+18:24
+dựa vào cái co á, diện tích của cái co để tính ra được cái đai á thì mình sẽ
+18:28
+gọi là dùng cái này là relative ha. Còn bây giờ là cái đai của mình nó đã cố
+18:33
+định rồi đó. Cái đai của mình nó đã cố định rồi thì mình sẽ dùng là absolute
+18:36
+ha. Absolute nhớ nha. cái đai mà để nó để là một cái một cái giá trị cố định á
+18:41
+thì ở đây em phải dùng là absolute giùm anh. Đó.
+18:45
+Ờ tiếp theo thì mình sẽ coi là ờ trước khi mà mình full plan á ha cái bước đầu
+18:51
+tiên là flan đúng không? Thì mình sẽ phải coi là
+18:54
+đầu tiên là các cái bước sau tổng hợp của mình. Tại vì BD á là mình bắt đầu
+18:58
+tính từ synthesis đúng không? Thì synthesis nó sẽ cho mình biết là cái
+19:02
+thông số à thứ nhất là về các cái sale mà nó đang sử dụng đó. À thứ hai là diện
+19:08
+tích diện tích của các sale đó. Và thứ ba là các cái số lượng sale mà mình đang
+19:13
+sử dụng trong cái bài này. Thì hiện tại em cứ nhìn vào cho anh là đầu tiên á là
+19:18
+à những con sale mà fip lop được chưa? Sale fip lop á thì nó sẽ có cái ký hiệu
+19:23
+ở đầu là DF như thế này. Đó thì ở đây là nó đang dùng năm con sale fip lop nè.
+19:29
+Tại vì sao dùng năm con? Tại vì hồi nãy mình đã phân tích á là mình dùng ba cái
+19:33
+con fip lop để lưu trữ đầu vào và hai con phi block để lưu trữ đầu ra đúng
+19:37
+không? Là năm con. Rồi ờ tiếp theo thì các cái con sale này đó thì nó sẽ thực
+19:44
+hiện cái cái gọi là gì? À cái logic của cái fuller đó. Logic của fuller được
+19:49
+chưa? Logic của fuller đó. Thì những con sale này đó
+19:54
+ên gọi và cái cách gọi của nó là nó nó khác so với lại hồi nãy mình đã vẽ hình
+19:59
+ra. Mình vẽ cái con Fer ra đó tại vì có những con xe phức hợp ví dụ như là OR
+20:03
+này nè nó kết hợp lại với nhau thì mình sẽ thấy nó không còn giống với cái hình
+20:07
+hồi nãy mình mình coi nữa. Nhưng mà em phải coi thử là cái số lượng mà các cái
+20:11
+con sale mà tổ hợp với lại tuần tự là bao nhiêu. Đó ở đây là tổng số sale của
+20:15
+mình là 39 được chưa? 39 m sale thì em trừ ra 39 mà trừ đi 5 thì nó sẽ còn là
+20:20
+bao nhiêu? 34 con sale tổ hợp đúng không? Là 34 cái con sale mà thực hiện
+20:26
+logic logic của mình á. Đó. Thì bây giờ mình sẽ coi ở đây là mình sẽ
+20:32
+coi thử là hai cái thông số. À đầu tiên là cái thông số này á mình lấy ở đâu? Đó
+20:37
+thông số này mình lấy ở đâu? Thì cái thông số này á là nằm ở bước flow plan
+20:42
+nha. Nằm ở bước flow plan. Đó nghĩa là khi mà mình xem ờ mình xem gọi là gì?
+20:48
+cấu hình của con chip á thì mình sẽ cần phải coi là à cái cấu hình mà nó đang
+20:54
+chạy là như thế nào. Thì cái bước đầu tiên á là khi mà Open RAW nó bắt đầu nó
+20:58
+chạy á thì mình cần coi cái bước là bước Flow BL này nè. Những cái bước trước đó
+21:02
+mà nó có open raw thì em chưa cần coi đâu. Em chỉ cần coi cái bước đầu tiên là
+21:05
+cái bước Flow BL á thì em bấm vào đây thì nó sẽ có những cái file này đúng
+21:09
+không? Thì em cứ cứ coi như cái file là config Jason thôi.
+21:14
+Đó thì cái file config Jason này á nó cho em biết những cái thông số mà ờ cấu
+21:20
+hình ha. Những thông số cấu hình đó là những thông số cấu hình nè.
+21:26
+Nhưng mà ờ nếu mà em coi trong này đó thì đây là những cái thông số cấu hình
+21:30
+mà mình đưa từ từ người dùng tức là từ cái từ cái file mà bên ngoài của mình
+21:34
+đưa vào á. Đây nè. Đó đưa từ đây vào nè tụi em. Đó thì
+21:39
+những cái thông số này nó cũng lấy lại thôi. Đây là cái file config nằm ở bên
+21:42
+ngoài ha. Lúc mà tụi em làm lab á sẽ tụi em sẽ thấy là cái file config này là
+21:46
+dùng cho tất cả các cái rin khác nhau. Tức là mỗi lần em rin á thì em sẽ sửa
+21:50
+lại. Nhưng mà nó đều dùng chung nằm nằm chung một cái chỗ là config. Jason đó.
+21:55
+Thì cái file confit. Jason này là nó là cái file ngoài đây nè.
+22:04
+Đó cái file confit. Đó là cái file nằm ở ngoài đây nè.
+22:08
+Đây nè. Đó thì cái file này đó là cái file mà em sẽ gọi là em cấu hình nè. Em
+22:14
+thêm vào nè. Đó thì khi mà em vô cái bước flow plan á nghĩa là em bấm vô cái
+22:18
+open draw nó sẽ sử dụng lại y hệt ờ cái config đó. Thì cái này em em bấm vào đây
+22:25
+thì cũng được thôi nhưng mà thường thường bấm vào đây nó sẽ không có thông
+22:28
+tin đâu. Em sẽ bấm vào cái giùm anh là cái stay out nha. Stay out và stay in.
+22:32
+Thì cái stay out nó là cái trạng thái mà sau khi mà cái flow này nó xử nó xử lý
+22:37
+xong nè. Được chưa? Còn stay in là cái trạng thái mà nó đưa vào ở cái bước
+22:41
+trước đó. Đó ví dụ như bây giờ mình nói là ờ
+22:47
+bây giờ mình kiểm tra những thông số này. Đó muốn kiểm tra những thông số này
+22:50
+thì những thông số này nó lấy từ đâu? Nó lấy từ synthesis đúng không? Đó nó lấy
+22:53
+từ synes thì mình phải coi là những thông số này nó có đúng hay không. Ví dụ
+22:57
+như là ờ về diện tích của cái con a của con standard sale này nó ghi là 276,515
+23:03
+nè. Thì cái này nó lấy từ đâu? Nó lấy từ synes thì mình phải coi nó có khớp hay
+23:07
+không. Đó. Nếu mà nó không khớp thì nó là một cái thông số nằm ở đâu đó.
+23:26
+Ở trong đây thì đó mình coi thử là các cái thông số này nè. Ví dụ như là design
+23:33
+instant count là 39 đúng không? Và diện tích của mình là 276,5 5152. Thì mình
+23:38
+bấm vô stay in á để mình coi thử là những cái thông số này là nó có khớp với
+23:42
+lại cái bước trước hay không. Đó. Đó thì nó phải khớp đúng không? nó phải
+23:47
+khớp. Rồi tiếp theo một số cái ví dụ như là ờ cái design row và cái design size
+23:54
+này nè. Đó thì những cái design size và design row này nó nghĩa là gì? Ví dụ như
+23:59
+là cái design size này là giống như là em em hiểu rằng là cái co của mình á nó
+24:03
+sẽ chia ra nhiều cái nhiều cái ô ô lưới á để nó nhét cái con standard sale vào
+24:07
+đây. Đó. Ờ sequential sale là gì? Sequential sale là những con sale mà phi
+24:14
+block đúng không? Rồi ở đây nó sẽ tính là design instant
+24:20
+multi input combinational sale. Đấy chưa? Combination sale là những con sale
+24:24
+tổ hợp đó thì nó tính là 32 đó. Trong khi bên này nếu mà em em tính là 39 mà
+24:31
+trừ đi 5 thì nó là 34. Đó 39 nè trừ đi 5 thì nó là 34. Thì có phải là em thấy
+24:37
+rằng nó bị thiếu mất hai con sale không? Ở bên đây nó tính có 32 à mà bên đây nó
+24:41
+tính tới 34 lại. Phải xem thử là hai cái con sale đó nó nằm ở đâu nó biến mất. Là
+24:45
+lý do tại sao nó biến mất đúng không? Thì thật ra hai con sale đó nó không
+24:49
+biến mất nha tụi em. Ờ hai con sale đó nằm ở đây nè. Đó thì nếu mà em làm cái
+24:54
+lap trước thì em sẽ thấy rằng là đây là hai con sale nó truyền vào cho output.
+24:59
+Nó truyền cho output nha. Đó là output buffer á nó truyền vào đây. Thì hai con
+25:04
+sale này nó không tính vào là cái sale logic nha. Đây là những con xe logic
+25:08
+thôi. Những con xe logic thôi. Còn những xe buffer ví dụ như con xe buffer này
+25:11
+hai con thì nó tính ở đây nè. Tính ở đây nè. Đó. Cho nên là mình sẽ biết rằng là
+25:16
+32 cộng với 2 là 34. Đó. Nó khớp cái số bên này. Rồi. Ờ diện tích của cái
+25:22
+combination sale á là 160,154 thì nó trừ đi cái diện tích của hai con
+25:27
+xe buffer này ra luôn nha. Đó. Thì đối với cái hình này đó thì em sẽ
+25:35
+thấy rằng là ờ những cái thông số ví dụ như là à đầu tiên là cái số này nè.
+25:43
+Ví dụ như cái số mà 16611 1,52 này á thì nó sẽ là cái cái
+25:51
+qua cái hình này thì mình sẽ thấy rằng là đầu tiên là cái số đầu tiên là 161
+25:55
+ha. 161 thì nó sẽ coi như là cái chiều này là cái chiều dài à tức là cái người
+26:03
+ta gọi là cái cái cái wit á chiều rộng chứ cái chiều rộng của cái đai đó chiều
+26:09
+rộng của cái đai còn cái chiều cao của mình á là 111,52 micrm đó thì hai con số
+26:14
+này là nó đã cố định nha tức là toàn bộ cái cái diện tích của con xe của mình nó
+26:18
+đã nó bị cố định rồi nó không có thay đổi được đó rồi sau đó là mình sẽ tính
+26:23
+ra được cái diện tích của cái tức là cái vị trí của của cái core, vị trí của cái
+26:26
+core thì để tính ra được cái vị trí của core á thì mình sẽ dựa vào cái thông số
+26:30
+này là design core boox nè. Đó thì cái này đó ví dụ như là 2,76 nè, 2,72 nè thì
+26:39
+nó do đâu mà ra đó? Nó do đâu mà ra? Thì tụi em nhìn vào đây nha. Thì cái số 116
+26:46
+này nè thì nó giống như là cái đơn cái đơn vị vậy đó. Cái đơn vị của mình.
+26:53
+>> Ôi bạn nào mở mic vậy? Alo alo bạn nào mic
+26:58
+tắt chị bắn cái mic cái
+27:04
+>> ờ Duy Vũ ơi tắt giùm anh cái mic alo alo
+27:23
+alo bạn di Vụ Củ tắt cho anh cái mic. Có bạn nào nhắn cho Duy Vũ tách giùm anh
+27:40
+cái mic với.
+27:46
+>> Ờ những cái thông số này tính từ đâu nha. Thì những cái thông số này ví dụ
+27:49
+như là 2,72 nè rồi 2,76 á thì thì em nhìn vào đây á thì nó nằm ở bên cái tọa
+27:56
+độ này. Đó thì 2,76 với 2,72 á là mình tính từ cái từ cái từ cái nào? Thì nó sẽ
+28:03
+tính từ cái cái file config của mình ha. Cái file confit của mình á thì nó sẽ
+28:14
+cái file config của mình á thì nó sẽ có cái thông số dụ là 1166 này nè. Thì nó
+28:18
+giống như là cái top á, cái top maging nghĩa là cái cái khoảng cách từ cái đai
+28:24
+của mình á, từ cái biên của cái đai tới tới cái khí cạnh trên của cái co á nó là
+28:29
+một đó. Rồi ví dụ như là cạnh dưới của co nó cũng cách là một nè. Rồi cạnh trái
+28:34
+cạnh phải nó cũng cách là là 6. Thì cái số 1 với cái số sáu này nè thì nó tính
+28:38
+theo cái đơn vị của
+28:41
+>> nó tính theo đơn vị của một cái size á nha. Thì đơn vị của một cái size á thì
+28:46
+nếu nếu mình muốn xem cái đơn vị của một cái size thì mình sẽ bấm vào đây. Mình
+28:50
+sẽ xem vào trong cái cái file de nha. Đó mình xem mình sẽ xem cái file de nha
+28:59
+tụi em. Thì mình sẽ thấy rằng là đơn vị của một
+29:04
+cái cái gọi là gì? Một cái một cái size nó là 460 đó. 460 thì khi mình quy đổi
+29:11
+ra theo cái đơn vị là microm á, mình đổi ra là 1000 micrm á thì nó sẽ đơn vị là
+29:17
+0,46 micrm ha. Thì mình lấy 0,46 mình nhân cho 6 lên. Mình lấy 0,46 mà nhân
+29:24
+cho 6 thì nó ra được cái số là 2,76 nàyy nè. Được chưa? Còn cái 2,72 á
+29:31
+nó là đơn vị theo chiều ngang. Đơn vị theo theo chiều ngang
+29:37
+nè. 2,76 là cái đơn vị theo cái chiều chiều ngang ha. Tức là cái hình nó như
+29:43
+thế này nè tụ em. để bỏ stand vào đúng không?
+30:15
+>> Ủa sao bạn nào cứ bật cái bật cái mic khó chịu vậy ta?
+30:32
+Sao anh không tắt được cái mic của bạn đó ta?
+30:45
+Anh tất tiếng được đó
+31:11
+kích không được luôn á. Hình như là từ để anh để để đăng nhập
+31:17
+vào một cái khác. đâ
+32:22
+thì bây giờ mình nói lại cái số a cái số mà nằm ở bên phía phía này nè.
+32:29
+Đó, đây là những cái số mà mình sẽ giải thích nó tại sao nó lại có những cái con
+32:33
+số này. Đó thì mình có là cái số 2,76 với lại
+32:49
+2,72 á thì nó nằm ở đâu đó. Tại vì từ cái này mình mới suy ra được cái kích
+32:53
+thước của cái co của mình đó nha. Thì cái này nó sẽ là nó suy từ cái file chd
+33:00
+nha tụi em. Nó suy từ cái file dep á. Đó thì nó suy từ cái file de như thế
+33:09
+nào? Thì nhưng mà từ cái cái file de này á thì anh sẽ thấy rằng là đầu tiên á là
+33:14
+những cái số này nè 2760 này là gì? 2760 này là gì? Thì 2760 này nó là cái à cái
+33:20
+độ cao ha cái độ cao của một con sale nha tụi em. Độ cao của một con sale.
+33:26
+Độ cao của một con sale thì nó tính từ đây tới đây.
+33:32
+Đó. Độ cao của một con sale thì nó là 2760 thì nó tính ra là 2,76 microm nha.
+33:41
+Tại vì nó tính theo đơn vị là micromet á. 2760 tức là 2 phẩy
+33:49
+2,76 micrm nha. Đó thì tất cả những con sale
+33:54
+á nó đều có cái nó đều có cái chiều cao này hết nha tụi em. Tại vì các cái hàng
+34:01
+của mình á các cái hàng của mình á nó nó sẽ là những cái hàng như thế này đúng
+34:05
+không? Đó thì tất cả những cái con sale á nó muốn nhét vừa vô cái hàng này á thì
+34:09
+nó phải có có cùng cái kích cỡ về chiều cao. Đó. Còn cái chiều rộng á, cái chiều
+34:14
+rộng này đó, cái chiều rộng này thì mình sẽ là cái con số này
+34:21
+đây, nó là con số là 460 ha. Thì em thấy rằng là 460 tức là mình tính ra được là
+34:28
+0,46 micrm nha.
+34:32
+Không này là 0,46
+34:40
+micrm đó. Thì tức là bây giờ đây là một cái ô của
+34:45
+mình ha. Người ta gọi cái ô này là một cái size. Được chưa? Một cái size. Đó.
+34:50
+Thì bây giờ mình sẽ lấy cái đơn vị này để mình tính ra được cái khoảng cách ha.
+34:54
+Tính ra được cái khoảng cách. Thì bây giờ ờ ở đây cái số này nè 2,76
+35:02
+thì nó là cái nó là cái số theo cái chiều cao này rồi đúng không? Tại vì nếu
+35:07
+mình thính theo cái chiều cái chiều cao đó thì mình thấy rằng là cái chiều cái
+35:12
+chiều từ cái gì ta? Từ cái từ cái này nè tính theo chiều cao
+35:19
+là tính th cái chiều này nè. Đó tính theo chiều này đúng không? Thì nó sẽ
+35:23
+phải bằng đúng kích cỡ của một đơn vị. Tại vì sao là một đơn vị? Tại vì trong
+35:28
+cái file config á đây nè mình quy định là chiều cao mà cách từ cái biên của cái
+35:33
+đai á ha là một đơn vị. Được chưa? Một đơn vị thì cái số 1 này là có nghĩa là
+35:38
+một đơn vị của của cái đơn vị này nè. Đơn vị là 2,76 á. Đó, số 1 này nó chính
+35:44
+là tính từ đây xuống đây là 2,76 nè. Còn 2,72 là cái theo theo cái chiều là chiều
+35:51
+ngang theo cái chiều này
+35:57
+thì mình sẽ lấy là 0 phẩ 0 phẩy mấy ta? 0,46. Lấy lấy theo chiều ngang là 0,46
+36:04
+ha. 0,46 mà em nhân cho 6
+36:10
+0,46 nhân cho 6 thì nó sẽ ra được là 2,72.
+36:16
+Được chưa? 2,72. Đó thì đó là cái khoảng cách để
+36:21
+mình trừ trừ từ trên à trừ từ phía dưới để mình ra được cái khoảng cách
+36:27
+của cái co này. Tức là cái co này nó sẽ cách sale này bao nhiêu đó thì mình sẽ
+36:33
+tính ra được là cái chiều dài và chiều rộng của cái co này được không? Thì cái
+36:37
+chiều dài của mình là mình sẽ lấy cái khoảng cách là 161 này nè microm nè. Đây
+36:41
+là chiều rộng đúng không? Trừ đi cái cái khoảng thuục lề vào là 2,76.
+36:47
+Đúng chưa? 2,76 thì mình trừ đi thì nó còn cái cái vùng này là 155,48. Rồi cái
+36:53
+cái chiều cao này thì mình lấy bằng cách là mình lấy cái số bên ngoài nè 111,52
+36:58
+rồi mình trừ đi cái số này là 2,72. Được chưa? 2,72.
+37:05
+Thì sau khi mình có được cái cái co này rồi á thì em thấy rằng là cái co này bây
+37:09
+giờ nó đạt một cái số cố định đúng không? Và cái đai này nó cũng là một cái
+37:13
+số cố định luôn. Thì sau khi mà mình mình đặt các con sale vào đây á thì
+37:18
+những cái diện tích này nó không thay đổi. Đó, diện tích này nó không thay
+37:20
+đổi. Đó, thì đây là cái diện tích của mình nè. Thì khi mà em tính ra được cái
+37:25
+vùng diện tích mà của con standard á, tức là cái vùng diện tích mà standard
+37:29
+sale nó chiếm so với lại cái diện tích của cái core. Thì em coi ở đây đây em
+37:35
+phải coi là cái diện tích của standard sale là bao nhiêu. Đó. À diện tích của
+37:39
+standard sale nó đang là 276,515 đúng chưa? Đó. Thì bây giờ em muốn tính
+37:44
+ra được cái con số là design instant utilization này nè. Đó, tức là cái phần
+37:51
+trăm phân bố của cái diện tích sale so với diện tích core đó thì em lấy cái con
+37:56
+số là 276,5152 đó. Rồi em chia cho cái diện tích của
+38:02
+cái co area đó thì nó sẽ ra được cái con số là 0,016575
+38:07
+nè. Thì cái này là nó chiếm chưa tới 2% đó. Nó chiếm rất là nhỏ.
+38:13
+Thì em thấy rằng là khi mình chạy từ AT tới GDS á thì nó ra được cái con số này.
+38:17
+Ờ thì mình thấy rằng là toàn bộ cái diện tích đây nè thì mình không dùng tới,
+38:22
+mình chỉ dùng một cái phần nhỏ xíu này thôi. Đó, tức là cái vùng này là mà khi
+38:26
+mà mình mua đó, khi mình mua á ha là mình mua một cái vùng diện tích như thế
+38:30
+này. Đó, còn khi mà mình thiết kế thì có thể là cái vùng diện tích của mình á là
+38:35
+nó bị dư ra. Nghĩa là mình nếu mình thiết kế mỗi con Fer không á thì nó dư
+38:39
+ra như thế này. Nó dư rất là nhiều đúng không? Cho nên là khi mình mua mà cái
+38:43
+vùng diện tích của mình mà nó bị thừa như thế này quá là nhiều đó thì mình cố
+38:46
+gắng mình làm sao đó mà cho nó tăng cái vùng diện tích của logic này lên đó để
+38:51
+cho nó f gần như là gần như là 80% tức là mình muốn cái số này nè cái số này nó
+38:56
+phải từ 80% đó là là là tốt nhất ha nghĩa là nó sẽ fill gần như là gần hết
+39:02
+cái co này đó vi gần hết gần hết cái co này rồi thì sau khi mà tụi em chạy xong
+39:08
+á thì mình sẽ bấm vô cái open raw Đ được chưa? Open Gui thì nó sẽ ra được những
+39:14
+cái những cái hình như phía sau này. Thì bây giờ anh sẽ làm mẫu cho tụi em coi
+39:18
+luôn ha. Để mất công để lát tức là tụi em coi slide cũng được hoặc
+39:24
+là coi trong cái video này nếu mà mấy bạn coi record á. Thì bây giờ đầu tiên
+39:28
+là khi mà mình chạy xong á mình chạy xong thì mình sẽ bấm vào cái
+39:32
+phần là CTWCI nè. Đó, bấm vào đây thì tụi em chạy á thì
+39:42
+tụi em load load cái file này vào thì cái file này lát anh sẽ gửi ha. Thì
+39:47
+trong này á mình sẽ có là một cái file là file fullder đó. Một cái file là file
+39:53
+fuller với lại một cái file là file à gọi là file
+39:58
+à file top ha. File top. Thì hiện tại là anh đã chạy rồi. Anh đã
+40:04
+chạy xong rồi. Thì khi mà em chạy xong á thì nó sẽ ra được cái hình như thế này.
+40:08
+Thì với mấy cái lá trước thì mình không có bấm được. Đó với cái láp này thì mình
+40:11
+bấm được cái open này thì mình bật lên. Đó. Thì trong cái open draw này đó nó sẽ
+40:18
+cho mình cái gì? Đầu tiên á là em sẽ xem được cái GDS ha là cái file này nè. File
+40:23
+này là cái file này là cái cái file GDS của mình. Nhưng mà bây giờ là mình có
+40:28
+thể zoom vào được. Đó. Đó mình có thể xem được cái tức là cái hình của mình
+40:32
+bây giờ mình có thể sửa được rồi. Hồi trước là mình chỉ xem thôi. Giờ mình có
+40:35
+thể sửa được. Thì bây giờ để coi cái này thì mình có thể là đầu tiên là mình sẽ
+40:40
+tắt hết ha. Mình sẽ tắt hết đi. Tắt hết đi ha.
+40:48
+Đó thì khi mà em tắt hết là em sẽ à bật từ từ lên. Thì khi mà em tắt hết á thì
+40:55
+trong đây nó sẽ cho em là thứ nhất là về cái
+40:59
+nó sẽ có ba cái cửa sổ ha. Nó sẽ có ba cửa sổ. Cái cửa sổ bên trái này nè là
+41:03
+cái cửa sổ mà để cho mình coi cái hiển thị. Được chưa? Coi hiển thị. Cửa sổ bên
+41:08
+phải này á là cái cửa sổ tùy tùy tùy chọn. Cái này mình có thể tùy tự thêm
+41:13
+vào nha. Cái này mình có thể tự thêm vào. Thì giờ anh thử anh tắt hết đi. Anh
+41:16
+thử tắt hết đi. Rồi cái này là để mình gõ lệnh TCL cho nó nè. Gõ lệnh TCL nè.
+41:21
+Đó. Thì giờ anh tắt đi luôn đó. Thì trước
+41:26
+tiên á là em cứ coi là em tắt đi hết. Em tắt hết các cái lớp metal đi ha. Tắt hết
+41:30
+đi. Thì khi mà em tắt hết như vậy á thì em
+41:34
+sẽ thấy rằng là các cái các cái này nè các cái ô này nè tụi em. Các cái ô này
+41:39
+nè thì nó sẽ có kích thước gần như là nó đều nhau. Về cái chiều cao của mình là
+41:43
+2,72. Được chưa? Còn cái chiều rộng á, cái chiều rộng thì tùy con sale nào mà
+41:48
+nó nó nhiều nó diện tích mà nó lớn thì nó sẽ chiếm khoảng ba ba cái cột ha. Ba
+41:54
+cái cột hoặc là bốn năm cột gì đó. Còn những con sale này nhỏ nhỏ nhỏ thì nó
+41:58
+chỉ chiếm được một cái cột trong này thôi nhưng mà nó phải bỏ vừa trong cái
+42:01
+cột này. Đó trong cái trong cái size này. Thì bây giờ mình sẽ coi ở đây á thì
+42:05
+nó sẽ có được là ờ nếu mình mình tắt hết á thì nó sẽ vẽ ra các cái ranh giới của
+42:10
+các con sale. Được chưa? tranh giới của các con sale. Thì bây giờ mình sẽ bật từ
+42:14
+từ lên. Mình sẽ bật từ lên. Đầu tiên là cái lớp decon nè.
+42:26
+Thì cái lớp licon này là cái lớp licon này ly 1 rồi m con. Đó thì ba cái lớp
+42:35
+này là ba cái lớp mà tạo ra một con transistor á nha. Đó thì bây giờ em tắt
+42:40
+hết mấy cái con filler đi. Mấy con filler là những cái con mà nó truyền vào
+42:43
+để chỉ để gọi là nó phủ những cái chỗ trống thôi ha. Thì những con filler này
+42:48
+nó không có logic em tắt hết đi thì em chọn vào trong cái phần là
+42:54
+instant á ha. Rồi em tắt cái phần physical đi. Tắt đi. Thì lúc này nó chỉ
+42:59
+hiển thị là những con sale logic thôi. Đó những con sale logic và những con
+43:02
+sale buffer thôi. Còn những con filler thì nó sẽ tắt đi. Đó thì khi mà em bật
+43:07
+ba cái này á thì nó sẽ ra được cái con transistor của mình nè. Đó nó ra được
+43:10
+con transistor của mình. Đó được chưa?
+43:15
+Đó. Rồi khi mà em bật em bật em bật lên á em bật lên tiếp. Ví dụ như bây giờ đi
+43:19
+anh sẽ chọn một cái con transistor nào đó. Thì mỗi con transistor á nó sẽ có
+43:24
+một cái một cái gọi là gì? Một cái con số đó. Ví dụ nha. Con này là conter gì
+43:30
+đó nó không biết mình không biết nhưng mà mình thấy nó có một con số đây nè là
+43:33
+22 đúng không? Em bấm vào. Rồi đầu tiên là em sẽ coi thử conter này nó là cái gì
+43:38
+thì em bật cái window chọn inspector lên. Đó chọn inspector
+43:43
+thì nó sẽ cho mình biết được rằng là con sale này là con sale fiplop ha. Đây nè.
+43:48
+Mình chọn con sale này thì nó sẽ chọn cho mình thấy rằng là cái thứ tự của nó
+43:51
+là số 22 được không? Số 22. Ờ con còn cái tính chất của con sale này là con
+43:57
+sale flock đó nè. S ph nè. Và cái loại cái loại sale là sale tuần tự. Sale tuần
+44:03
+tự được không? Đó thì bây giờ mình sẽ mình sẽ coi thử là ok bây giờ mình muốn
+44:10
+kết nối ờ giữa hai con sale này lại. Ví dụ như con sale bên này để coi con sale
+44:14
+bên này là sale gì ha. Sale bên cạnh nè. Đây là con sale số 22 đúng không? Con xe
+44:18
+bên cạnh nó là con sale số 24. Thì bấm vô, mình bấm vô thì mình thấy là con C24
+44:23
+này nó cũng là một con phi ló luôn. Đó thì nếu mà mình để mình để cái dấu mũi
+44:29
+tên ở đây nè, tức là để dấu mũi tên ở chỗ cái con fip này nè thì những cái chỗ
+44:33
+mà có fip nó sẽ sáng lên nha tụ em. Những chỗ mà có fip lop nó sẽ sáng lên.
+44:39
+Đó thì mình sẽ coi thử là nó có đủ số fip mà mình mong muốn hay không.
+44:46
+Đó thì nó nó sẽ cho em thấy rằng là có năm con phi lop đúng chưa? Vị trí của
+44:50
+năm con phip lop nó sẽ sáng lên. Rồi sau đó mình sẽ bật tiếp metal 1.
+44:56
+Đó thì cái metod 1 này á em thấy nè nó sẽ làm cái nhiệm vụ là gì? Đầu tiên
+45:05
+em sẽ thấy rằng là cái met 1 á nó sẽ kết nối gọi là nó dùng một giống như là một
+45:12
+cái dây kết nối của chính bên trong con sale. Ví dụ như con sale này đúng không?
+45:16
+Thì nó cũng dùng các cái met 1 để nó kết nối chính nó nè. Đó nó kết nối ở những
+45:20
+cái những cái vị trí ở bên trong của con sale của chính nó luôn. Hoặc không á là
+45:25
+nó sẽ dùng cho cái việc là nó sẽ kết nối sang một cái con sale khác. Ví dụ như là
+45:30
+con sale này cũng là một con sale fip đúng không? Thì hai con này nó nối với
+45:33
+nhau thông qua một cái met 1 được chưa? Met 1 thì met 1 của mình nó là màu đỏ nè
+45:37
+tụi em. Đó. Đó tức là metal 1 của mình nó làm hai nhiệm vụ ha. Một á là nó sẽ
+45:42
+là cái interconnect tức là cái kết nối của chính con sale transistor luôn. Đó.
+45:49
+Hai hai là nó là nhiệm vụ là nó sẽ kết nối từ con sale này qua con sale kia
+45:53
+đúng không? Đó nó sẽ kết nối từ con sale này qua con sale kia. Và ba là nó sẽ là
+45:57
+nhiệm vụ là như những cái những cái con gọi là
+46:01
+những cái rail ha. Những cái rail VDD và VS
+46:06
+đó. VDD nè. Nếu em bấm vào đây á thì em sẽ thấy là cái này là cái chân chân
+46:10
+nguồn nè. V này thấy không? V nè. Đó. Còn cái chân này là chân đất nè tụi em.
+46:14
+Cái này là đất nè. thì nó sẽ đi xen kẽ nhau. Nó sẽ đi xen kẽ nhau. Cái metal 1
+46:19
+á nó sẽ đi xen kẽ nhau. Tức là cái metal 1 của em á nó sẽ nó sẽ đang lưới liên
+46:23
+tục là ví dụ như đây là VDD rồi á thì cái này sẽ là VSS rồi cái này là VSS rồi
+46:28
+thì nó sẽ là VDD đó. Nó sẽ kẻ nhau thế này. Đó thì met 1 của mình nó sẽ là ba
+46:32
+nhiệm vụ lận đó. Rồi tiếp theo là mình sẽ từ met 1 nói
+46:37
+lên met 2 ha. Rồi ví dụ như đây là metal 1 của anh
+46:42
+đúng không? Bây giờ anh muốn nói metal 2 thì anh sẽ à bật cái V lên. Bật cái V
+46:47
+lên. Đó thì khi mà bật cái V lên á sẽ thấy là tại Met 1 nó sẽ dựng lên một cái
+46:51
+V nữa. Đó dựng lên cái V. Thì những cái V này để làm gì? Để nó tiếp tục nó nó
+46:56
+tạo ra những cái đường kết nối cho Metal 2 đúng không? Rồi thì em bật
+47:02
+em bật metal 2 lên. Đó bật metal 2 lên thì em thấy rằng là lúc này á là Metal 2
+47:09
+nó chỉ dùng để kết nối cái gì? nó có dùng để kết nối từ con sale này qua con
+47:13
+sale khác không? Phải coi thử là nó có dùng để kết nối từ con sale này qua con
+47:17
+sale khác không. Thì thật ra là vẫn có nha, vẫn có nhưng mà cái cái chủ yếu của
+47:23
+nó sẽ là nó sẽ kết nối tín hiệu ha. Ví dụ như tín hiệu từ cái chân này. Ví dụ
+47:28
+tín hiệu này là tín hiệu của clock đi. Ví dụ tín hiệu này là tín hiệu clock ha.
+47:31
+Nè em nhìn vào đây nó sẽ ghi là signal tie. Được chưa? Signal type. Em bấm vô
+47:35
+cái dây nè. Bấm vô cái dây á nó sẽ hiện ở đây là signal type là clock. Vậy thì
+47:40
+nó sẽ nối xuống cái cái clock của thằng này. Nối xuống cái clock của hai con
+47:45
+transistor này đây. Đó thì cái chỗ này là clock này t em.
+47:50
+Cái cục màu xanh này nó chính là clock nè. Nếu em bấm vào đây á em bấm vô con
+47:54
+màu xanh này nè thì nó sẽ hiển thị rằng là đây là clock nè. Đây là chân clock
+47:57
+của cái con fit block số 22. Được chưa? Còn em bấm vào cái con màu xanh này á
+48:02
+thì nó ra được là cũng là cái chân block của con số 24. Đó. Chân block con số 24.
+48:07
+Vậy thì nó đang kết nối vào cái chân block của hai con này. Được chưa? Thì
+48:12
+cái đầu ra của cái đây á thì nó sẽ là một con clock buffer. Clock buffer. Đó.
+48:18
+Thì cái clock buffer này nó khí đã tín hiệu clock thôi. Hết trả tín hiệu clock
+48:21
+thôi. Đó. Rồi tiếp theo là mình bật tiếp là metal 3 ha. Để để kết nối metal 3 thì
+48:28
+mình bật cái va lên. Bật cái vi V2 lên. Cái metal 3 này đó,
+48:36
+cái met 3 này đó thì nó sẽ kết nối tín hiệu luôn. Đó, nó cũng đi
+48:42
+kết nối tín hiệu luôn. Thì nếu mà em em thấy rằng á là mỗi mỗi mỗi một cái metồi
+48:47
+này nó sẽ có một cái hướng ưu tiên ha. Gọi là hướng ưu tiên nha. Hướng ưu tiên
+48:52
+nghĩa là ví dụ như là con metal 3 này á cái hướng ưu tiên của nó sẽ là cái hướng
+48:56
+ngang. Đó, hướng ngang nghĩa là khi mà người ta kết nối người ta vẽ nó ra á,
+49:00
+người ta sẽ vẽ nó theo phương ngang. Được chưa? Vẽ theo phương ngang. Đó. Rồi
+49:04
+cái hướng ưu tiên của con metal 2 đi. Ví dụ mình bấm cái hướng ưu tiên của con
+49:07
+metal 2 thì em thấy rằng là metal 2 nó sẽ ưu tiên theo hướng dọc. Đó, nghĩa là
+49:12
+nó sẽ cố gắng là nó tìm những kết nối theo theo theo phương dọc. Đó, theo
+49:16
+phương dọc. Được chưa? Metal 3 là kết nối theo
+49:21
+phương ngang. Metal 1 á, metal 1 thì cái hướng ưu tiên
+49:25
+của nó là hướng ngang nha. Hướng ưu tiên của nó là hướng ngang đó.
+49:30
+Rồi tới metal 3 á thì em sẽ thấy rằng là nó
+49:34
+cũng dùng để kết nối tín hiệu thôi. Rồi metal 4 đó metal 4 thì em thấy là nó sẽ
+49:40
+là những cái vịt những cái dòng mà những cái gạch màu đỏ đỏ đỏ nó cắt ngang qu
+49:44
+màu hồng nó cắt ngang qua toàn bộ cái co của mình nè.
+49:50
+Đó thì thứ nhất á metal 4 nó sẽ là cái
+49:55
+metal mà đặc biệt được chưa? Nó là cái metal đặc biệt. Thì cái metal 4 nó làm
+50:00
+nhiệm vụ là thứ nhất á là nó sẽ kết nối với lại các cái bọt bên ngoài của mình.
+50:05
+Đó ví dụ như cái bọt bên ngoài là những cái chân đầu vào đầu ra đó ví dụ như là
+50:08
+ui in ui out đó thì nó sẽ nối thẳng vô met 4. Ví dụ như là u in0 u in1 và u in2
+50:14
+là ba cái chân ngõ vào của mình đúng không? thì nó sẽ đi qua cái đường dây
+50:17
+metal 4 này nè để đi vào trong mặt được chưa? Và ngoài ra thì cái metal 4 nó còn
+50:21
+là nhiệm vụ là nó làm một cái nhiệm vụ là nó cấp nguồn đó. Nó cấp nguồn cho
+50:26
+toàn bộ các cái kết nối của mình cho toàn bộ các cái con standard sale. Được
+50:29
+chưa? Thì để nó cấp nguồn được á, để nó cấp nguồn được á thì nó dùng một cái
+50:34
+tính chất của của cái đây. Tại sao met 4 nó phải bự như vậy? À tại
+50:42
+sao phải metal 4 nó phải to như vậy? thì nó ờ nó dựa vào một cái tính chất này
+50:46
+nha. Ừ.
+50:57
+Đó, method 4 là nó đi hết nó cắt qua tất cả những cái những cái chân gọi là chân
+51:01
+power nha tụi em. Em lưu ý là nó sẽ cắt qua những chân power thôi. Đó, còn những
+51:06
+chân VSS đó là nó sẽ không cắt nha. Đó, những chân power nó sẽ cắt hết đó. Những
+51:11
+chân ba nó cắt hết để nó cấp nguồn á. Thì tại sao nó phải bự như vậy? Thì nó
+51:15
+dựa vào cái đặc tính người ta gọi là IR drop. Được chưa? IR drop. Thì cái IR
+51:19
+drop này á nó giống như kiểu là em truyền một cái tín hiệu đi xa. Đó,
+51:24
+truyền tín hiệu đi xa và nó đi qua các cái tải đó. Ví dụ như là em đang gửi đi
+51:29
+một cái điện áp là V1 à gửi xuống cái tải là cái tải standard sale này. Nghĩa
+51:33
+là cái đầu vào của Standard Sale này nó đang dùng một cái đầu vào là một cái
+51:38
+điện áp đúng không? Thì bây giờ mình truyền cái điện áp vô con S này. Thì khi
+51:42
+mình truyền đi á mà nếu mà nó đi qua nhiều tức là nó cái cái đường dây mà nó
+51:46
+quá dài á tụi em. Cái đường dây của nó của này mà nó quá dài á ha thì nó sẽ tạo
+51:51
+ra các cái điện trở ký sinh trên này. Được chưa? điện trở ký sinh trên này thì
+51:55
+những cái điện trở này đó thì nó sẽ làm ra một cái gọi là nó sẽ giảm đi cái điện
+51:59
+áp khi mà truyền tới cái V2 này. Thì mình sẽ có công thức là V2 là cái điện
+52:03
+áp mà truyền vào cái đầu vào của con standard á nó sẽ bằng là V1 trừ đi là
+52:08
+điện à cái dòng ở đây nhân cho R đúng không? R nó sẽ là cái cái điện trở trên
+52:14
+cái đường dây. Thì em thấy rằng là cái dây mà nó càng dài á thì có phải là cái
+52:17
+R của mình nó sẽ càng lớn không đúng không? Cái R mình nó càng lớn đó. Cho
+52:21
+nên là khi mà nó truyền đi xe thì gần như là cái điện áp nó sẽ bị sục giảm. Đó
+52:26
+thì mình thấy rằng ví dụ như là điện áp của mình là hoạt động của mẫu standard
+52:29
+là 1.8 V nhưng mà thật chất là nó giảm còn có 1.72 V nè. Đó thì bây giờ mình
+52:35
+làm sao để cho cái điện áp này nó cái điện trở này nó nó không có quá là lớn.
+52:39
+Thì bây giờ mình phải làm thiết kế cho cái dây á nó rộng ra. Cái dây mà nó càng
+52:44
+rộng thì điện trở nó càng nhỏ nha. Đó. Dây nó càng rộng thì điện trở nó càng
+52:47
+nhỏ. Và ngoài ra nữa là tại vì cái con ST cái con cái con Metal 4 này nè, cái
+52:53
+metal 4 này nó làm nhiệm vụ là nó truyền nguồn cho tất cả các con standard được
+52:57
+chưa? Truyền nguồn cho tất cả standard sale. Do đó rằng là nó phải to để làm
+53:01
+gì? Để nó chịu được cái dòng lớn. Nó giống như kiểu là em có một cái đường
+53:05
+dây kết nối tất cả các con standard sale lại thì bây giờ nó phải bự, nó phải đủ
+53:09
+bự để nó nó nó có thể dòng điện chảy qua đây nè, nó đủ lớn nó có thể là nó tải
+53:14
+được không? Còn mà nó nhỏ quá thì nó không thể tải được cái dòng cái dòng đổ
+53:18
+lớn nha tụi em. Đó. Rồi metal 4 thì cái hướng ưu tiên của nó là hướng hướng nào
+53:24
+tụi em biết không? Nếu nhìn vào đây thì em thấy là met 4 hướng ưu tiên nó là
+53:26
+hướng dọc ha. Met 4 này hướng ưu tiên của nó là hướng dọc. Đó hướng dọc.
+53:32
+Thì nếu mà em hỏi anh là hướng ưu tiên của nó thì xem ở đâu?
+53:37
+Các bạn có bạn nào đoán được là hướng ưu tiên xem ở đâu không?
+53:46
+Ờ hướng ưu tiên là nó nằm hình như anh nhớ là nó nằm trong cái file de này nè.
+53:51
+Nó sẽ có hướng ưu tiên nằm trong này của các metal á
+53:58
+em không nhớ rõ. Hình như là nó nằm ở một cái file nào đó ờ file.dde
+54:04
+gì đó nó sẽ có hướng ưu tiên nha. Đó tức là nó vẫn có thể kết nối theo phương
+54:10
+ngang vẫn được. Ví dụ như là em dùng metod 4 này hay là mấy cái metod 1,
+54:13
+metod 2 đó. Ví dụ met 1 đi. Hướng ưu tiên nó là hướng dọc nhưng mà nó vẫn có
+54:17
+thể kết nối theo theo theo hướng ngang được, theo phương ngang được. Đó.
+54:24
+Tiếp theo ha, tiếp theo thì bây giờ mình có là một số những cái khác. Ví dụ như
+54:28
+là mình sẽ phân tích. Ví dụ như sau khi mình bật hết tất cả các metal lên rồi,
+54:33
+bật hết lên rồi đó thì mình sẽ thấy rằng là
+54:38
+đây mình sẽ phân tích cái gì? Đầu tiên á là tụi em sẽ
+54:43
+nhìn qua cái cửa sổ bên này đúng không? Thì cửa sổ này là inspector là để mình
+54:47
+bấm vào một con sale bất kỳ. Ví dụ như con sale này thì nó sẽ hiển thị là nó
+54:51
+tính chất của nó là gì? Là con clocker đúng không? Đó clockfer. Rồi tiếp theo
+54:57
+thì mình sẽ bấm vào Windows tiếp mình chọn một cái gì đó ví dụ timing report.
+55:01
+Time report thì đây nó sẽ ra được là à cái em bấm vào đây nha. Update nha. Đó
+55:06
+là update. Bấm vào update thì nó sẽ ra được là các cái đường đi của ờ gọi là
+55:12
+phân tích thời gian tỉnh á. Thì ở đây thì nó sẽ cho mình coi là các cái đường
+55:18
+đi. Ví dụ như em coi thử cái đường tệ nhất là cái đường nào ha. Coi cái đường
+55:22
+tệ nhất là cái đường nào? Là cái đường mà có Slack nhỏ nhất á. Thì ở đây ví dụ
+55:26
+như là 14,943 này thì cái đường này là đường có slash nhỏ nhất nè tụi em. Thì
+55:31
+khi em bấm vào đó, khi em bấm vào nó sẽ những cái vị trí nào mà nó nó nó bôi màu
+55:37
+đen nè thì nghĩa là cái vị trí đó nằm trên cái đường mà mình đang xét. Được
+55:40
+chưa? Thì cái đường mình đang xét á nó đang nằm ở trên mình bấm databas detail
+55:46
+được chưa? Thì chỗ này nó sẽ cho mình thấy rõ được là nó sẽ đi qua những cái
+55:49
+nào. Đầu tiên nó đi qua là nó đi từ cái ngõ vào. Ngỏ vào của cái con clock này.
+55:58
+Đó. Ngỏ vào của con clock 24. Đó bài từ con log 24
+56:03
+đây. Mình phải coi là con log 24 là con log nào đây log 24 nè. Log 24 này thấy
+56:08
+chưa? Rồi mở vào của 24 rồi nó đi qua cái gì? Nó đi ra A và X của hai cái
+56:16
+buffer này. Rồi nó đi tới URL. Đó out nó là cái chân ngõ ra. Rồi cái
+56:23
+này là buffer. Buffer thì nó nó là cái gì? Nó là một cái chân gọi là khuất đã
+56:28
+tín hiệu thôi ha. Tất cả tín hiệu của của ngõ re thôi. Đó.
+56:33
+Đó là cái chân này nè. Buffer này nè. Thì cái con buffer này nó nằm ở ngay ngõ
+56:37
+re luôn. Thì cái đường trễ của nó sẽ là đi từ cái ngõ re ha. Ngỏ ra Q là cái ngõ
+56:42
+cái ngõ cái ngõ re của con phí block số 24 á đi qua đây. Được chưa? Đó thì mình
+56:49
+sẽ thấy một cái đường kết nối. Thấy một cái đường kết nối là đi từ clock bên này
+56:53
+đúng không? đi trực block này rồi đi thẳng qua cái con 24 này. Nhưng mà em
+56:59
+thấy rằng là em phải coi thử là trên cái đường này nè nó có bao nhiêu con
+57:02
+standard sale ha. Thì hiện tại là em thấy là nó chỉ có là một con standard
+57:07
+sale là con flock thôi. Còn lại những con khác ví dụ như con này đi. Con này
+57:11
+nó là một con clock wer đó. Rồi con này cũng là một con clock wer luôn. Đó thì
+57:18
+nếu mà bây giờ ở đây nó thêm quá nhiều clock buffer như vậy á thì mình phải coi
+57:22
+thử mục đích của nó để làm gì. Thì nghe cái tên này em biết rồi đúng không?
+57:25
+Cluber là nhiệm nhiệm vụ của nó là nó sẽ khết đãi tín hiệu clock. Đó tín hiệu
+57:29
+clock của mình nó truyền vào là từ tín hiệu này đúng không? Rồi đi qua đây thì
+57:32
+nó đi qua một con cluber nè. Rồi là đi qua đây tiếp. Rồi nó tới đây là cũng một
+57:36
+con cluber tiếp. Đó. Vậy thì ở đây nó nó không có liên quan gì nó không ảnh hưởng
+57:41
+gì tới tới cái STA của mình hết. Tại vì ST của mình nó không có nó không có tính
+57:46
+từ cái chỗ club offer mà nó tính từ đâu? ST mình nó tính từ cái chỗ Q nè. Đó tính
+57:51
+từ ngõ ra Q là ngõ ra con fit block á. đi tới cái cái ngõ rang này. Đó thì có
+57:56
+thể là mình sẽ xem thử là mình thay một con buffer nào đó ở đây. Đó thay một con
+58:00
+buffer khác để xem thử là nó có tăng cái tăng cái slash này lên hay không. Nó
+58:05
+tăng cái slash này lên không. Nhưng mà bây giờ mình thấy là slash dương rồi thì
+58:08
+mình không cần phải thay cái gì hết. Đúng chưa? Đó slash nó dương rồi thì
+58:12
+không cần phải thay gì hết. Khi nào slash âm á thì mình mới xét mình
+58:16
+thay thôi. Rồi tụi em có thể bật là clock trewer ở đây ha.
+58:21
+À rev rồi
+58:30
+trebuie thì em có thể em tắt bớt mấy cái kết nối
+58:37
+nó không ờ tắt bớt một vài cái đi.
+58:59
+thì em sẽ thấy rằng là cái clock tre là gì? Cái clock tre á nếu mình bật lên á
+59:04
+clock trewer nè đúng không? Thì nó sẽ là cái phân bổ của cái clock. Đúng chưa?
+59:09
+Phân bổ của clock. Thì bây giờ mình thấy rằng là nó đi từ đâu? Nó đi từ cái chân
+59:13
+clock đi vào. Thì mình có thể bật cái metal 4 lên để
+59:16
+mình coi thử là nó đi vào từ cái chân nào. Đây nè. Đi từ cái chân clock này
+59:20
+tụi em. Đi từ chân clock đi vào ha. Rồi nó truyền vào đâu? Nó truyền vào các cái
+59:25
+clock buffer. Thì mình phải coi thử là ở đây nó đang có bao nhiêu cloper tụi em.
+59:29
+Nếu mà nhìn vào hình này á thì em thấy rằng đầu tiên là cái màu đỏ nè. Đó chính
+59:32
+là cái cái nguồn truyền bên ngoài vào là cái clock á. Cái suột á sột clock của
+59:36
+mình á là cái này. Đúng chưa? Rồi. Ở đây nó có ba cái số nó có ba cái cái
+59:42
+cục màu xanh nè. Nó có ba cái cục màu xanh nè. Thì ba cái cục này chính là ba
+59:47
+cái cục cluber nha tụi em. Ba cục cluber. Thì nếu mà em nhìn vào đây thì
+59:51
+em sẽ thấy là nó có ba cái cục nó sáng lên nè. Cục này, cục này, rồi này. Đó,
+59:57
+ba cục nha. N ba cục này nè. Đó, thì nhiệm vụ của ba cục buffer này làm gì?
+1:00:03
+Thì mình nhìn vào cái clock trewer đó mình sẽ thấy cái nhiệm vụ của nó.
+1:00:07
+Đây thì nhiệm vụ của nó là nó sẽ làm sau đó mà cái clock skill cái clock skill từ
+1:00:13
+cái nguồn cho tới những con fit block này là là là thấp nhất có thể. Thì em
+1:00:17
+thấy rằng hiện tại là ở cái hình dưới này nè em thấy là có năm con fip loock
+1:00:20
+đúng chưa? Nghĩa là cái ngõ bào của mình là năm con phi block. Năm con phi lop đó
+1:00:25
+đi vào năm con. Thì bây giờ mình thấy rằng là ờ mình sẽ thấy là cái con số bên
+1:00:29
+này nè nghĩa là từ cái từ cái vị trí này tới vị trí này đúng không? đúng không?
+1:00:33
+Là nó sẽ cách nhau có 0,1 nano giây thôi. Nghĩa là nó sẽ làm sao đó mà nó
+1:00:38
+hạn chế ờ cái sự chên lệch và clock đúng chưa? Sự chên lệch và clock đó thì nó sẽ
+1:00:43
+phân bố như thế nào đó mà để cho cái số này nó nhỏ nhất có thể. Nhỏ nhất có thể.
+1:00:47
+Thì cái số này nó chính là gì tụi em? Club skill. Được chưa? Số này nó chính
+1:00:51
+là club skill nè. thì nó muốn phân bố cái số này mà nhỏ nhất có thể đó thì nó
+1:00:55
+phải đặt đối xứng làm sao đó để cho cái cái cái thời điểm mà tới tới những con
+1:01:02
+những con fip loock này là là là như nhau. Thời điểm nó tới những con flock
+1:01:05
+này như nhau ha. Thì hiện tại cái clock skill của mình nó đang là 0,3 nano 0,3
+1:01:10
+nano giây. Đó, còn khi mà nó đi qua từng con fip á thì em sẽ thấy rằng là ờ đây
+1:01:17
+nè, em thấy rằng là nếu mà bây giờ đó những con fip lop này nó nằm trên một
+1:01:21
+đường thẳng không? Mình lấy một cái thước mình kỉa ngang qua, kẽ ngang qua
+1:01:25
+thì tất cả nó nằm trên một đường thẳng. Nghĩa là gì? Nghĩa là clock skill của
+1:01:28
+tụi nó là giống nhau đó. Clock skill của tụi nó là giống nhau. Nghĩa là thời điểm
+1:01:34
+tới những con fip lop này là như nhau á. Tụi em gần như là nó nó nó tới cùng một
+1:01:37
+lúc ha. Tới cùng một lúc thì em muốn là nó thẳng hàng. Còn nếu mà có một con fit
+1:01:42
+lock nào đó mà nó bị nằm lệch ở phía dưới này nè, tức là nó nằm lệch xuống
+1:01:46
+dưới đây nè thì nghĩ là cái skill của nó là lớn nhất đúng không? Skill của nó là
+1:01:50
+lớn nhất. Thì mình sẽ phân bổ lại. Mình phân bổ lại mình chạy lại cái club trees
+1:01:54
+lại ha. Đó thì cái buffer nó là nhiệm vụ là thứ
+1:01:58
+nhất là nó sẽ cố gắng là nó đ nó đẩy cái tín hiệu clock tới đây là là là cái s nó
+1:02:04
+nhỏ nhất. Còn cái skill á cái skill thì nó phân bố làm sao đó mà tất cả những
+1:02:08
+con này nó thẳng hàng với nhau nè. Thì em nhìn cái hình này là em biết được.
+1:02:14
+Rồi thì đó là những cái thông số cơ bản ha. Ờ mình cần phải nắm. Rồi mình có thể
+1:02:19
+xem là về cái hit map nữa. Hit map là một cái rất là quan trọng ha.
+1:02:25
+Hit map thì nó là giống như là một cái chỗ mà để tụi em xem cái thiết kế của
+1:02:30
+mình á. Đây ví dụ như anh anh bật lại hết nha.
+1:02:34
+Bật lại hết. Anh bật lại hết đi thì anh sẽ bật cái
+1:02:43
+hit map lên. Nó đang hiện cửa sổ gì đây ta?
+1:02:52
+hiện cái sổ gì đây thì mình bật cái hit map lên.
+1:02:59
+Ờ ở đây hit map mình bật lên đúng không? Thì ở đây mình chọn là thứ nhất là về
+1:03:03
+cái đầu tiên anh sẽ bật là cái placement density ha. Placement DCT nghĩa là cái
+1:03:08
+độ phân bố về cái về về về cái việc mà đ sale á
+1:03:15
+mình có thể ấn ấn kích vào đây kích vào đây sẽ thấy rằng là nó sẽ hiện ra cái
+1:03:21
+cửa sổ này em bật cái S number với lại cái S legion lên
+1:03:27
+đó thì bên này nó sẽ hiển thị cái nhãn đúng không tương ứng cái màu thì cái màu
+1:03:31
+mà nó càng đậm nghĩa là cái phân bố chỗ đó nó nó càng dày đặp đúng chưa phân bố
+1:03:35
+chỗ đó càng dày đặ thì ở đây N đó thì tức là cái vị trí chỗ này nó đặt
+1:03:50
+quá nhiều con sale ở đây được chưa? Đó đặt quá nhiều sale ở đây thì tại vì ở
+1:03:56
+đây nó có tới ba cái ngõ vào luôn đó ba cái ngõ vào nó có clock có reset nữa cho
+1:04:01
+nên cái vị trí này là nó dày đặc nhất nè. Rồi mình xem tiếp là
+1:04:05
+về cái gọi là routing ha. Routing là về cái độ ngễn
+1:04:12
+cái độ ngễn khi mà đi dây á thì cái rating này nó sẽ xét theo cái xét theo
+1:04:17
+cái trục mặt cắt mặt cắt theo cái trục theo cái trục dọc á tụi em. Tức là cái
+1:04:23
+trục nào mà nó chứa nhiều các cái lớp metal nhất á thì chỗ đó nó sẽ là à đỏ
+1:04:29
+nhất ha. Ví dụ như ở đây em sẽ thấy rằng là anh bật cái S number với solion lên.
+1:04:37
+Cái tiên thì nó chỉ hiện cái màu thôi. Hiện màu thôi.
+1:04:43
+Hiện màu thôi chứ nó không có hiện s number. Thì em hiểu rằng là cái vị trí
+1:04:47
+nào mà nó có nhiều cái lớp metal nó xếp trồng bên nhau theo cái theo cái chiều
+1:04:52
+chiều chiều thẳng đứng á thì chỗ đó nó sẽ là cái gọi là cái routin chỗ đó nó sẽ
+1:04:57
+dày nhất ha. Ring chỗ đó nó sẽ dày nhất. Rồi thường là anh sẽ coi hai cái đó
+1:05:03
+thôi. Placement với lại routing thôi. Đó còn khi nào mà em đang muốn xử lý cái gì
+1:05:09
+mà liên quan tới năng lượng ha. Em muốn là cái năng lượng của em nó nó tiết kiệm
+1:05:13
+hơn á thì em sẽ coi cái chỗ nào mà nó nó tốn nhiều năng lượng nhất. Đó coi chỗ
+1:05:17
+nào tốn nhiều năng lượng nhất thì bật lên cái number isolation luôn.
+1:05:22
+Đó thì chỗ nào tốn nhiều năng lượng nhất thì em sẽ cố gắng em chọn một cái con
+1:05:26
+sale nào đó nó nhỏ hơn chút xíu ha. Ví dụ như là ở đây là cái sale mà tốn nhiều
+1:05:31
+năng lượng nhất là cái con club buffer số 0 này nè. Đúng chưa? Cái vị trí này
+1:05:36
+tốn nhiều năng lượng nhất thì bây giờ em có thể thay một cái con sale mà nó có có
+1:05:40
+cái gọi là cái diện tích nó nhỏ hơn hoặc là khả năng lái của nó thấp hơn một chút
+1:05:44
+xíu để nó tiết kiệm năng lượng hơn thôi. Đó thì bấm vào đây để mình xem được
+1:05:48
+những cái vị trí nào mà mình cần quan tâm khi mà cái thiết kế của mình nó càng
+1:05:52
+ngày càng lớn á thì cái hit map này nó rất là quan trọng nha tụ em. Rất quan
+1:05:56
+trọng luôn đó. Rồi một số cái ví dụ như là cái TCL ha. TCL thì anh em bật
+1:06:02
+Windows lên thì em chọn vô đây là scripting ha. Scripting
+1:06:07
+đó chọn qua scripting. Nó sẽ có một cái vài một vài cái lệnh cơ
+1:06:11
+bản. Một vài cái lệnh cơ bản ha. Đầu tiên là ví dụ như anh đang muốn là anh
+1:06:17
+xem về ví dụ như anh xem về thứ nhất là cái thiết kế của mình á cái diện tích
+1:06:22
+của mình nó là bao nhiêu thì mình bấm là report ha. Nó có một cái vài cái ví dụ
+1:06:26
+như report về cái gọi là gì? Diện tích của con sale ha. À
+1:06:31
+diện tích của thiết kế đó
+1:06:35
+thì nó ra được kích thước là 400 19 m ha. Microm² nha. Microm². Và cái
+1:06:44
+diện tích của mình là 3%. Đó 3% tức là nó nằm ở cái khu vực này nè. Đó. Rồi
+1:06:49
+mình bấm là mình xem thử là các cái con sale của mình là gồm những con sale nào.
+1:06:55
+Report, sale, usage được chưa? Thì nó sẽ cho mình biết là những con sale mình
+1:06:59
+đang có. Đó, những con sale mình đang có em có thể xem ở đây hoặc là em có thể
+1:07:05
+bấm vô Windows nè. Em chọn à em chọn vô cái hiki á nó cũng cho em
+1:07:12
+thấy nha. Cho em thấy thì cái con những con sale mà quan trọng nhất của mình nó
+1:07:16
+chỉ là hai con sale phía dưới này nè là second sale và multi input combination
+1:07:21
+sale. Thì hai con sale này mình có thể thay đổi được và mình có thể sửa ITL để
+1:07:26
+mình giảm cái con sale ở đây. Sửa ATL hoặc là mình sửa synthesis để nó giảm.
+1:07:30
+Còn những con sale này thì mình sẽ sửa bằng cách là mình sửa cái confit á để
+1:07:35
+chèn vào ít hơn. Ví dụ như là cái timing repay buffer này. Những con sale này là
+1:07:38
+những con sale timing là nó truyền vào để nó sửa ho time hoặc là setup time á.
+1:07:44
+Thì ví dụ mình muốn nó giảm xuống, muốn nó giảm xuống ha thì mình sẽ làm cách
+1:07:48
+nào đó để cho nó nó nó bớt cái biên độ đi. Đó có nhiều cách lắm. Thì em có thể
+1:07:52
+xem là report ha report sale us. Được chưa? Thì nó sẽ cho em
+1:08:00
+được cái này. À hoặc là em có b thể bấm là report. Về bộ buffer để coi thử là
+1:08:06
+những con xe buffer là những con xe nào đó. Thì trong đây nó có một vài loại
+1:08:10
+buffer ví dụ như là buffer cho ngõ vào ngõ ra buffer cho clock đó.
+1:08:15
+Clock delay buffer nè. Thì những con mà delay này nè nó dùng để gì? Để sửa cái
+1:08:22
+ho. Sửa cái hó tức là dữ liệu mình đi quá nhanh. Dữ liệu mình đi quá nhanh thì
+1:08:27
+nó sẽ dùng cái này để nó sửa cái h được chưa? Sửa cái hô đó. Rồi em có thể em
+1:08:32
+xem bằng cách là em có thể xem cái bass ha.
+1:08:42
+À có một cái lện để mình xem các cái bass
+1:08:57
+của mình á thì anh nhớ nó là cái gì ta? Tên này khi
+1:09:05
+không phải có một cái lệnh để mình xem các cái B
+1:09:16
+đâu quá không xài không nhớ lắm thì em có thể bấm H để coi
+1:09:22
+report chắc là report
+1:09:28
+report SL Ha. Bort slash ờ không có thôi.
+1:09:39
+Để bấm report xem coi những cái lệnh nào.
+1:09:45
+Ờ report. Nếu mà bây giờ em bấm report slag đi xem
+1:09:54
+cái đường slash tệ nhất á. Report B slash là cái đường slash tệ
+1:10:00
+nhất ha. thì nó ra là 14,94
+1:10:09
+là nếu mà anh nhớ có một cái lệnh để nó show cái đường này nữa.
+1:10:14
+À tắt cái này đi. Tắt cái hit map đi. Có một cái lệnh để nó show cái này.
+1:10:33
+Hiện tại là nó chỉ show cho mình được là cái cái thông số thôi. Anh quên mất cái
+1:10:37
+lệnh để nó show cái này rồi. Thì cái gì làm la ha? Làm la nó sẽ có chi tiết hơn.
+1:10:41
+Rồi có thể xem là một cái report khác. Total negative SL ha. Tổng tổng các cái
+1:10:54
+slash âm của mình á thì nó ra 0 nè. Đó. Rồi thì sẽ có một cái bài lệnh ví dụ như
+1:11:00
+là lệnh mà em hay dùng trong Linux á ha và TCL ví dụ như là BWD
+1:11:07
+thì BWD nó sẽ cho mình biết là cái cái file mà hiện tại mình đang đứng cái vị
+1:11:10
+trí mình đang đứng là cái thư mục nào là mình đang đứng ở thư mục này được chưa?
+1:11:14
+Rồi vậy em muốn liệt kê những cái file có bên trong thư mục này á muốn liệt kê
+1:11:18
+ra ha thì em sẽ bấm lại cái lệnh là à ex nha execute á rồi em bấm ls tại vì
+1:11:27
+cái ls này nó nằm trong nha thì em bấm như thế này thì nó sẽ liệt kê ra cho em
+1:11:32
+là những cái lệnh ờ là nó liệt kê ra cho em nó list ra các cái file thư mục đó.
+1:11:40
+Đó. Rồi ví dụ bây giờ em đang muốn là chỉ
+1:11:44
+chỉ mở open row thôi. Tức là những cái thư mục mà liên quan tới open row thôi
+1:11:47
+ha. Thì em sẽ bấm là đầu tiên em bấm là ex nha. Ex là cái
+1:11:53
+lệnh để mình thực thi những cái câu lệnh liên quan tới lanet á. Rồi bấm file nè.
+1:11:57
+Rồi bấm là à chữ nha. Mình đang muốn tìm file đúng
+1:12:02
+không? Tìm th tìm tìm tìm thư mục. Tìm thư mục. Tìm thư mục thì mình sẽ chọn là
+1:12:08
+D ha directory. Rồi mình tìm theo tên.
+1:12:13
+Tìm theo tên ha. Ở đây tên thì mình sẽ chọn những cái tên
+1:12:17
+nào mà nó bắt đầu bằng nó có chữ Open Draw.
+1:12:21
+Đó thì mình sẽ chọn là Open Draw. Thì nó sẽ liệt kê ra cho mình là các cái
+1:12:32
+thư mục mà nó có chứa open draw nè. Thì ở đây nó sẽ có các cái cái các cái số
+1:12:36
+thì những cái số này là tùy nha tụi em. Không phải là lúc nào nó cũng là cái số
+1:12:39
+cố định như thế này. Có nhiều cái có nhiều cái rin á nó chạy ít hơn rin chạy
+1:12:44
+nhiều hơn. Ví dụ cái rin này nó chạy tới 72 cái step khác nhau đúng không? Thì ở
+1:12:49
+đây em có thể em sort lại insort để cho nó
+1:12:53
+ờ sort để cho nó tạo ra được cái cái list cho nó đẹp. Nghĩa là nó xếp theo
+1:12:58
+thứ tự á. Thì đây nó nó đang xếp lộn xộn nè.
+1:13:01
+Thì khi em xếp lại thì em sẽ phe được là cái số thứ tự đúng không? Rồi bây giờ em
+1:13:07
+giờ em muốn nhảy vô cái flan nhảy vô cái flan nhảy v fl thì bấm là cd copy cái
+1:13:13
+này lại. Copy xong rồi em bấm là CD nhĩa vào.
+1:13:19
+Đó thì em kiểm tra lại là em đang đứng ở thư mục nào đây em đang đứng ở nè đúng
+1:13:23
+không? đứng program rồi thì em sẽ list ra trong đây xem có những cái file nào
+1:13:33
+đó thì nó sẽ có cái file ví dụ như là file ờ file dep được chưa? File dep là
+1:13:40
+cái file mà nó nằm ở xuyên suốt tất cả các cái toàn bộ thiết kế mình là các cái
+1:13:44
+file de nó giống nhau nha. File DEP nó giống nhau hết ở tất cả các bước luôn
+1:13:47
+giống nhau hết nha. Ờ rồi file cái file mà để mình xem gọi là gì cái gọi là cái
+1:13:55
+cái trạng thái của cái bước này á là stayout.
+1:13:58
+Được chưa? Stay out. Thì em muốn xem cái file này á thì em bấm là ex bấm cái lệnh
+1:14:04
+cá nha. Lệnh cát là để cái lệnh mà để mình xem cái
+1:14:08
+xem file đó. Đó thì nó sẽ liệt kê ra cho em là cái
+1:14:14
+thông số của nội dung bên trong cái file này. Được chưa? dung ở trong cái file
+1:14:18
+này. Đó.
+1:14:23
+Rồi ví dụ như em muốn tìm một cái tên chính xác. Em muốn tìm một cái tên chính
+1:14:27
+xác trong cái trong cái file này ha. Tìm một cái tên chính xác. Ví dụ như là
+1:14:31
+trong cái file stay out này nè. Em muốn tìm một cái tên nào đó liên quan tới lỗi
+1:14:34
+ha. Er ha thì em có thể dùng cái lệnh là em dùng cái lệnh rep nha. R gạch
+1:14:42
+N rồi em tìm cái tên là error
+1:14:51
+rồi em liệt em em có thể là em tìm nó trong cái file nào cái file là
+1:14:59
+stayout. Ha chử đ mình tìm xem nó có lỗi hay không
+1:15:04
+á. Đó thì khi em gõ như thế này á thì nó sẽ
+1:15:10
+tạo ra nó sẽ gõ ra cho em là những cái chỗ nào mà có cái chữ error thì để em
+1:15:15
+xét thử là nó có lỗi hay không. Nó sẽ nhanh hơn là em phải đi tìm. Em phải bấm
+1:15:19
+đây phải em phải kéo qu từng vòng em tìm đúng không? Đó thì lúc mà tụi em làm TCL
+1:15:24
+á tụi em cũng cố gắng là học mấy cái lệnh này. Mấy cái lệnh này là nó dùng
+1:15:27
+cho gần như là tool nào nó cũng dùng hết á. Tool nào nó cũng dùng hết tụi em. Đó.
+1:15:33
+Ờ để anh coi còn lệnh nào nữa không. Ừm. Ví dụ như tụ em có thể coi là ờ ví dụ
+1:15:41
+như bây giờ em muốn coi về cái STA ha, STA đi thì bây giờ em phải liệt kê ra là
+1:15:48
+em đang ở thư mục nào đây? Thư mục này đúng không? Thì em nhảy
+1:15:52
+vô thư mục ST để em coi. Thì em nhảy về cái thư mục trước đó một thư mục là CD 2
+1:15:58
+chấm đây nè. Rồi em sẽ tiếp tục em nhảy tiếp. Em nhảy tiếp là bây giờ em sẽ nhảy
+1:16:02
+tới cái thư mục mà nó có cái STA cái chữ ST ha.
+1:16:06
+Thì em gõ cái lệnh đi tìm á, đi tìm á. Đây em gõ cái lệnh nào mà nó có chữ STA
+1:16:11
+giùm anh. Thì cái ST của mình nó sẽ là STA sau khi mình đã đi dây nha. Là STA
+1:16:19
+post B and đó. Đó em gõ ra thì nó ra được cái file này
+1:16:24
+đúng không? Nó ra được cái ờ cái thư mục này. Em copy lại. Em copy lại.
+1:16:32
+Copy xong rồi nhảy tới đó luôn. Đó, nhảy xong rồi kiểm tra mình đã đứng
+1:16:38
+ở đó chưa? Rồi, đứng ở đó rồi nè. Rồi tiếp tục liệt kê ra. Liệt kê ra.
+1:16:44
+Đó, thì nó sẽ có những pha này đúng không? Thì em coi giùm anh là ờ summary
+1:16:50
+thôi ha. Đối với lại đối với lại mà SDA nó sẽ có nhiều cái con khác nhau để mình
+1:16:55
+xét để mình coi nhưng mà mình chỉ coi cái summary thôi ha.
+1:16:59
+thôi thì em bấm là ừ cái lệnh xem bấm cái lệnh xem là đây
+1:17:10
+c sumy
+1:17:15
+report đó thì nó ra cái bảng này đúng không
+1:17:20
+thì em có thể em coi như thế này cũng được hoặc là em có thể gõ bằng lệnh như
+1:17:26
+thế nào đó nói chung là mấy cái này em phải cố gắng em em học để mình hạn chế
+1:17:31
+cái việc là mình hỏi ai có thể mình gõ lệnh để cho nó nhanh. Gõ lệnh cho nó
+1:17:34
+nhanh. Đó
+1:17:39
+thì cái bài láp anh sẽ đưa cho tụi em để tụi em làm thử ha. Ờ tức là mình thao
+1:17:44
+tác cái tool. Mình thao tác xong rồi mình sẽ tìm cách để mình sửa sửa theo
+1:17:49
+đúng cái tiêu chí mà mình đề ra. Được chưa? Đó thì bữa nay chỉ có như vậy
+1:17:53
+thôi. Ờ có bạn nào có hỏi gì không ta?
+1:18:09
+Có bạn nào hỏi gì không? Làm BD thì tụi em cố gắng tụi em cứ làm
+1:18:16
+thôi chứ kiến thức nó cũng có nhiêu đó à nó không có gì mới hết á.
+1:18:21
+BD là nó không có gì mới hết. Nó chỉ có gọi là khi tụi em làm nhiều tụi em có
+1:18:26
+kinh nghiệm tụi em biết sửa cái gì thôi. Chứ mà kiến thức mới của PD thì nó không
+1:18:30
+có ha. Khi mà ví dụ như là khi cái công nghệ mà nó thay đổi á ha từ ví dụ như là
+1:18:36
+từ 130 nó xuống 28 65 22 gì đó thì nó cũng vậy à nó không có thay đổi gì nhiều
+1:18:42
+đâu. Nó chỉ nó chỉ thay đổi một số cái dụ là
+1:18:48
+cái số metal này nó tăng lên nè. Rồi cái kích thước kích thước của con
+1:18:53
+sale rồi các tính chất của con sale là cái dụ năng lượng của con sale đó là nó
+1:18:58
+tiết kiệm hơn rồi nó nó nhanh hơn thôi. Còn lại là các cái về cái tư duy để mình
+1:19:03
+làm BD thì nó giống nhau hết nó không có khác gì lắm.
+1:19:09
+Có nào có câu hỏi gì không? Cái TCL cũng vậy ha. TCL thì nó có thể
+1:19:18
+dùng được cho cả ờ cả tool này với cả những cái tool
+1:19:23
+thương mại luôn. Thì em có thể học những cái TCL cơ bản. Thì TCL với Lanus là hai
+1:19:29
+cái mà tụi em phải học dần đi. Ờ tại vì những cái lệnh đó nó sẽ hỗ trợ cho tụi
+1:19:35
+em rất là nhiều trong cái quá trình mà tụi em làm việc á.
+1:19:38
+Cho nên là bạn nào mà học cái này thì phải học
+1:19:42
+sớm nhưng mà đừng có học nhiều quá nha. học mấy cái cơ bản ví dụ như là kiểm tra
+1:19:47
+file rồi liệt kê rồi tìm từ khóa. Đó những cái cơ bản thôi.
+1:19:56
+Ví dụ như em muốn tìm một cái file nào đó có tên gì đó thì nãy
+1:20:01
+anh chỉ rồi đó cũng có mấy cái lệnh đó thôi. À
+1:20:07
+thôi nghĩ nha các bạn nếu không có câu hỏi gì thì mình nghĩ nha.
+1:20:17
+Chào anh ạ.
+1:20:20
+>> Ok.
+Đang hiển thị 4. Physical_Design_24_10_2026.mkv.
+
+5. Physical_Design_30_10_2026.mkv
+Gemini
+
+
+
+0:10
+/
+1:10:41
+Bản chép lời
+Tìm trong bản chép lời
+0:34
+Bữa nay có 10 bạn. Thấy màn hình không ta
+1:24
+hôm nay mình sẽ học à làm con chip đầu tiên nha tụ em thì mấy buổi trước là
+1:30
+mình à học cái kiến thức cơ bản rồi. Thì trong khóa này á thì mỗi một cái con
+1:35
+chip mà anh chị cho tụi em làm thì mình sẽ có cái kiến thức ờ để mình làm. Đó
+1:42
+thì hôm nay là mình sẽ làm cái con time to digital conductor ha. Thì cái con này
+1:47
+á mà em lên trên Google em gõ là con này em lên Google em gõ Time to
+1:55
+digital á thì nó là một con chip à giúp cho mình đo sự kiện nha. Nú cho mình đo
+2:01
+sự kiện thì nó sẽ chuyển đổi từ thời gian sang số. Được chưa? Nghĩa là em
+2:07
+giống như là em đi bấm giờ vậy đó. Em đi bấm giờ vậy đó. Thì anh ví dụ như là cái
+2:12
+đơn giản nhất á ví dụ như mình có một cái sự kiện bắt đầu tại thời điểm a ví
+2:16
+dụ như b nói là có một cái sự kiện bắt đầu tại thời điểm A đi ha. thời điểm A
+2:20
+đi. Đó thì tại thời điểm này á ví dụ như là sau một khoảng thời gian ha sau
+2:26
+khoảng thời gian ờ cái sự kiện đó nó dừng lại là cái sự kiện a này nó dừng
+2:30
+lại thì em phải đo được cái khoảng thời gian từ lúc nó bắt đầu cho tới khi mà nó
+2:35
+kết thúc ha. Đó thì nó ứng dụng rất là nhiều thôi em. Cái con TDC này á nó ứng
+2:42
+dụng rất là nhiều. Nếu mà em gõ lên trên mạng gõ là TDC
+2:48
+T instrument ha. lấy
+2:59
+thì nó có rất là nhiều ờ cái dòng này nó chủ là đó là nó đo cho em là ờ nó lấy
+3:06
+một cái nó có hai đầu được chưa? một cái đầu là sẽ ghi nhận là cái sự kiện bắt
+3:13
+đầu và sự kiện kết thúc. Đó, start và stop đó. Và nó trả ra cái kết quả chính
+3:18
+xác là cái cái khoảng cách giữa hai cái thời
+3:21
+gian mà start với stop á là cái delta t này là bao nhiêu giây. Được chưa? Đó,
+3:27
+thì hôm nay mình sẽ làm cái con chip này. Thì cái con chip này đó ờ nó có
+3:32
+nhiều cách làm lắm tụi em. Cách mà cách mà đơn giản nhất á, cách mà đơn giản
+3:36
+nhất ha là mình sẽ dùng counter được chưa? Counter cách đơn giản nhất là mình
+3:42
+dùng counter. Thì cái ý tưởng của counter là gì? Là khi mà em có một cái
+3:46
+tín hiệu, ví dụ như là em có một tín hiệu clock ha.
+3:51
+Em có một tín hiệu clock đi.
+3:59
+>> Đó thì cái tín hiệu clock này á nó sẽ quyết định cho cho em biết là cái
+4:05
+counter là cái bộ đếm của em á nó sẽ đếm trong bao nhiêu
+4:12
+nó sẽ đếm hết một chu kỳ trong bao nhiêu lâu. Được chưa? Thì ví dụ như vậy thì
+4:24
+đây là cái chu kỳ của mình ha. Đây là cái đây là một cái chu kỳ của mình nè.
+4:31
+Đó đây là một cái chu kỳ của anh chưa? Thì một cái chu kỳ của mình ví dụ như
+4:35
+anh chọn clock của one áock của anh á có tần số là
+4:40
+100 m đi ha. Thần số 200 m đi. 200 m đi. Ví dụ như là clock của anh nó là 200 m
+4:46
+đúng không? Thì nghĩa là một chu kỳ này là bao
+4:50
+nhiêu? Bao nhiêu nano giây tụi em? 5 nan giây đúng chưa? 5 nan giây. Đó thì nếu
+4:57
+mà anh gọi 5 nan giây là cái khoảng ờ cái khoảng nhỏ nhất mà mình có thể đo
+5:01
+được thì có nghĩa là đây là độ phân giải của con chip của mình nè. Đây là độ
+5:05
+khoan giải nè. Được chưa? Độ khoan giải đó. Độ phân giải là cái khoảng thời gian
+5:11
+mà nhỏ nhất mà con chip của mình nó có thể phân biệt được á. Thì ở đây chu kỳ
+5:15
+clock của mình nó là 5 nano thì cái độ phân giải nhỏ nhất của mình sẽ là 5. Tại
+5:19
+vì sao? Tại vì nếu mà mình cho một cái bộ đếm ha, cho một cái bộ đếm đó nó kích
+5:24
+hoạt khi nào? Ví dụ như mà khi có một cái sự kiện xảy ra đi đúng không? Khi có
+5:28
+một cái sự kiện xảy ra á thì mình sẽ cho cái bộ đếm nó kích hoạt là start. Được
+5:33
+chưa? Thì tại cái thời điểm start này á giả sử
+5:36
+như là nó là 0 nano giây ha. không nô dây rồi cho tới khi mà cái thời điểm kết
+5:42
+thúc này nè là cái sự kiện này nó nó nó diễn ra trong khoảng thời gian là một
+5:46
+khoảng thời gian nào đó đi thì tới đây là nó kết thúc đúng không? Ở đây nó kết
+5:49
+thúc thì mình sẽ coi thử là counter của mình có giá trị là bằng mấy. Ví dụ như
+5:54
+counter của mình mà có giá trị là bằng 10 đi đúng không? Đó thì mình sẽ đo được
+6:01
+là con chiếc của mình nó đo được là 10 nhân cho 5 là bằng
+6:07
+nan giây. Đúng chưa? Vậy thì bây giờ á nếu mà em
+6:14
+đo những cái khoảng thời gian ví dụ như là 100 nano giây nè. đó hay là 105 nano
+6:20
+giây hay là 200 nano giây đi thì những cái
+6:25
+thờ đây là những cái khoảng thời gian mà em có thể đo được. Tại vì sao? Tại vì
+6:29
+nếu mà em chia cho cái độ phân giải á thì em thấy nó là bội số của 5 đúng
+6:32
+không? 100 105 với lại 200 nó là bội số của 5. Nhớ chưa? Thì ở đây á mình có
+6:40
+clock là 200 m đúng không? Mà bây giờ em nói là bây giờ em muốn giảm cái độ khoan
+6:44
+giải nghĩa là em muốn nó đếm chính xác hơn nữa. Ví dụ như là ở đây là độ khoan
+6:47
+giải của mình là 5 nan giây thì em làm sao? Em muốn làm sao cho nó giảm xuống 1
+6:51
+nan giây đi. Giả sử như em muốn giảm cái độ phân giả xuống còn 1 n giây thì em
+6:54
+làm sao? Giảm số 1 này đâu vậy?
+7:02
+Có bạn nào biết không? Nó đang là 5 nè. Bây giờ muốn giảm số 1 thì sao?
+7:11
+Alo. Tương tác xíu. Tương tác xíu.
+7:23
+Không có bạn nào trả lời anh luôn nè. Nó đang là 5 n giây đúng không? Tại vì
+7:26
+clock mình là 200 m. Bây giờ anh muốn giảm cái độ phân giải xuống là 1 n giây
+7:31
+thì làm sao các bạn? Ừ. Tăng lên. Tăng lên bao nhiêu em?
+7:39
+Ừ. Să năm lần là khoảng 1 GB đúng không? Ờ. Ừ. Bây giờ câu hỏi đặt ra là có cách
+7:45
+nào đó mà mình đếm được cái khoảng thời gian mà nó nhỏ hơn một chu kỳ clock hay
+7:50
+không? Đó, câu hỏi mình đặt ra nè. Có cách nào ha? Có cách nào á mà mình đếm
+7:59
+cái độ phân giải đó nhỏ hơn một chu kỳ clock? Tại vì
+8:05
+ví dụ như em nói là độ phân giải của em là 1 đô giây đi thì em không thể nào mà
+8:08
+em nhỏ xuống được hơn được nữa. Nếu mà em muốn nhỏ xuống hơn thì bắt buộc phải
+8:11
+tăng clock tăng tăng lên hoài. Tăng lên hoài đúng không? Thì khi mà clock nó
+8:15
+tăng á, clock mình nó tăng á thì cái công suất của nó cũng tăng ha. Công suất
+8:20
+của nó tức là cái power của nó cũng tăng nha tụi em đúng không? Thì mình đang
+8:23
+muốn con chip của mình nó tiết kiệm điện mà mình muốn con chip mình nó tiết kiệm
+8:26
+năng lượng mà. Thì bây giờ nếu mình cứ tăng cái lốc hòa như vậy là không được.
+8:29
+Thì bây giờ người ta phải tìm một cái cách nào đó để người ta tạo ra được một
+8:32
+cái độ phân giải nó nhỏ hơn 1 n đầu dây hoặc là nhỏ hơn chu kỳ block ha. Thì bây
+8:36
+giờ anh đang cho cái con cái ví dụ của mình á là 200 m ha. 200 m đó. Và anh tìm
+8:42
+cách làm sao đó hiện tại nó đang là 5 n giây nè. Hiện tại là anh đang làm tìm
+8:47
+cách làm sao đó để cho cái độ phân giả này nó thấp hơn 5 nan giây ha. Mà không
+8:50
+không có tăng clock thậm chí là dùng clock nhỏ hơn. Ví dụ như em dùng clock
+8:54
+10 m vẫn được luôn nha. Đó thì đó là cái nguyên lý của con chip này. Thì đầu tiên
+8:58
+á người ta sẽ dựa vào một tính chất rất là đặc biệt. Đó tính chất này á người ta
+9:03
+gọi là delay tab ha. Tức là người ta thiết kế theo kiểu này nè tụ em là mỗi
+9:09
+một cái mỗi một cái con sale nè. Mỗi con sale này đúng không? Thì nó là con sale
+9:13
+delay. Con sale delay á thì nó sẽ có tính chất là ờ nó sẽ có khoảng thời gian
+9:18
+đi vào đi ra. Nghĩa là ví dụ như là một tín hiệu đi vào cái câu sale này đúng
+9:22
+không? Là input á. cái chân input á thì khi nó đi ra cái nó đi ra đó nó sẽ mất
+9:26
+một khoảng thời gian. Đó tức là bản thân cái con sale này nó không có logic. Con
+9:31
+sale này chỉ là con sale delay thôi. Thì con sale delay này nó có tên là delay
+9:35
+gsd3 1 đúng không? Thì cái con sale này á nếu
+9:40
+mà em làm SDA thì em sẽ thấy là con sale này là cái con sale dùng để sửa H. Được
+9:45
+chưa? Con sale này là cái con sale dùng để sửa fix fix cái H val. Thì bây giờ
+9:50
+mình sẽ tìm hiểu chút xíu con sale này ha.
+10:00
+Thì cái câu sale này á nó có hai chân là chân chân đầu vào và chân đầu ra. Thì
+10:05
+chân đầu vào của nó là input và chân đầu ra nó là output. Vậy thì cái chân này đó
+10:09
+nó hoàn toàn là không mang logic nhưng mà ờ người ta thiết kế như thế nào đó để
+10:13
+khi tín hiệu nó chạy qua đây nè nó mất một khoảng thời gian. Được chưa? Thì cái
+10:17
+diện tích của con sale này nó cũng khá là lớn đó. nó khá là lớn ờ để cho nó làm
+10:21
+cho cái tín hiệu đi qua đây nó sẽ bị chậm lại. Đó, nó sẽ bị chậm lại thì mỗi
+10:25
+một con sale này nó sẽ có một cái khoảng thời gian delay khi mà đi ngang qua nó.
+10:28
+Vậy thì nếu mà anh làm một cách nào đó để anh nối cái câu sale này lại thành
+10:33
+một cái thành một chuỗi như thế này, được chưa? Thành một chuỗi như thế này
+10:37
+thì anh gọi cái này á là delay tab nha. Delay tab. Đó thì ở trong cái Wikipedia
+10:45
+á nó có có có cái cách để mình làm là digital delay line nè. Đây nè. Nếu mà em
+10:50
+bấm vào đây em sẽ thấy là ờ trên Wikipedia nó có một cái cách là digital
+10:55
+delay line được chưa? Nghĩa là người ta sẽ người ta sẽ tạo một cái đường trễ
+10:59
+bằng những cái con sale được chưa? Tạo cái đường trễ bằng những con sale. Thì ở
+11:03
+đây là người ta đang tạo những cái đường trễ bằng con sale fit block đó. Bằng
+11:05
+những con sale fit block. Nhưng mà anh đang muốn cái kỹ thuật của mình nó nó nó
+11:09
+khác một chút xíu thì anh đang tạo trễ bằng cái con sale delay này. Đó, tạo con
+11:13
+sale delay này. Thì bây giờ á anh sẽ kết nối những con sale delay này thành một
+11:18
+cái chuỗi như thế này. Được chưa? Thành một cái chuỗi như thế này. Thì mỗi con
+11:21
+sale này á nó sẽ có một cái độ trễ người ta gọi là độ trễ danh định nha. Độ trễ
+11:25
+danh định. Nghĩa là ở trong cái file chli của em á, cái file chấm list của em
+11:29
+á thì nó sẽ có quy định về cái độ trễ của con sale này. Đó. Tuy nhiên rằng á
+11:34
+khi mà mình kết nối như này nè. Đó, mình kết nối trên này thì nó có nhiều vấn đề
+11:37
+lắm. Bây giờ nha, bây giờ anh sẽ nói cái vấn đề đầu tiên mà mình hay làm nè. Đầu
+11:41
+tiên á khi mà em kết nối như thế này á thì mỗi một con sale á nó khi mà nó mang
+11:45
+độ trễ như vậy á thì ví dụ như anh nói ví dụ là một con sale này mang độ trễ là
+11:49
+ờ con này 0,5 nano ha. 0,5 đi. Đó, rồi con này là 0,5 con này 0,5 0,5 0,5 hết.
+11:56
+Giả sử nha anh cho nó bằng nhau hết. Thì có phải là anh đang nối tám con sale này
+12:00
+lại với nhau đúng không? Thì cái tab này nè, cái tab này á nó có độ trễ hiện tại
+12:04
+nó đang là độ trễ của một tab đi. Cái này là độ trễ của một tab ha.
+12:10
+Một tab của anh á là gồm có tám con delay sale nha. Tám con delay sale.
+12:16
+Đó. Thì độ trễ của anh bây giờ á thì nó sẽ là bằng cái gì? Nó sẽ bằng 8 nhân cho
+12:21
+độ trễ người ta gọi là IOBAT á. Ta gọi là IOB.
+12:27
+Tức là độ cái độ trễ đầu vào đầu ra của một con sale nha. Đó, cái độ trễ khi mà
+12:33
+nó đi từ input nè ra output á thì nó gọi là iobat. Đó, thì anh giả định như là
+12:38
+cái độ trễ của con này là 0,5 nano giây ha. Ví dụ nha anh. Ví dụ vậy thì nó sẽ
+12:44
+có độ trễ danh định ha là ờ 4 nano giây được chưa? 4 nano giây đó. Thì em thấy
+12:51
+rằng là cái số 4 nano giây này nè lúc này nó đã nhỏ hơn gì? nó đã nhỏ hơn là
+12:55
+là 5 NJ của mình rồi đúng không? Nó đã nhỏ hơn rồi đó. Nó đã nhỏ hơn rồi. Thì
+13:02
+cái số 0,5 này nó đâu ra? Số 0,5 nó đâu ra? Thì á con sale của mình á khi nó
+13:07
+hoạt động á tụi em là cái trạng thái hoạt động của nó nó phụ thuộc vào cái
+13:10
+gì? Thứ nhất á nó phải phụ thuộc vào cái BDK đúng chưa? Cái BDK tức là cái công
+13:14
+nghệ đó tức là nó phụ thuộc vào cái gọi là ba thứ ha là B, V. Được chưa? B, V và
+13:22
+T. V là voltage đó. Và T á T nó là temperature đúng
+13:28
+không? Đó thì tất cả những cái này xem ở xem ở đâu? Xem ở trong file. Nè đó thì ở
+13:34
+đây mình sẽ chia ra là nhiều cái con khác nhau. Nhiều cái con khác nhau thì
+13:38
+thường thường mình sẽ có là tổng cộng là có chín con nha tụi em. Mình sẽ có chín
+13:41
+con giống như cái bài lá hôm trước anh đã nói cho tụi em á. Mình sẽ có chín
+13:44
+con. Đó thì anh đang giả định rằng là cái câu sale nè là nó đang hoạt động ở
+13:50
+cái con mà ờ gọi là thông thường á con thông thường á nó sẽ là coner này
+13:56
+con là normal được chưa rồi TT đó rồi à 25° C
+14:04
+25° C ờ 1v8 được chưa V đó thì đây là cái điều kiện để con sale này nó hoạt
+14:12
+động thì khi mà giả sử như có những cái điều kiện khác ví dụ như là max đi ha,
+14:17
+điều kiện max đi, max rồi slow slow đi ha, slow slow rồi 100° C rồi 1v6 đi ha.
+14:25
+Thì dĩ nhiên là ở trong cái điều kiện này thì cái thời gian của nó lúc này nó
+14:28
+sẽ bị trễ hơn rồi. Tại vì lúc này là nó đang xét những cái con sale, những con
+14:32
+sale chậm đúng không? Những con sale chậm thì chắc chắn nó sẽ trễ hơn. Có thể
+14:35
+thời gian của nó là tới 0,8 hoặc là tới 1,2 nan giây ví dụ như vậy. Thì ở đây
+14:40
+anh đang xét trong một cái điều kiện gọi là điều kiện này. Đó thì nó sẽ là 0,5
+14:44
+giây. Vậy thì để em xem được cái này đó thì trong cái file mà hôm bữa anh gửi
+14:48
+cho tụi em á là Sky 130 á ờ Sky 130 example ở đây nè. Thì trong đó
+14:55
+em coi trong cái file clip ha. Đó thì em coi trong cái file clip này. Đó thì bây
+15:00
+giờ muốn coi cái file clip này á thì một là các bạn có thể bấm ờ bấm coi ở trong
+15:05
+cái Visual Studio luôn cũng được. Các bạn bấm xem trong đây cũng luôn cũng
+15:09
+được. Ví dụ như anh thêm vào ha để anh xem cái thông số của nó
+15:23
+anh thêm vào ờ từ từ anh thêm lộn rồi anh thêm lộn rồi
+15:35
+đó theo cái file clip này vô n nha các Thì khi thêm cái này vô đúng không các
+15:40
+bạn? Bấm vào đây. Đó thì trong này nè các bạn thứ nhất á các bạn phải xem giùm
+15:45
+anh là ờ những cái số đầu tiên nè nó phải đúng là ví dụ như anh đang xét ở
+15:49
+trong trường hợp nào? Ờ trong trường hợp ở đây anh xét là 25° C nè. Voltage của
+15:54
+anh là 1,8 V. Được chưa? Đó thì em bấm vô đây em tìm cái con sale chính xác mà
+15:58
+em em muốn tìm á là con sale mà nãy anh anh đang xét là con delay sale đúng
+16:02
+không? Ờ cái tên của nó là DLI gì đó.
+16:14
+Em tìm đúng cái tên của nó nha. Ờ để anh coi cái tên của nó coi.
+16:19
+DLI get 4SD31 ha. 4SD3.
+16:25
+4SD3. Đó
+16:29
+thì em sale cái em xem cái con sale này được chưa? Xem con sale này. Đó. Thì con
+16:35
+sale này á nó sẽ cho em biết rằng là cái độ trễ và các cái đặc tính của nó.
+16:40
+Đó, độ trễ và đặc tính của nó đây nè. Thì ở đây đó, ở đây nó sẽ là cái
+16:54
+độ trễ danh định nha tụi em. Nghĩa là mình chưa có xét tới cái việc mà khi mà
+16:57
+mình đi dây ờ mình chưa xét tới cái việc là khi mà mình đi dây mình mình routing
+17:02
+ở phía dưới. Thì ở đây á cái độ trễ của nó đó thì em xem ở đâu? Đầu tiên là em
+17:06
+xem cái tên của nó ha. Cái em xem cái tên của nó nè là đúng cái tên của nó rồi
+17:10
+nè. Xem em xuống dưới á em sẽ xem vô chỗ cái phần mà
+17:16
+cái phone với xe rise này là cái thời gian mà nó chuyển ha. Nó chuyển từ mức
+17:20
+cao xuống mức thấp. Còn này là chuyển từ mức thấp xuống mức cao nè. Đó đây là tốc
+17:23
+độ chuyển của nó. Đó thì em coi trong này á thì em sẽ thấy
+17:33
+là nó sẽ có một vài cái giá trị ví dụ như là index 1 với index 2 được chưa?
+17:37
+Thì ở đây á nó sẽ có nhiều cái điều kiện khác nhau. Thì nếu mà em nhìn vào đây
+17:41
+thì em sẽ không biết được là cái độ trễ của nó là cái gì. Thì một hồi nữa khi mà
+17:46
+mình dùng synthesis á thì mình sẽ coi cái đó nó rõ hơn. Còn hiện tại là ở
+17:51
+trong đây cái độ trễ nó liệt kê á là nằm ở đây nè. Chỗ cái lick power tụi em. Ờ
+17:55
+đây nè. Ờ lick power
+18:02
+đây nè. Đó thì nó chở đâu đó khoảng là ờ 4,17
+18:11
+nano giây nha. 0,04 tức là 0,0 đây là đơn vị nano dây
+18:17
+nha tụi em. Đó thì đây là cái độ trễ của nó. Thì bây giờ khi mà mình chạy đó mình
+18:22
+giả định mình giả định là anh đang giả định là mỗi một con này là có độ trễ là
+18:26
+0,5 nano giây ha. Thì lát nữa mà khi mà mình synes á mình sẽ thấy. Rồi thì một
+18:32
+tab của mình á bây giờ mình đã xét là một tab của mình á là gồm có tám con
+18:35
+sale và có tám con. Vậy thì độ trễ của mình á ước lượng là ở cái điều kiện là
+18:41
+hoạt động ở điều kiện là nom ha nom TT. này n mình đặt nó là tab 0 tab 1 ví dụ
+18:58
+như là từ delay 8 tới delay 15 á thì mình đặt là tab 1 nè rồi mình sẽ có tổng
+19:03
+cộng là 32 cái. Mình sẽ có tổng cộng là 32 cái tab thì những cái tab này nó sẽ
+19:08
+nối nó sẽ nối tiếp nhau nha tụi em nè. Tức là cái đầu ra của cái tab này nè.
+19:12
+Cái đầu ra của tab này á thì nó sẽ nối tiếp vào cái đầu vào của tab của cái tab
+19:16
+tiếp theo. Được chưa? Nó cứ nối tiếp liên tục. Nghĩa là cái chuỗi này nó là
+19:19
+một cái chuỗi liên tục. Thì trong cái chuỗi liên tục này đó mình sẽ có tổng
+19:23
+cộng là 256 con sale nha nè. 256 con sale. Tính từ
+19:28
+con sale delay 0 cho tới con sale delay 255 á thì nó là 256 con. Thì tại vì sao?
+19:33
+Thì bây giờ á em đang muốn là bây giờ em đang có khoảng thời gian là 100 nano
+19:37
+giây đúng không? Giả sử nha anh đang nói là cái clock của anh á bây giờ anh đang
+19:41
+nói là clock của anh đi. Clock hoạt động của anh á anh đang có clop hoạt động của
+19:44
+anh là 10 10 MHz đó. Thì bây giờ anh đang muốn là nó đạt được
+19:49
+độ phân giải là ờ 4 nano đi ha. Thì anh anh không quan tâm cái clock ở đây là
+19:54
+bao nhiêu. Anh chỉ quan tâm là ví dụ như clock anh cho một cái số bất kỳ đi. Ở
+19:58
+đây anh chọn là 10 m tức là 100 nano giây ha. Thì em làm sao đó mà em em
+20:03
+cover được, nghĩa là em bao phủ được cái toàn bộ cái 100 nano giây này. Ví dụ như
+20:08
+là anh đang có là 100 nano giây thì nếu mà em chia ra cho 4 á, em chia cho 4 đi
+20:13
+ha. Không em chia cho 0,5 chứ chia cho 0,5 đúng không? Chia 0,5 thì em
+20:21
+sẽ ước lượng là em cần khoảng 200 con sale. Đúng chưa? Em ước lượng là em sẽ
+20:25
+cần khoảng là 200 con sale là em sẽ có thể là cover được hết. Em sẽ cover được.
+20:30
+Nghĩa là nếu mà em tính là một con sale là 0,5 á thì em nhân cho 200 thì nó sẽ
+20:36
+ra được là 100 nanozây. Tại vì cái độ phân giải của mình á nhỏ nhất á là 0,5 à
+20:41
+giống như là em lấy một cây thước là từ đây tới đây là 0
+20:45
+100 đúng không? Đó 0 tới 100 nè. Thì em tạo một cái độ phân giải thấp hơn là
+20:50
+0,5. Đó thì để em có thể em đo được á thì em sẽ cần phải là em phủ hết em
+20:56
+cover được hết. Đó em cover được hết toàn bộ đó.
+21:00
+Thì để coi vào được á thì nó sẽ cần khoảng là 200 con. Đúng chưa? Nhưng mà
+21:03
+cái này là trong cái điều kiện là lý tưởng ha. Cái này trong điều kiện lý
+21:07
+tưởng là normal. Còn khi mà ở trong cái điều kiện mà giả sửa nó chạy mà nó chạy
+21:12
+chậm hơn chẳng hạn, nó chạy chậm hơn hoặc là nó chạy nhanh hơn. Giả sử như nó
+21:15
+chạy nhanh hơn đi ha. Giả sử như trong cái điều kiện là nó chạy nhanh hơn là
+21:19
+min đúng chưa? Min rồi fast fast ờ âm 40° C đi ha. Âm 40° C và 1v95. Đó
+21:28
+thì trong điều kiện này con sale của mình nó chạy rất nhanh. Thì có thể là
+21:31
+thời gian của mình nó còn không phải là 0,5 nữa. Nó có thể là nó 0,2 nha tụi em.
+21:36
+0,2 đó. 0,2 mà em nhân lên á em nhân lên là em nhân lên cho 200 đó thì lúc này nó
+21:43
+vẫn chưa đạt được cái con số là 100 nano giây đúng không? Nó vẫn chưa đạt được.
+21:47
+Thì do đó là anh sẽ chọn cho nó dư ra một chút xíu ha. Chọn ra dư ra một chút
+21:51
+xíu. Thì ở đây anh chọn là 256 con ha. Ở đây anh chọn là 256 con sale. Được chưa?
+21:57
+Đó thì lát nữa mình sẽ đo đạt sẽ đo đạt là ờ với 256 con sale này nè thì nó có
+22:02
+cover được hết không? Nó có có bao phủ được hết 100 nan của mình không? Thì 100
+22:06
+nan này nó là cái chu kỳ clock của em nha. Giả sử như em xài một cái lock khác
+22:09
+ví dụ như em xài cái block a 50 nano giây đúng không? Tùy theo cái
+22:20
+clock mà ở đây em chọn. Đó thì ở đây chọn clock thấp nhất là clock 10B đó.
+22:24
+thì ở đây sẽ chọn là 256 con sale mà mỗi mỗi cái tab của anh á mỗi cái tab của
+22:30
+anh á thì nó gồm là tám con ha. Mỗi cái tác quanh là tám con. Vậy thì á
+22:37
+anh sẽ có tổng cộng là 256 con sale nè anh chia cho 8 thì nó ra bao nhiêu? Nó
+22:43
+ra là 32 cái tab nha. 32 cái tab đúng không? 32 tab. Đó. Thì tại sao anh
+22:52
+lại chọn con số 8 này? Tại sao anh lại chọn con số 8? Tại vì
+22:57
+nếu mà giả sử nha anh nói là bây giờ anh không chọn con số 8 đi mà anh chọn con
+23:02
+số khác. Ví dụ anh chọn con số 4. Đúng chưa? Anh chọn số 4 nghĩa là 4 delay
+23:06
+sale cho một tab á nha. Bốn delay sale cho một tab. Thì khi đó anh nói rằng là
+23:12
+một cái tab của anh á nó đo được bao nhiêu giây? Một tab của anh nó sẽ đo
+23:15
+được là 2 nano giây đúng không? Đó hiện tại là
+23:20
+đối với lại một tab của anh á thì nó đo được là 4 nano giây nè. Đó. Còn nếu mà
+23:24
+anh muốn cái độ phân giải mà nó thấp hơn nữa đó thì anh sẽ cho một tab của anh nó
+23:27
+sẽ là 2 nano dây. Nghĩa là lúc này anh sẽ giảm xuống là còn bốn delay sale cho
+23:32
+một tab. Được chưa? Thì lúc đó nó sẽ tăng cái số phi lop lên. Đó bây giờ anh
+23:36
+mới nói con fip nó nằm ở đâu nè. Con fip á là nó sẽ chốt ở cái đầu ra của mỗi cái
+23:42
+tab nha tụi em. Đây nè. Thì lúc này mình sẽ có là cái tab này nè nó sẽ được lưu
+23:47
+nó sẽ được lưu vào trong fip lop. Đó nó được lưu vào trong photog nghĩa là như
+23:52
+thế này. Nghĩa là em có tám con sale đúng không? Đó thì nó nối thành hàng với
+23:56
+nhau là một tab đó. Thì nó nối với nhau như vậy. Thì cái đầu ra cuối cùng á cái
+23:59
+đầu ra cuối cùng á nghĩa là cái đầu ra của cái tab ví dụ như là cái này là tab
+24:02
+0 đi ha. Tab 0 đi thì nó sẽ nối với một câ phip lop đó nó sẽ nối với lại ngõ ngõ
+24:08
+vào của một con phi lop nha. Đó nó sẽ nối như thế này
+24:13
+đó. Nối với ngõ vào qua phi lop này được chưa? Đó. Rồi cái cái tab này tiếp
+24:19
+theo là nó nối tiếp nó nối tiếp nó nối tiếp ha. Đó thì cái này là đầu ra của
+24:25
+con tab số mấy? Tab số 1 đúng không? Tab số 1 thì nó lại nối ra với một con phi
+24:29
+ló tiếp. Đó thì em cứ hiểu như vậy chứ rã. Em cứ
+24:34
+hiểu như vậy rã. Còn tại sao nó lại như vậy thì giờ anh sẽ giải thích nè. Đó thì
+24:37
+ở đây mình sẽ có là 32 cái tab thì tương ứng là ờ mình sẽ có là 32 con fiplop ở
+24:42
+đây đúng không? 32 con fip block. Đó. Ở đây là mình có là 32 con phi block. Đó
+24:48
+thì em nhìn vô cái hình này á em sẽ thấy rằng là cái cái delay line của mình á
+24:52
+cái delay line của mình nó chỉ đơn giản là những con delay buffer nó nối với
+24:55
+nhau như thế này thôi. Đó, còn cái ở trong cái khối chính của mình á, cái
+24:59
+khối cái khối chính của mình á ha, đây nè, cái khối mà TDC của mình á thì mình
+25:04
+sẽ ờ mình sẽ tạo ra hai cái đường hai cái đường trễ là đường trễ của start và
+25:09
+là đường trễ của stop ha. Là cái đường trễ của sự kiện bắt đầu và đường trễ của
+25:13
+sự kiện kết thúc á thì hai cái đường trễ này nó đọc lập nhau thì em sẽ kết nối
+25:17
+cái đường trễ của cái thằng start này nè là 32 bit á là em nối vào 32 con fip
+25:22
+nha. Ở đây là anh vẽ một con thực chất nó là 32 con á nha các bạn. 32 con ở
+25:26
+đây. Đó thì cái điều đó có ý nghĩa như thế nào?
+25:32
+Cái chỗ này hơi khó nha. Các bạn sẽ ờ nghe kỹ chỗ này nha. Đây anh anh anh anh
+25:37
+ví dụ nha. Anh ví dụ nha. Ví dụ cho cái hình này luôn cho dễ nè. Ví dụ cho cái
+25:41
+hình này luôn cho dễ nè. Bây giờ anh giả sử nha có một cái sự kiện nào đó bắt đầu
+25:45
+ha. Cái sự kiện nào đó nó bắt đầu thì cái sự kiện đó giả sử như là nó đang là
+25:50
+ờ cái cái chỗ event này nó đang là không đúng không? Thì bây giờ anh đang cho nó
+25:54
+thay đổi là từ 0 lên 1 ha. Cái event này nó sẽ là từ 0 lên 1. Đó. Thì anh anh cấp
+25:59
+cái số 1 vào đây. Được chưa? Đó. Anh cấp số 1 vào đây. Thì
+26:06
+bây giờ á anh sẽ thấy rằng là khi mà cái sự kiện này nó bắt đầu á thì nó sẽ lan
+26:12
+truyền vào. Nó sẽ lan truyền từ từ vào đó. Nó sẽ lan truyền vào các con sale
+26:21
+này đúng không? Đó, nó lan truyền vào nè.
+26:27
+Đó, thì nó cứ lan truyền liên tục nha các bạn. Nó cứ lan truyền cho tới con
+26:30
+sale cuối cùng luôn. Đó, nó cứ lan truyền liên tục vậy cho
+26:34
+tới con sale cuối cùng. Đó, thì bây giờ á mình phải có một cái
+26:42
+một cái phần tử để nó lưu lại cái thời điểm mà nó nó lan truyền vào. Ví dụ như
+26:46
+là cái tab không này nè. Cái tab này á nó được gắn qua một câu phi l đúng
+26:50
+không? Thì khi mà gặp cảnh lên á nó chốt cái dữ liệu tại đây á thì nó thấy là à
+26:54
+nếu mà cái số một ở đây á nó đẩy vào phi flop nha. Cái số 1 ở đây á mà đẩy vào
+26:59
+phi flop á thì nghĩ rằng là cái dữ liệu của mình nó đã lan truyền tới cái con
+27:03
+sale này rồi đúng không? Rồi sẽ có một con phí block ở đây để nó lưu trữ và gặp
+27:08
+cảnh lên nó cũng thấy rằng là cái số một của mình á nếu mà nó truyền vào đây
+27:12
+nghĩa là ờ cái sự kiện của mình nó đã nó đã lan truyền tới đây rồi. Nó đã lan
+27:16
+truyền tới cái tới cái con delay này rồi. Đó thì cũng có một con phi block ở
+27:20
+đây để nó làm gì? Để nó báo là ờ cái sự kiện của mình nó đã nó đã lan truyền tới
+27:24
+đây rồi. Thì bây giờ mình sẽ có là tất cả những con sale nè nó kết nối với
+27:28
+nhau. Thì giả sử như anh có một cái sự kiện bắt đầu là start đi. Đó đây là cái
+27:33
+start nha. cách event của anh nha. Nó bắt đầu tại
+27:36
+thời điểm là t anh á nó bằng là
+27:40
+90 nano giây ha. 90 nano giây đó. Thì giả
+27:47
+sử như đây là clock của anh. Đúng chưa? Đây là clock của anh. Thì đối với cái
+27:52
+tần số đối với cái tần số là ờ 100 nan giây á thì ờ mỗi một cái móc nó sẽ cách
+27:59
+nhau bao nhiêu? Mỗi một cái móc nó sẽ cách nhau là 100 nano giây. Ví dụ ở đây
+28:02
+nó đang là giả sử anh đang tính là đây là reset đi ha. Sau khi reset xong á thì
+28:07
+mình tính từ đây đi. Đó tính từ đây nó là đang là 0 nano nè. Anh tính từ đây nó
+28:11
+đ là 0 nano giây nha. Đó thì đây tới đây nó là
+28:16
+100 được chưa? 100 ra tới đây nó là 200. Đó. Rồi anh cho một khoảng thời
+28:26
+gian nào đó xa xa xíu. Ờ ví dụ như là 600 đi ha. 600
+28:31
+đó thì có phải là cứ một lần nó cách nhau là 100 nan giây không? Là một chu
+28:35
+kỳ á. Thì có giờ mình mình đang ví dụ nè. Mình đang ví dụ là cái thời cái thời
+28:38
+điểm bắt đầu của sự kiện của mình á là thời kiện start của mình á nó bắt đầu
+28:42
+vào thời điểm là 90 nano giây ha. Anh ví dụ là mình sẽ bắt đầu tại thời điểm này.
+28:47
+90 nano giây là bắt đầu ở đây nè. Đó cái start của mình
+28:56
+thì ban đầu nó là 0 tụi em. Ban đầu nó là 0 thì khi nó bắt đầu á thì nó sẽ là
+29:00
+một đó nó sẽ là một ở đây được chưa? Nó sẽ là một thì khi nó là một á nó cứ giữ
+29:05
+nguyên như thế này nè. Đó nó giữ nguyên như thế này nè. đó.
+29:09
+Rồi sau đó một khoảng thời gian ví dụ như là stop đi. Cái stop của mình á là
+29:14
+sau một khoảng thời gian ví dụ như là ờ anh ví dụ như là 600 a
+29:23
+ờ để anh coi ờ nếu mà cách nhau một khoảng là đây thì
+29:31
+cho là 650 nano đi ha. Ví dụ như cái stop của mình á là nó cách một khoảng là
+29:41
+đây là 650 n giây thì cái stop mình nó lên một ha. Cái này là 650
+29:51
+đó 650 nano giây thì cái stop mình nó lên 1. Vậy thì mình sẽ tính được cái
+29:56
+khoảng thời gian trên lệch của mình là từ đây là 90 nè. Cái này là 90, cái này
+30:02
+là 650 thì mình trừ ra mình trừ ra cái thời gian chính xác của mình á là 650
+30:08
+đúng không? 650
+30:12
+rồi trừ cho 90 nano giây thì mình sẽ tính ra được cái delta t của mình ở đây.
+30:18
+Đây là delta t lý thuyết nha. Delta t lý thuyết nè. Nghĩa là thời điểm bắt đầu
+30:22
+của mình á cái start của mình nó đang là 90 rồi cái stop của mình nó là 650. Đó
+30:27
+thì bạn nào trừ ra giùm anh cái cái số này là bao nhiêu? Số này nó đang là có
+30:31
+phải là 500 560 nano giây không?
+30:37
+Đúng không ta? 540 chứ. Ờ
+30:43
+à 560 đúng rồi đó 560 n giây đây là cái đây là cái lý thuyết nha. Đây lý thuyết
+30:48
+nha. Đó, thậm chí là bây giờ mình có thể là
+30:52
+mình cho nó một cái khoảng thời gian nào đó mà ờ nó lẻ lẻ hơn chút xíu nữa. Ví dụ
+30:58
+như hồi nãy là anh nói là cái khoảng thời gian mà nó đếm được á là cách cách
+31:02
+nhau là 100 nano giây. Nếu mà bây giờ mình nói là mỗi một khoảng thời gian này
+31:05
+là 100 nano giây á thì mình chỉ có thể đếm được là 100 nè, để có thể đếm được
+31:09
+là 200 thôi. Nếu mình dùng bộ đếm á, nếu mình dùng bộ đếm á thì mình chỉ đế có
+31:13
+thể đếm được là 100, 200, 300 thôi. Đây là những cái sự kiện mình đếm được. Còn
+31:16
+ví dụ như mình đếm là 105 đi đó hay là 120 đi hay là 125 á thì
+31:24
+mình không thể nào đếm được đúng không? Nếu mình dùng bộ đếm thông thường. Còn
+31:27
+cái này thì nó có thể đếm được. Ví dụ như nó có thể đếm được là 560 thì 56 mấy
+31:31
+đó nói chung là cái độ phân giải nó thấp thì mình có thể đếm được. Thì ví dụ như
+31:34
+bây giờ cái này là 560 ha. Thì làm sao để nó tính được cái khoảng thời gian
+31:38
+này? Thì đầu tiên á nó sẽ xét là từ cái thời điểm mà start này nó lên một đó tụi
+31:44
+em. Thì cái số một này nó sẽ lan truyền vào trong đó. Thì khi nó lan truyền vậy
+31:48
+á thì nó sẽ lan truyền vào trong mạch ha. Thì nó lan truyền vào những cái con
+31:51
+delay á. Đây nè. Nó lan truyền vào những con delay nè. Đó thì nó lan truyền tới
+31:55
+khi nào? Thì nó cứ lan truyền hoài như vậy á. Nhưng mà khi mà gặp clock cạnh
+31:59
+lên á, ví dụ gặp clock cạnh lên ha, giả sử như anh có gặp một cái clock cạnh lên
+32:03
+đi. Ờ giả sử như anh gặp clock block cạnh lên
+32:07
+ở đây đúng không? Tại vì em biết là mỗi con phi block á nó sẽ chốt ở một cái
+32:11
+thời điểm đúng không? là gặp cạnh lên là nó chốt. Thì bây giờ mình có là giả sử
+32:15
+như mình có là con fip ha con fip tại cái vị trí mà ờ tại vị trí anh sẽ đặt là
+32:24
+những vị trí ví dụ như là vị trí 0 đi thì nó sẽ tương ứng với lại cái tab số 0
+32:29
+ha. Nó sẽ là đầu ra của tab 0 đó. Rồi con phi block nằm ở vị trí số 1 á thì nó
+32:34
+sẽ tương ứng với đầu ra là tab 1. Được chưa? Đó
+32:39
+thì tất cả những cái con này nè tụi em nó sẽ đồng loạt đó nó sẽ đồng loạt trả
+32:44
+dữ liệu tại cạnh lên này đúng không? Tại cạnh lên nào cũng được. Miễn là cạnh lên
+32:47
+nó sẽ trả dữ liệu. Thì anh giả sử như tại đây đúng không mà nó trả dữ liệu là
+32:52
+ở đây là một nó trả dữ liệu ở đây là một ha. Rồi con lop này nó trả dữ liệu ở đây
+32:57
+là 1. Đó. Rồi con số 2 đi. Con số 2 đi. Con số 2 anh đang ví dụ nha. Anh em ví
+33:04
+dụ là con số 2 thì tương ứng với tab 2 đi ha. Đó, tương ứng với tab 2 đó nó lên
+33:10
+một được chưa? Nó lên một thì tất cả những con phi ló ở phía sau nó tắt hết.
+33:15
+Ví dụ như là mình có 32 cái tép đúng không? Thì mình có 32 con phi ló ở phía
+33:19
+sau thì nó tắt hết. Tắt hết nha. Ví dụ như là con này là con
+33:22
+31 đi ha. Thì nó sẽ là của cái tab số số 31 đúng không? Đó, giả sử như là tất cả
+33:30
+từ 012 là nó sáng nó tắt nó nó bật lên một nè. Còn tất cả những cái sần ở sau
+33:34
+là nó tắt hết, nó bằng 0 hết. Thì điều đó có nghĩa là gì? Nếu mà cái con fip
+33:38
+lop này mà bằng 0 này nè, tại cạnh lên này mà nó sáng á tụi em nó bằng một á
+33:42
+thì nghĩa là cái cái sự kiện mà cái sự kiện mà mà start á nó đã nó đã kịp lan
+33:50
+truyền tới cái thời điểm này rồi. Nó đã nó đã kịp lan truyền tới cái con con
+33:53
+phip này rồi. Được chưa? Nó đã kịp lan truyền tới con phi block số 0 này rồi.
+33:58
+Được chưa? Rồi nếu mà cái này lên một á thì nghĩa là nó đã kịp lan truyền tới
+34:01
+đây rồi. Ờ nếu mà là con chuyến đó số 2 mà nó là một á thì nó đã lan truyền kịp
+34:07
+tới cái tab số 2 rồi. Thì ví dụ như ở đây là mình đã kịp lan truyền tới tới
+34:10
+bao nhiêu tab? Tab 0, tab 1 và tab 2. Mình đã kịp lan truyền là ba tab đúng
+34:15
+không? Ba tab. Vậy thì khi đó mình sẽ khẳng định được là cái số cái số mà mình
+34:19
+đang cóở đây á là mình có là file người ta gọi là file start nha. Người ta gọi
+34:25
+là file start. Tại vì mình đang xét sự kiện là bắt đầu mà. của mình á nó sẽ là
+34:29
+bằng 3. Được chưa? 3 thì cái số 3 này ở đâu ra? Cái số 3 này là do là nó đã nó
+34:36
+đã tới được ba tab rồi tụi em. Tab số 0, tab số 1 và tab số 2 là nó tới được ba
+34:40
+tab rồi đó. Tới được ba tab rồi đó. Thì cái số 3 này có nghĩa là gì? Nếu mình
+34:47
+quy cái số 3 này ra tab á thì mình có được là nó đã lan truyền được tới tab
+34:51
+thứ ba đúng không? Nó đang truyền được ba tab rồi mà một tab của mình á, một
+34:55
+tab của mình á, một tab của mình là bao nhiêu nano giây? Một tab của mình nó là
+35:01
+4 nano giây. Đúng chưa? Một tab của mình là 4 nano
+35:06
+giây. Vậy thì mình tính ra được là ba tab là bao nhiêu? Ba tab
+35:12
+nó sẽ là 12 nano giây đúng không? thì nghĩa là mình sẽ suy ra được là cái
+35:19
+thời cái sự kiện start á cái sự kiện start của em á nó cách cái thời điểm
+35:25
+cạnh lên gần nhất ví dụ thời điểm cạnh lên gần nhất nó đang là 100 nano giây nè
+35:30
+thì em tính ra được là cái thời điểm start nó là bắt đầu trước đó 12 nano
+35:33
+giây rồi đúng không nó bắt đầu trước đó 12 nano giây thì em lấy 100 em lấy 100
+35:40
+mà em trừ đi cho 12 ha thì ra được bao nhiêu ra được là 88 nano giây
+35:49
+đó thì nó sẽ có một xíu sai số đó thì lát nữa mình sẽ phân tích tại sao nó có
+35:54
+sai số như thế này ha thì cái thời điểm bắt đầu của mình chính xác á nó là 90
+35:58
+nano giây đúng không tụi em 90 nè nhưng mà khi mình tính ra được cái con số này
+36:02
+là file start của mình là 3 á là ba tab á mình suy ra được là một tab của mình
+36:06
+là 4 thì ba tab của mình là 12 đúng không thì mình lấy cái thời điểm mà của
+36:10
+cạnh lên mà gần nhất á là 100 nè mình trừ đi 12 nó ra được con số là 88 n giâ
+36:16
+Đó thì mình tiếm tính ra được cái thời điểm mà T start được chưa? T start của
+36:20
+mình là 88 nây. Rồi tương tự tương tự với cái
+36:26
+stop nha cái stop cũng vậy nha tụi em. Với cái stop cũng vậy thì mình sẽ xét
+36:31
+tại cái thời điểm mà cạnh lên mà gần gần nhất á là cạnh lên bên này nè. Tại vì
+36:35
+cái start này nó nó xuất hiện tại cái cái cái ờ cái cạnh xuống là 65 nano giây
+36:41
+nè. Thì cạnh lên tiếp theo nó sẽ là 700 đúng không tụi em? Cạnh lên tiếp theo nó
+36:46
+là 700 giây đó 700. Vậy thì mình nói là mình phải
+36:51
+tính được là cái khoảng thời điểm mà cái này nó đã lan truyền được bao nhiêu cái
+36:55
+tab rồi đúng không? Thì mình phải tính. Thì bây giờ anh giả sử nha anh giả sử
+36:59
+như bây giờ nó lan truyền được qua khoảng là 17 cái tab. Đây ví dụ à 10 ví
+37:05
+dụ là 10 cái tab đi. Ví dụ như qua được 10 tab đi. Qua được 10 tab đó. 10 tab
+37:10
+nghĩa là những cái con fip block mà từ cái vị trí số 0 á, những con phi block
+37:15
+từ vị trí số 0 cho tới vị trí số 9 được chưa? Tới vị trí số 9 đó nó sáng lên
+37:23
+nghĩa là nó bằng 1 đó bằng 1 nè 1 nè từ 0 cho tới đây đúng chưa? Thì mình suy ra
+37:29
+được là đã có 10 tab tức là cái thời gian lan truyền đã kịp chạy tới cái tab
+37:33
+số 10 rồi đó. Ờ thì mình sẽ suy ra được là mình có 10 tab đúng không? Và một tab
+37:38
+của mình nó đang là 4 nano giây. Vậy thì mình suy ra được là ờ cái thời gian của
+37:44
+mình đã cách một khoảng bao xa. Nghĩa là cái thời gian mà bắt đầu cái stop này nè
+37:49
+nó cách cái cạnh lên là bao xa đúng không? Cách cạnh lên bao xa thì mình tí
+37:53
+là mình lấy 4 nano dây mình nhân cho 10 đúng chưa? Thì mình ra được là 40 nano
+37:59
+giây đó. 40 nano giây đó. Thì bây giờ cái 40 n giây này là ý
+38:05
+nghĩa là gì? là cái cạnh lên gần nhất của mình á là 700 đúng chưa? Mà mình trừ
+38:11
+đi 40 nano giây là cái thời gian mà nó đã lan truyền được á thì mình trừ 700 -
+38:17
+4.0 là nó ra được là gì? Là 660 nano đó thì mình tính ra được cái T stop.
+38:28
+Tính ra được cái T stop đó. Thì bây giờ cái delta T của mình á,
+38:34
+delta T lúc này của mình á nó sẽ bằng là gì?
+38:36
+bằng t trừ cho t start đúng không? Nó giống như
+38:41
+cái công thức mà mình tính thôi. Nhưng mà lúc này nó sẽ bằng là gì?
+38:50
+Ừ cho cái thời gian nãy mình tính là bao nhiêu? 560 đi ha.
+38:55
+Ở đâu? Trừ cho thời gian nãy mình tính là 88
+38:59
+đó thì nó sẽ có chên lệch đúng không? Chên lệch khoảng bao nhiêu?
+39:09
+Nãy là 560 thì nó chên lệch khoảng là 500
+39:18
+62 ví dụ vậy thì nó trên lệch đâu đó khoảng là 2 nano giây ha. Trên lệch đâu
+39:23
+đó khoảng là 2 nano giây. Thì cái này là anh cái thời gian này anh giả định thôi.
+39:27
+Lúc mà mình làm mình phải đo ha. Lúc mình làm mình phải đo. Thì mình sẽ có là
+39:32
+thứ nhất á cái sơ đồ của mình á là nó gồm là có ba khối được chưa? Có ba khối.
+39:38
+Ờ cái khối thứ nhất á là cái khối này đó. Khối thứ nhất là khối này. Khối thứ
+39:43
+hai là cái khối này. Được chưa? Ờ khối này khối top nha tụi em. Cái tani TDC
+39:48
+này là khối top nè. Còn cái khối mà còn cái khối này nữa là TDC thmometer này nó
+39:55
+làm cái gì đó. Thì cái khối này nó có nhiệm vụ là nó đếm nha tụi em. Nó đếm là
+40:03
+nó đếm là ví dụ như bây giờ em có là mình có là số bit 1 ở đây á mình có là
+40:08
+32 bit 1 đi ha. Mình có 32 bit mà là 1 hết á thì nó sẽ trả ra được là cái kết
+40:15
+quả là từ cái tab số mấy? Từ cái tab số 0
+40:19
+cho tới tab số 31 đúng không? đó
+40:26
+thì nó đếm nó đếm là có bao nhiêu số bit 1 nó đã sáng lên rồi đó thì nó cứ tính
+40:31
+là cứ 1 bit 1 nó sáng lên thì nó nó nó giống như cái bộ giải mã vậy tụi em nó
+40:35
+giống như cái bộ giải mã vậy á mình sẽ biết được là có bao nhiêu pit 1 đó thì
+40:40
+bây giờ cái khoảng thời gian của mình á cái khoảng thời gian của mình á mình
+40:44
+tính được là ờ sau khi ví dụ như bây giờ mình nói là à cái t của mình đúng không
+40:49
+nó bắt đầu ở đây thì nó cách một khoảng thời gian là từ đây tới đây á thì nó gọi
+40:53
+cái này là cái khoảng thời gian mà từ cái lúc start nè cho tới lúc cặp cạnh
+40:57
+lên thứ nhất á thì nó gọi là file start. Nó gọi là file start. Được chưa?
+41:05
+Thì cái file start này của mình á nãy là mình tính là bằng mấy? Bằng 3. Đó. Rồi
+41:11
+cái khoảng cách từ cái lúc mà nó stop á tới cái lúc mà 700 nano giây nè mà mình
+41:15
+tính cái file start này của mình nó là bằng à bằng 10. Được chưa? Rồi mình sẽ
+41:21
+tính là từ cái lúc mà từ cái lúc mà start này nè tới lúc stop này nè. Đó thì
+41:26
+cái khoảng cách từ đây tới đây á khoảng cách từ đây tới đây nó đã qua
+41:31
+được bao nhiêu chu kỳ? Thì ở đây là em thấy là nó đã qua được là 1 2 ờ ba chu
+41:36
+kỳ rồi đúng không? Ờ đây nè. Nếu mình tính từ đây á là một chu kỳ nè, hai chu
+41:41
+kỳ nè, ba chu kì ờ bốn chu kỳ đúng không? Ví dụ vậy thì mình sẽ tính được
+41:48
+cái khoảng thời gian này nữa. Tính khoảng thời gian này nữa. Thì cái khoảng
+41:51
+thời gian này nó gọi là khoảng thời gian ừ lúc mà start cho tới lúc stop ha.
+41:56
+Nhưng mà nó làm tròn tới cạnh lên á. Nó làm tròn tới cạnh lên tại vì cái thời
+41:58
+gian này nó không tính được. Thời gian này nó tính bằng delay đó. Cho nên nó
+42:01
+chỉ tính được là cái cạnh lên này tới cái cạnh lên tới cạnh lên của stop á là
+42:05
+cạnh lên này nè. Ờ đây nè. Thì anh mở cái hình cho tụi em coi để tụi em thấy
+42:10
+nha. Có cái hình anh cho một cái ví dụ.
+42:20
+Đó ví dụ như đây là clock của anh là 100 nano giây đúng không? Thì anh có là cái
+42:25
+thời điểm start của anh là 425. Đó xong anh tính ra được là cái file start á.
+42:30
+File start nghĩa là cái thời điểm của anh là bao nhiêu tab nó cách cái cạnh
+42:34
+lên gần nhất là bao nhiêu tab? Thì cách cạnh lên gần nhất nó là
+42:39
+là là năm tab. Được chưa? 5 tab thì anh sẽ tính ở gần nhất ở đây là 5 rồi ở cạnh
+42:45
+lên ở đây của anh á từ đây ví dụ như là 673 đi ha nó cách từ đây tới đây á nó là
+42:50
+17 đúng không c đây đây là 17 đó thì nó sẽ tính được gần cái cạnh lên gần nhất
+42:56
+đó nó cách bao nhiêu đó là 17 tab được chưa đó thì cái số này ở đâu ra em lấy
+43:02
+17 em nhân cho nếu mà em lấy cái cái khoảng cách này nè là em lấy cái khoảng
+43:06
+cách mà tuyệt đối á thì em lấy là 750 trừ đi 673 được chưa? Thì nó ra con số
+43:11
+77 này. Đó, con số này là con số tuyệt đối nha. Rồi mình lấy 450 mình trừ đi
+43:17
+425 thì nó ra 25 đúng không? Đây là con số tuyệt đối, tức là con số về lý thuyết
+43:20
+á. Còn cái khoảng cách từ cái lúc mà nó bắt đầu á là cái start này nè, nó bắt
+43:26
+đầu nó chốt tại cái thời điểm là 450. Tới thời điểm mà nó chốt ở đây là 750 á
+43:31
+thì cái khoảng cách giữa hai thằng này là ba clock cycle. Được chưa? 1 2 và 3
+43:37
+ba clock cycle. thì nó sẽ là 300 nano giây. Vậy thì công thức đã tính á là cái
+43:42
+thời gian từ lúc mà start đến stop á tụi em là 248. 248
+43:48
+thì nó lấy công thức là 1 á là em lấy là 673 ha em trừ đi cho 425 thì nó ra được
+43:53
+là 300 ờ đâu ra được là 248 đó hoặc không là nó
+43:59
+dùng công thức này nó dùng công thức này nè đó là nó dùng cái công thức delta t
+44:05
+này nó bằng là cos delta này là cái gì là cái khoảng thời gian khoảng thời gian
+44:09
+a cách nhau chữ start với stop á là 3 đúng không 3 đó
+44:15
+rồi nhân với lại là T clock. T clock ở đây nó là 100 nano giây đúng không? Rồi
+44:22
+cộng với lại file start. File start là 5. 5 này là 5 tab nha tụi em. Rồi file
+44:27
+stop của em là 17 thì em thế vô công thức này đúng không? Thế vô công thức
+44:31
+này thì nó tính ra được là ờ cái khoảng thời gian của em nó sẽ là bằng 200 48 ờ
+44:39
+nano giây. Được chưa? Thì đó là công thức của mình.
+44:44
+Thì em cứ áp dụng thôi. Thì cái công thức này á là cái em lưu ý là cái cái
+44:47
+đơn vị ở đây á cái file start chứ stop này nè nó không quy đổi về nano dây nha.
+44:52
+Nó không quy đổi nano dây mà nó quy đổi về đơn vị là đơn vị tab ha. Ví dụ nè là
+44:57
+ở đây mình có là cái delay line của mình nó dài là 32 tab đúng không? 32 tab. Thì
+45:02
+nếu mà ở đây nó bắt được là file start của mình nó bằng 5 á thì nó đã nó đã đi
+45:06
+qua được là bốn tab rồi. Đi qua được b năm tab rồi. 0 1 2 3 4 nè. năm cái tab
+45:11
+rồi. Còn nếu mà ở đây nó đ bắt được là 17 á thì nó đi được là từ 0 cho tới 16
+45:15
+rồi đó. Thì mình tính ra được hai cái này thì mình không đổ ra nano dây nha.
+45:20
+Tại vì cái thời điểm này á ví dụ như là mình nói là một tab của mình nó là 2 à
+45:24
+một một tab của mình nó là 4 đúng không? Thì mình nhân vô đây là 5 x 4 nó là ờ 20
+45:29
+nan giây nhưng mà cũng có thể là một tab của mình nó có thể nhỏ hơn ví dụ như là
+45:33
+3 nano giây đi thì nó có thể là 5 x 3 nó là 15 đúng không? Thì cái số mà cái số
+45:40
+mà mình nhân nano dây á thì hồi nãy anh giả định tại vì anh đang giải định là
+45:43
+một tab của anh á nó đang là có đơn vị là ờ 4 n giây cho nên anh mới lấy anh
+45:48
+nhân ha anh mới lấy anh nhân chứ thực chất là mình sẽ không nhân nha tụi em
+45:51
+mình sẽ không nhân tại vì mình chưa có biết được là nó đang hoạt động ở điều
+45:54
+kiện nào đó vậy thì để mà tụi em làm cái con chip này á thì anh đã anh đã đưa sẵn
+45:59
+cho tụi em là cái code ATL rồi. Ờ tụi em có thể là lấy cái code này xong tụi em
+46:04
+chạy chạy hết từ từ trên xuống ha. Tức là em vô cái CTWI á,
+46:11
+em vô đây nè. Rồi em chạy con chip đó. Và em sẽ phân
+46:16
+tích, em bắt đầu em đo ha. Em sẽ đo giùm anh là cái thời điểm mà nó lan truyền ờ
+46:22
+giữa các tab. Ví dụ bây giờ anh sẽ mở cái con chip đó lên ha.
+46:31
+Em lưu ý là khi em chọn này á thì em chọn thư mục suột thôi nha. Thư một suột
+46:35
+thôi. Đó, thư một suột thì nó gồm có ba cái file này. Đó, thì ba cái file này là
+46:40
+anh đã mô tả trong cái này rồi. Anh mô tả nó trong cái Ro này rồi ha. Thì tụi
+46:45
+em có thể coi để tụi em nắm thêm cái kiến trúc của nó. Ở đây nó còn có thêm
+46:49
+một cái máy trạng thái nữa để nó phát hiện là khi nào thì bộ đếm của mình nó
+46:53
+đầy ờ và khi nào thì kết quả của mình nó hợp lệ ha. Thì cái này tụ em phân tích
+46:58
+thêm cái code ATL. Anh sẽ không có nói rõ hơn về cái này đâu. Tự phân tích nha.
+47:02
+Chủ yếu là cái PD này mình sẽ đo. Thứ nhất á là mình sẽ đo cái thời gian thực
+47:05
+tế khi mà ờ nó nó lan truyền qua qua một tab như thế này nè là một tab của mình
+47:10
+nó gồm có tám con delay đúng không? Thì mình phải đo cái thời gian thực tế. Tại
+47:13
+vì khi mà mình đặt xuống chip á thì nó có hai vấn đề. Cái vấn đề đầu tiên á là
+47:19
+cái delay này nè tụi em là nó xem như là gì? Nó xem như là những cái cổng logic
+47:24
+đúng không? Cho nên là nó sẽ tối ưu đó. Nó sẽ là nó sẽ tìm cách nó tối ưu những
+47:28
+cái cổng logic này. Đó mà mà mình đang muốn là gì? Con chip của mình mình đang
+47:32
+muốn là mình phải giữ nguyên cái cổng logic cái cổng này luôn. Nghĩa là mình
+47:35
+phải khi mình viết code ATL á là mình phải sử dụng chính xác cái cổng này mình
+47:40
+thêm vào chứ không không có phải là mình mình tức là mình phải bắt nó giữ. Mình
+47:44
+phải bắt giữ. Thì để làm được cái đó đó thì ở cái buổi trước á cái lá trước bạn
+47:47
+nào nếu mà làm á thì bạn sẽ có một cái kỹ thuật là gì? Mình sẽ giữ cho nó đây.
+47:54
+Mình sẽ dùng cái kỹ thuật là kip được chưa? Dùng kỹ thuật là kip
+47:59
+n. Nghĩa là lúc này em sẽ gọi chính xác cái con sale mà em đang muốn đúng không?
+48:04
+Em gọi chính xác con sale mà em đang muốn sử dụng và em thêm cái từ kip vào
+48:07
+đây. Đó em thêm từ kip vào đó để làm gì? Để nó giữ nguyên cái con sale này thành
+48:14
+một cái delay tab cho em. Chứ nếu mà nó tối ưu mất tiêu á, nó tối tối ưu mất thì
+48:18
+cái con chip này của em nó nó nó không có ý nghĩa nữa tại vì nó nó tối ưu mất
+48:21
+tiêu rồi. Nhưng mà ờ khi mà tụi em chạy lần đầu tiên á, tụi em chạy lần đầu tiên
+48:26
+á thì nó sẽ có một cái hiện tượng là nó sẽ vi phạm có thể là nó vi phạm set of
+48:32
+time. Tại vì á nếu mà em xét cái thời điểm mà từ lúc bắt đầu nè cho tới thời
+48:37
+điểm mà thời điểm mà đi vào con fip này nè em thấy là nó đang đi qua một đống
+48:40
+cái con trễ luôn không? Đó đi qua một đống con trễ luôn. Thì nếu mà em em xét
+48:44
+cái gọi là cái đường đi trên này nè thì em sẽ thấy rằng là nó nó sẽ bị trễ clock
+48:50
+đó. Tại vì nó siết là từ cái đầu vào cho tới gì cho tới cái đầu vào của con fip
+48:55
+này nè mà nó đang lan truyền qua như quá nhiều con quá nhiều con sale như thế này
+48:59
+thì khi mà nó xét FTA á nó sẽ thấy rằng là ờ cái timing của mình bị vi tại vì
+49:04
+cái timing của mình hiện tại là đang yêu cầu là 100 nano đúng không? Nghĩa là dữ
+49:08
+liệu của em nó chỉ có 100 nan giây để em tới kịp thôi. Nhưng mà khi nó delay
+49:11
+nhiều quá, ví dụ như là ở đây thì nó kịp nè, xuống tới đây á thì em thấy rằng là
+49:16
+từ tính từ đầu vào cho tới khi mà nó đi ra tới đây nè. Thấy không? Tính từ đầu
+49:20
+vào cho tới khi mà đi ra tới đây á là cái cái con phí block cuối cùng nè. Em
+49:23
+thấy là nó cộng dồn không? Một con này nó là 0,5 mà em nhân lên đây em nhân lên
+49:28
+là 256 con. một con là 0,5 mà có 256 con sale thì thời gian của em nó tới là 128
+49:36
+nano giây mất tiêu rồi đúng không? Em mất 128 nano giây để em đi tới cái con
+49:40
+flock cuối cùng và trong khi đó cái thời gian của em yêu cầu là có 100 nano giây
+49:45
+à đó thì có phải là em bị vi phạm cái setup sam không đúng chưa mà mục tiêu
+49:50
+của mình á là cái delay này là cái cái gọi là cái delay gọi là có chủ đích chứ
+49:54
+không phải là delay mà mà do logic cái này là delay có chủ đích nha. Vậy thì đố
+49:59
+các bạn là làm sao để cho nó nó nó nó vượt qua được cái SDA. Tại vì nếu mà
+50:04
+mình xét cái đường này á, mình xét cái đường này thì chắc chắn là mình vi phạm
+50:08
+SDI mất tiêu rồi. Thì có cách nào để để xử lý cái vấn đề đó không? Không bị vi
+50:13
+phạm nữa không? Alo.
+50:43
+Có cách nào để xử lý cái việc mà ST của nó bị vi phạm không? Tại vì nếu mình
+50:47
+chèn delay nhiều như vậy thì chắc chắn là khi mà nó xét cái cái cái gọi là cái
+50:52
+SDA tính từ cái đầu vào cho tới cái con phi block cuối cùng á chắc chắn nó sẽ
+50:56
+không kịp. Chắc chắn không kịp. Vậy thì làm sao?
+51:02
+Có bạn nào biết không? Thôi cái này để cho các bạn tự tìm hiểu
+51:19
+nha. Anh sẽ đưa cái bài láp cho các bạn. Tức là mục tiêu của các bạn á là làm sao
+51:24
+mà đạt được cái STA giống như anh nè. Nghĩa là cái ST của anh á hiện tại là
+51:29
+trong cái ring mà anh đang chạy á. Trong cái ring mà anh đang chạy á thì
+51:34
+cái ST của anh nó đang là ờ đây cái setup slash của anh á là nó đang
+51:43
+là 56,474 nha. Đó nghĩa là nó gần như là nó nó dương rất là nhiều. Nó dương rất
+51:49
+là nhiều luôn. Nhưng mà làm cách nào để cho mình dương được như vậy đó. Tại vì
+51:54
+nếu mà các bạn xét STA thông thường á thì nó sẽ không bao giờ đạt được cái số
+51:57
+dương như thế này đâu. Đó thì cái này là mình sẽ tìm hiểu ha. Tìm hiểu trong cái
+52:02
+bài ló các bạn sẽ tự tìm hiểu cái cách để mình làm sao cho nó dương được như
+52:06
+thế này. Đó nếu mà mình không biết cách thì nó sẽ tính luôn cái ST vào trong cái
+52:11
+đường này thì chắc chắn là nó sẽ bị âm đó các bạn. Đó.
+52:16
+Rồi sau khi mà các bạn chạy được PD xong rồi á còn một bước nữa là các bạn sẽ đo
+52:21
+gọi là gì? chạy mô phỏng thì cái mô phỏng này người ta gọi là mô phỏng post
+52:26
+layout được chưa? Cái này người ta gọi là mô phỏng post layout.
+52:32
+Đó, mô phỏng post layout là gì? Là sau khi mà mình đi dây xong đúng chưa? Thì
+52:37
+cái gọi là cái cái con chip của mình á, lúc này nó sẽ
+52:41
+có ờ cái độ trễ trên đường dây ha. Độ trễ trên đường dây người ta gọi là điện
+52:48
+dung và điện và tụ ký sinh á. Đó thì cái độ trễ trên đường dây đó tụi em xem ở
+52:53
+đâu? Tụi em sẽ xem nó ở trong cái file là file SDF ha. SDF nè. Đó thì cái SDF
+53:00
+này nó là gì? Nó là standard delay format. Nghĩa là khi mà em chạy các cái
+53:06
+corner á thì em sẽ có được là nó sẽ tính ra được là cái điện trở và điện dung ký
+53:10
+sinh của em trên đường dây. Đó thì ví dụ như anh bấm vô một cái ví dụ như là cái
+53:15
+cái đ anh đang xét là cái NOM TT025 đó ha. Xét ở đây. Đúng chưa? Rồi anh mở cái
+53:20
+cái delay format này lên. Đó anh mở lên thì trong này đó nó sẽ quy định cho em
+53:25
+là ờ cái gọi là cái IOP của em á nè. Trong đây nó sẽ quy định cho em là
+53:32
+cái khoảng thời gian đi giữa những con sale. Đó thì
+53:37
+bây giờ em phải mở trong cái gọi là Netlix á. Cái file Netlix á là cái file
+53:41
+mà sau khi nó tổng hợp á là cái file nè Netlix.v nè. Đó thì anh mở trong đây
+53:46
+luôn cho dễ coi ha. Mở trong đây cho dễ coi. Thì em sẽ có một cái file là trong
+53:51
+cái thư mục ATL á nó sẽ có một cái file là file netlist.v thì cái file này là
+53:56
+cái file do thằng Yosis nó tạo ra đúng chưa? Ở cái bước synes đó, ở cái bước
+54:01
+synthesis thì cái thằng yosis nó tạo ra đúng không?
+54:04
+Thì bây giờ á ở trong đây nè, đầu tiên á em phải biết là thứ nhất là cái tab của
+54:10
+em á, tức là cái delay của em á ờ nó sẽ là nằm trên cái những con sale nào. Nó
+54:14
+là những con sale nào thì em bấm vô cái code gọi là code ATL á, em bấm vô cái
+54:19
+gọi là TDC delay nè. Thì em thấy rằng là à những con sale là delay G này đúng
+54:24
+không? Đó. Và nó nằm trong cái U delay đó. U delay đó. Thì đây là những con
+54:31
+sale mà nó xử lý cái việc là nó tạo ra cái delay tab của mình đúng không? Thì
+54:36
+có thể là mình đi tìm mình đi tìm nhưng mà ở đây á thì em bấm vô đây thì em sẽ
+54:41
+thấy rằng là mình có hai cái đường trễ lận. Mình có hai đường trễ lận là một
+54:45
+cái đường trễ là của cái thằng gì? Thằng start và một cái đường trễ là của thằng
+54:52
+thằng stop. Đúng chưa? Thì mỗi cái đường trễ này á nó sẽ có cái tên ví dụ như là
+54:57
+U Startline. Ví dụ U Startline đúng chưa? Thì bây giờ em bấm vô trong cái
+55:02
+file này nè. Em tìm những cái đường trễ nó tên là U
+55:06
+Start Line. U Start Line được chưa? Thì nó sẽ là gì?
+55:16
+Nó sẽ là các cái đường trễ ờ của mình đúng không? Thì bây giờ em nhìn vào cái
+55:21
+hình của anh á. Nhìn vào cái hình của anh á, cái hình mà hình ATL đây nè.
+55:32
+Đó thì các bạn sẽ thấy rằng là ờ ở đây nó tương ứng với cái chen thứ mấy? Ví dụ
+55:36
+cái này là tab 0 á. Tab 0 của mình là tương ứng với cái chen 8 đúng không?
+55:40
+Tương ứng với chen 8 và cái con delay số 7 đúng không? Thì em bấm vào em tìm đúng
+55:45
+cái chen số 8 nha anh. Tìm đúng cái chen số 8 nh anh nha. Chấm nè. Ch 8.
+55:55
+Đó thì tìm tới con chen số 8 thì em đi tìm thôi.
+56:01
+Đó thì em sẽ thấy rằng là cái chên 8 này nè nó đi qua nó đi vào cổng cổng vào của
+56:07
+một con m đúng không? Đi vào cổng vào của một con m nè. Nếu mà em nhìn nè em
+56:12
+nhìn ở đây là chên 8 đúng chưa? Thì em thấy rằng là cái ngõ ra của nó đó nè.
+56:17
+Ngõ ra của nó là đi vào một con M 21 nè. Thấy không? Đó đây con MX nè. Đó thì đi
+56:21
+vào con mức xong rồi nó lại đi vào cái gì? Đi vào phi lop đó thì em cứ tra
+56:25
+thôi. Bây giờ là nó đi vào con con m này đúng chưa? Thì em bấm vô con m đây là
+56:30
+con m 497 đúng chưa? Đó con m 497 thì cái ngõ ra của con m gì? Là là 062 đúng
+56:37
+không? Đó thì em có thể là em lấy cái tín hiệu đầu vào này luôn. Đó em lấy tín
+56:42
+hiệu đầu vào này luôn. Đó tại vì đây là cái độ cái đường trễ của của
+56:46
+cái chen 8. Đúng chưa? Đây đường trễ đây nè. Đó em lấy cái này luôn. Rồi em bỏ
+56:51
+vào trong mô phỏng. Em bỏ vào trong mô phỏng để em đo. Thì ở đây anh anh cũng
+56:56
+sẽ hướng dẫn mô phỏng để tụi em chạy trong cái tab của em á. Đây nè. Thì ở
+57:00
+đây là anh đang thêm vào đây là cái con sale số 7 nè. Con sale số 15, con sale
+57:06
+số 23, sale 31. Đó thì đây là những con sale mà nằm ở vị trí là tab 0 nè, tab 1,
+57:11
+tab 2, tab 3, tab 4. Được chưa? Đó. Sau bắt đầu em đo. Thì khi em đo á em sẽ
+57:17
+thấy rằng là cái thời gian của nó sẽ bị delay lại. Tại vì mỗi lần nó đi qua một
+57:22
+tab á thì cái khoảng thời gian nó bị trễ đi là hai n 4 n giây đúng không? Thì khi
+57:28
+nó đi qua cái tab kế tiếp á thì nó sẽ bị trễ đi 4 nano giây tiếp. Đó nhưng mà có
+57:32
+thể là cái số này nó có thể lớn hơn 4 nano giây nha. Cái số này là nó có thể
+57:35
+trễ hơn tại vì cái này là nó đã đi dây rồi. Cái này là post layout cho nên nó
+57:39
+có thể trễ hơn. đó thì nó sẽ tới cái lúc màu tới cái lúc mà gặp cái cạnh lên gần
+57:46
+nhất á ví dụ nè tới đây đúng không thì tới cạnh lên này nè đây là thời điểm là
+57:50
+thời điểm start thời điểm a = 1 á là thời điểm start nó bắt đầu đó thì nó
+57:54
+đang truyền vào nó đang truyền vào cái tab thì tới cái cạnh lên này là cạnh lên
+57:58
+gần nhất á đó tới cạnh lên gần nhất thì em thấy rằng là các cái con fip lop cái
+58:02
+con fip lop này lúc này nó chốt nó chốt là tất cả cái ngõ ra của nó đó em nhìn
+58:07
+vào ngõ ra á thì em thấy là tất cả ngõ raq của nó bằng 1 hết thì nó sẽ có cái
+58:10
+con fip lop là từ con fip lop 619 cho đến 624 thì con 619 nó tương ứng với là
+58:17
+tab 0 620 thì tương ứng với tab 1 đó rồi 624 là tương ứng với tab số 5 được chưa
+58:23
+thì em thấy là từ tab số 0 cho tới tab số 4 á là nó sẽ bằng 1 hết đó ở đây nó
+58:27
+sẽ hơi khó nhìn lúc mà tụi em chạy mô phỏng tụi em sẽ cố gắng tụi em xem cái
+58:31
+chỗ này thì tab từ số 0 cho tới số 4 á nó sẽ bằng 1 đó đây n em ng em coi cái
+58:35
+ngõ ra á nha đó còn cái tab số 5 á là cái tab này nè là nó nó nó bị gọi là bị
+58:41
+glitch. Tại vì sao? Tại vì cái thời điểm mà đi tới cái con sale này nó đã bị trễ.
+58:46
+Tức là nó nó đã nó đã ra sau cái cạnh cạnh lên của Piplop rồi. Nó đã ra sau
+58:50
+rồi cho nên nó không có chốt được cái cạnh lên ở đây. Đó nó chỉ chốt được cạnh
+58:54
+lên của bốn tab thôi nè. Tab 0 nè, tab 1, tab 2,
+58:59
+tab 3, tab 4. Thì bốn cái tab này nó đang nằm trước cạnh lên cho nên nó vẫn
+59:02
+bắt được. Thì em thấy rằng là thời điểm đây của mình là T start của mình là 425
+59:06
+giây. Rồi cái T này là T của cái tứ tư chưa? T này t của t thứ tư nè là 446,9
+59:14
+nano giây thì em tính ra được là cái file start của em á nó là 21,9 đúng
+59:19
+không? 21,9. Còn hồi nãy á, còn hồi nãy lúc mà mình tính trong cái công thức
+59:26
+công thức này nè à mình tính cái cái T file start này nè
+59:31
+tụi em. Thì cái thời gian của nó là 25 nano giây
+59:34
+đúng không? 25 nano giây thì mình có thể mình xa số chút xíu đó. Mình x mình sẽ
+59:40
+có sa số ở đây chút xíu. Đó. Rồi tương tự cũng vậy. Ờ mình có thể đo được là
+59:46
+cái thời điểm đây là delay tab. Delay tab nghĩa là cái
+59:53
+thời điểm trễ của một tab á tụi em. Thời gian trễ của một tab á thì em sẽ đo được
+59:58
+là em đặt em đặt vô đây á thì nó sẽ đo được là 4,3 micro 4310 micro giây tức là
+1:00:06
+nó sẽ khoảng là 4,3 nano giây á tụi em. Nghĩa là một tab của mình á nó sẽ có độ
+1:00:11
+trễ là 4,3 nano giây so với cái thời điểm hồi nãy mình xét là 4 nano giây
+1:00:15
+đúng không? Thì bây giờ nó là 4,3 đó. Thì khi đây cái này là do mình đi dây
+1:00:19
+thực tế thì nó sẽ ra được cái con số thực tế nha. Còn hồi nãy là mình ước
+1:00:22
+lượng thôi. Ước lượng thôi. Đó. Rồi cái này là delay của một sale.
+1:00:29
+Delay của một sale thì hồi nãy mình ước lượng là khoảng 0,4 thì bây giờ nó nó
+1:00:33
+tính ra được là 556 microây. Nghĩa là 0,56 nan giây á. Đó thì độ delay của một
+1:00:39
+sale nghĩa là đi từ cái ngõ vào A tới cái ngõ ra X đúng không? Từ ngõ vào A
+1:00:44
+tới ngõ ra xo được cái khoảng thời gian delay của chính con đó là 556 microây.
+1:00:50
+Thì cái này nó là post layout được chưa? Cái này là mô phỏng post layout. Thì khi
+1:00:54
+mà em mô phỏng post layout thì em biết được là thực tế cái con chip của mình á
+1:00:56
+khi mà nó đi d xong á nó sẽ chạy được thực tế là bao nhiêu. Rồi em đo stop
+1:01:01
+cũng vậy luôn. Em đo stop cũng vậy luôn. Thì em tính ra được cái khoảng thời gian
+1:01:04
+là 73,3 trong khi thực tế của em là tới 77 lận
+1:01:08
+đúng không? Đó thì em trừ ngược lại. Em trừ ngược lại thì anh thấy là cái độ
+1:01:13
+chênh lệch của nó là không quá nhiều. Ví dụ như anh kéo qua đây anh tính á anh
+1:01:16
+tính cái công thức nè. Mình có là 3 nè nhân cho 100. 100 đây là số 3 này ở đâu?
+1:01:23
+Số 3 này là cái số chu kỳ mà từ cái lúc mà cạnh lên nó được bắt á, từ lúc mà
+1:01:27
+cạnh lên nó được chốt á tới cái chu kì tiếp theo của cạnh lên mà cái stop được
+1:01:32
+chốt nha. Là ba chu kỳ đúng không? Rồi nhân cho 100 rồi cộng cho 21,9. Thì cái
+1:01:37
+số này nó là đo được từ cái này 21,9 là đo từ đây. Đó. Rồi tiếp theo là mình có
+1:01:43
+là 72 73,3 là đo được từ cái post layout này. Thì đây là cái thời gian tính được
+1:01:50
+là sau cái post layout nó là 248,6 n ha. Thì cái độ chênh lệch của mình nó là
+1:01:58
+đây thời gian thực tế của mình là 248. Vậy thì cái cái độ chên lệch thực tế của
+1:02:02
+mình nó chỉ có là 0,06 thôi. Nano dây thôi đó. là cũng khá là chính xác. Ở đây
+1:02:09
+là mình đang giải thuyết là cái clock skill của mình nó bằng 0. Nghĩa là tất
+1:02:13
+cả một con phi lop á, tất cả một con phi lop mà nó chốt lại á là cái skill của nó
+1:02:17
+bằng nhau hết nha. Cái skill của nó là giống nhau hết. Nghĩa là nó không có sự
+1:02:20
+chênh lệch khi mà nó chốt cạnh lên ở đây. Được chưa? Coi như là mình cho
+1:02:23
+skill nó bằng 0 hết. Đó. Ok. Thì bài hôm nay chỉ có vậy tụi em. Ờ
+1:02:33
+sau buổi hôm nay thì anh sẽ đưa cái con đưa cái cái con chip này để tụi em làm
+1:02:37
+thử ha. Thì nếu mà các bạn làm thành công á, làm ok
+1:02:42
+á mà làm tốt á thì có nghĩa là các bạn đã hiểu rõ rất là rõ về BD. Còn nếu mà
+1:02:48
+các bạn không làm được thì khả năng cao là các bạn sẽ ờ cái con đường BD của bạn
+1:02:53
+nó sẽ khá là khó khăn. Tại vì cái này nó liên quan tới cái cổng logic rồi cách
+1:02:58
+mình mô phỏng post layout này kia đó nó sẽ hơi khó ha. Ờ có bạn nào có câu hỏi
+1:03:03
+gì không? Có b nào có câu hỏi v không ta?
+1:03:23
+Alo. Alo. Alo.
+1:03:48
+Sao không ai nói gì hết vậy? Anh ơi anh có gửi cả file link không
+1:03:54
+anh?
+1:03:54
+>> Có có anh gửi đầy đủ cho tụi em nha. Vâng ạ.
+1:03:58
+>> Ờ tụi em chỉ chạy từ ATL tới JDS thôi. Xong tụi em coi cái cách đo đo cái post
+1:04:04
+layout á rồi tụi em tự đo. Tức là cái khó nhất của cái bài này á thứ nhất là
+1:04:08
+tụi em có thể là tụi em hiểu cái kiến trúc.
+1:04:11
+Cái thứ hai nữa là tụi em phải làm như thế nào đó để mà sau khi mà tổng hợp á,
+1:04:16
+tức là sau khi mà nó lấy cái code và nó tổng hợp á, nó phải giữ nguyên nó phải
+1:04:20
+giữ nguyên tám cái con sale, tức là nó phải giữ nguyên cái đường trễ của mình.
+1:04:23
+Nếu mà tụi em không biết cách á, tụi em không biết cách thì nó sẽ thường nó sẽ
+1:04:26
+tối ưu nó làm mất cái cái đường trễ của mình luôn. Tại vì cái mục tiêu của con
+1:04:30
+chip này là nó tạo ra cái đường trễ mà. Đó, thì tụi em phải làm cách nào đó để
+1:04:33
+nó giữ nguyên cái đường trễ này đúng không? thì anh đã chỉ cho tụi em cách là
+1:04:37
+dùng kip rồi. Nhưng mà một cái ngoài ra nữa là
+1:04:41
+phải làm sao để cái STA của em nó thỏa là nó nó timing của em nó dương á. Thì
+1:04:45
+cái ST của em nó muốn dương á thì nó phải loại bỏ cái đường này. Đó anh gửi ý
+1:04:49
+là nó phải loại bỏ cái đường này. Tức là nó không tính cái đường này vào trong
+1:04:51
+SDI thì em phải làm cách nào đó để nó không có tính cái đường này vào. Được
+1:04:54
+chưa? Làm sao nó không tính đường này vào? Tại vì nếu mà tính đường này vào á
+1:04:59
+thì thì cái cái tham min của mình nó sẽ không không có thỏa.
+1:05:03
+Nhưng mà không phải lúc nào em không bỏ được nha. Tại vì sao cái đường này mình
+1:05:06
+có thể bỏ được tụi em? Tại vì cái sự kiện event này nè nó là một sự kiện anh
+1:05:11
+gọi là bất đồng bộ ha. Thì khi một tín hiệu mà bất đồng bộ á nghĩa là nó không
+1:05:15
+phụ thuộc vào thì em có thể bỏ nó ra. Em không xét STA vẫn được. Tại vì mục tiêu
+1:05:21
+của mình STA là gì? Thì em phải hiểu rõ cái ST nghĩa là sao? Nghĩa là set cái
+1:05:25
+lúc mà cái dữ liệu của mình á nó đi ra. Ví dụ dữ liệu của mình đúng không? Nó đi
+1:05:29
+ra ở đây đó. cho tới khi mà nó truyền tới nó truyền tới nó truyền nó truyền
+1:05:35
+truyền truyền truyền là tới cạnh block cạnh lên tiếp theo. Ví dụ vậy đó nó xét
+1:05:40
+tới clock cạnh lên tiếp theo thì nó phải kịp thời gian đó nó phải kịp thời gian
+1:05:44
+tới loog c lên này thì nghĩ là em phải thấy rằng là cái dữ liệu của mình á nó
+1:05:47
+phải đi ra từ một câu phi lop đúng không? Dữ liệu của mình nó phải đi ra từ
+1:05:50
+một câ phi lop này nè đây là ngõ raq đúng không? Đó, dữ liệu của mình nó phải
+1:05:54
+đi ra từ một con phi block rồi nó đi qua các cái gọi là các cái combinational
+1:05:58
+logic á, combinational logic đó. Rồi nó đi vào
+1:06:03
+một cái cổng D đúng chưa? Đó thì cái lý thuyết của mình á là như vậy. Nhưng mà
+1:06:09
+em thấy rằng là cái start của mình á, cái start của mình nó cái start á và cái
+1:06:13
+stop á nó là hai sự kiện người ta gọi là sự kiện bất đồng bộ. Nghĩa là nó không
+1:06:17
+phụ thuộc vào cái việc là nó nó được đẩy ra bởi một con fit lop nào cả mà nó vào
+1:06:22
+một cách ngẫu nhiên. Nghĩa là bất kỳ một cái thời điểm nào người ta bật cái tín
+1:06:25
+hiệu nó lên á mình không biết được đúng không? Cho nên là cái thời điểm nào mình
+1:06:28
+không biết được thì mình có thể bỏ nó ra. Nghĩa là mình coi cái này là gì?
+1:06:31
+Acynchronus. Đó mình xem cái này nó là bất động bộ thì mình sẽ không xét nó
+1:06:35
+trong cái việc mà mình à về xét phân tích STA đúng không? Bỏ nó ra. Bỏ nó ra.
+1:06:41
+Đó thì lúc này mình sẽ không làm cho cái đường ST của mình nó bị quá âm. Đó tại
+1:06:45
+vì nếu em xét vào thì nó sẽ bị kéo một cái đường rất là dài từ cái ngõ vào cho
+1:06:49
+tới ngõ ra luôn. đó thì em phải làm cách nào đó để em bỏ cái đường này ra ngoài
+1:06:53
+được chưa? Bỏ cái đường này ra không có xét vào. Sau này cũng vậy, một cái tín
+1:06:57
+hiệu nào đó mà bất đồng bộ ha, nghĩa là nó không phụ thuộc clock á thì em phải
+1:07:00
+bỏ ra ngoài không có xét STA vào. Được chưa các bạn?
+1:07:08
+>> À em nghĩ là có phải chỉnh cái file SDC không anh?
+1:07:12
+>> Ờ không, file SDC là anh có để sẵn cho tụi em luôn. Tụi em coi, tụi em tham
+1:07:17
+khảo rồi tụi em làm một cái bản báo cáo cho anh. Vâng. Vâng.
+1:07:22
+>> Ờ tức là anh sẽ để sẵn. Thì nếu mà trước khi mà tụi em viết á thì cái SDC á cái
+1:07:29
+SDC nó là một cái mà ờ có thể là ban đầu nó sẽ là một cái a nó sẽ có hai file SDC
+1:07:35
+ha. Nó sẽ có hai file ờ một file SDC để mình DJ Day và một
+1:07:41
+file SDC để mình à để mình sign off. Nó sẽ có hai file SDC. Lúc này làm PD nó
+1:07:46
+cũng sẽ có hai file hết thì các bạn sẽ phải tìm hiểu là hai file SDC nó nó khác
+1:07:50
+nhau cái điểm nào. Đó thì đây là cái dự án đầu tiên về BD ha. Cho nên là các bạn
+1:07:56
+phải làm ờ rất là kỹ và và phải tìm hiểu cho nó kỹ. Các bạn phải hiểu bản chất
+1:08:01
+của nó rồi các bạn mới có thể làm được những con chip lớn hơn được. Còn cái dự
+1:08:05
+án này mà các bạn không nắm rõ thì mấy cái dự án khác các bạn làm thì nó cũng
+1:08:09
+là cửa ngựa xem hoa thôi. Tại vì cái dự án này các bạn làm á nó kết hợp cả nhiều
+1:08:12
+thứ. Thứ nhất là các bạn phải biết cách viết cái file SDC như thế nào để nó loại
+1:08:16
+bỏ được cái cái đường SDA mà mình không mong muốn là cái cách thứ nhất. Cái thứ
+1:08:19
+hai là phải biết cách tổng hợp như thế nào để cho nó giữ lại nguyên cái đường
+1:08:23
+delay đó mà nó không thay đổi cái đường delay của mình. Cái thứ ba là các bạn
+1:08:27
+phải biết làm như thế nào để đo được cái post layout. Nghĩa là sau khi mình đi
+1:08:31
+dây á mình đo được cái khoảng thời gian trễ khi mình mình
+1:08:35
+xét từ một cái delay đầu cho tới cái cuối cái delay đó mình phải xét được. Đó
+1:08:39
+và mình sẽ có thể mình thay đổi một vài cái lúc mà mình mình mình chạy á mình có
+1:08:44
+thể thay đổi một vài cái để làm sao đó để cho nó tiết kiệm năng lượng hơn hoặc
+1:08:47
+là nó sẽ làm sao cho cái delay của giữa những con sale nó nhất quán hơn. Có thể
+1:08:51
+là bây giờ em chọn delay sale đúng không? Nhưng mà sau đó em có thể đổi
+1:08:55
+thành một con khác ví dụ như là thành một con inver chẳng hạn cổng not á. Thay
+1:08:59
+vì em dùng delay thì em có thể dùng một con inor. Thì hai con inver mà nó ghép
+1:09:03
+với nhau á thì nó như là nó triệt tiêu. Nó đâu có tạo ra một cái cổng logic nào
+1:09:07
+đó đâu đúng không? Hai cái cổng note mà ghép với nhau thì nó coi như là một cái
+1:09:11
+đường dây. Nhưng mà giữa con inver con delay thì hai con đó nó khác nhau những
+1:09:15
+điểm nào thì có thể là mỗi bạn sẽ có một cái cách làm khác nhau. Các bạn thì
+1:09:20
+thích dùng delay sale, các bạn thì thích dùng inver hoặc các bạn thì thích dùng
+1:09:23
+flock. Nói chung là ý tưởng của mình á vẫn là tạo một cái đường trễ. Được chưa?
+1:09:28
+Và khi mà nó đi xuống ở phía dưới cái con chip á nhiều khi cách mà em phân bố
+1:09:33
+như thế nào đó mà để nó bảo toàn được cái đường trễ đó. Đó thì đó là những cái
+1:09:38
+cách mà tụi em học khi mà tụi em thiết kế BD đó cho nên là cố gắng các bạn sau
+1:09:43
+buổi này á là tìm hiểu cho kỹ. Anh gửi cái cái anh gửi cái thư mục ừ xong rồi
+1:09:48
+các bạn tìm hiểu cho kỹ nha. Rồi các bạn có thể làm rồi báo cáo lại cho anh. Cái
+1:09:53
+này nó quan trọng lắm á. Anh nghĩ là nó sẽ rất là quan trọng để mình làm cái con
+1:09:57
+chip kế tiếp. Nó rất là nhiều kiến thức trong này các
+1:10:02
+bạn. Nhiều lắm. Nếu mà các bạn làm các bạn phải hỏi hỏi và mình sẽ cùng phân
+1:10:08
+tích thì nó sẽ tốt. Ok cảm ơn các bạn nha. Huynh ơi, record
+1:10:18
+cho các bạn. Aloh ơi vin
+1:10:28
+nãy giờ mày có học vậy rồi thằng này chắc ngủ rồi
+1:10:36
+rồi bye bye các bạn Em chào anh
+1:10:40
+em anh ạ.
+Đang hiển thị 5. Physical_Design_30_10_2026.mkv.

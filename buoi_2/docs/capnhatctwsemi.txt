@@ -1,0 +1,40 @@
+set -e
+
+CTW_IMAGE="huyatieo/ctwsemi:1.0.1"
+CTW_DATA_DIR="$HOME/ctwsemi-data"
+CTW_OLD="ctwsemi-old-$(date +%Y%m%d-%H%M%S)"
+DOCKER_GID="$(stat -c '%g' /var/run/docker.sock)"
+
+docker pull "$CTW_IMAGE"
+
+mkdir -p "$CTW_DATA_DIR/work" "$CTW_DATA_DIR/.lanex"
+
+if docker container inspect ctwsemi >/dev/null 2>&1; then
+    docker stop ctwsemi
+    docker rename ctwsemi "$CTW_OLD"
+    echo "Container cũ đã được giữ lại với tên: $CTW_OLD"
+fi
+
+docker run -d \
+  --name ctwsemi \
+  --restart unless-stopped \
+  --user "$(id -u):$(id -g)" \
+  --group-add "$DOCKER_GID" \
+  -p 127.0.0.1:8765:8765 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$CTW_DATA_DIR:$CTW_DATA_DIR" \
+  -e HOME="$CTW_DATA_DIR" \
+  -e LANEX_HOME="$CTW_DATA_DIR/.lanex" \
+  "$CTW_IMAGE"
+
+echo
+echo "Kiểm tra schematic viewer:"
+docker exec ctwsemi sh -lc '
+test -f /app/lanex/server/static/modules/ide/schematic.js
+grep -q "ide-schematic-toggle" /app/lanex/server/static/index.html
+echo "Schematic viewer is installed"
+'
+
+echo
+docker ps --filter name=ctwsemi
+echo "Mở: http://127.0.0.1:8765"

@@ -1,0 +1,101 @@
+TOTAL SLIDES: 33
+
+=== SLIDE 1 (ppt/slides/slide1.xml) ===
+BUỔI 4 Physical  Design I Thiết kế vật lý với  Openroad GUI
+
+=== SLIDE 2 (ppt/slides/slide2.xml) ===
+Full Adder view 04
+
+=== SLIDE 3 (ppt/slides/slide3.xml) ===
+Top module view 04
+
+=== SLIDE 4 (ppt/slides/slide4.xml) ===
+Process stack 04 - Lớp metal đóng vai trò như  các dây dẫn phía trên  stdcell  - Có 5 lớp metal: metal 1 →  metal 5 - Các lớp metal nối với nhau  bằng via - Tinytapeout: Chỉ routing tối  đa tới metal 4, metal 4 sẽ  kết nối với các pin của người  dùng ra ngoài, metal  5 dùng cho nguồn - licon (local interconnect):  nằm gần transistor nhất. - poly, diffusion, transistor:  thực hiện
+
+=== SLIDE 5 (ppt/slides/slide5.xml) ===
+Inverter schematic 04 - CMOS: 2 mosfet bù nhau (complementary)  - Có 2 loại: PMOS và NMOS - Thiết kế standard cell và đo đạc là một công việc  riêng, thường thì ta dùng các stdcell có sẵn trong .lib - Có thể tự tạo các stdcell của mình bằng Magic.
+
+=== SLIDE 6 (ppt/slides/slide6.xml) ===
+Inverter 2D 04
+
+=== SLIDE 7 (ppt/slides/slide7.xml) ===
+Inverter 3d 04
+
+=== SLIDE 8 (ppt/slides/slide8.xml) ===
+Baseline config 04 - Tên top_module: “DESIGN_NAME”: fa_lab - Liệt kê file RTL: “VERILOG_FILES”. - Diện tích die: “DIE_AREA” - Vật lý của die: “FP_DEF_TEMPLATE” - Clock mong muốn: “CLOCK_PERIOD” - Công nghệ: “PDK” - Các chân đất và nguồn: “VDD_PIN”, “GND_PIN” - Lớp kim loại tối đa được phép đi dây: “RT_MAX_LAYER” - Mật độ sắp xếp: “PL_TARGET_DENSITY_PCT” - Sửa lỗi hold time: “_HOLD_SLACK_MARGIN” - Khoảng cách giữa core và die: “TOP_MARGIN_MULT”,… - Cách tính diện tích khởi tạo khi Floor Plan: “FP_SIZING”
+
+=== SLIDE 9 (ppt/slides/slide9.xml) ===
+Synthesis - Floorplan 04
+
+=== SLIDE 10 (ppt/slides/slide10.xml) ===
+Floorplan 04 111.52um 111.52um 111.52um 161.00um 155.48um 106.08um 2.72um 2.72um 2.76um 2.76um
+
+=== SLIDE 11 (ppt/slides/slide11.xml) ===
+Layout Result 04
+
+=== SLIDE 12 (ppt/slides/slide12.xml) ===
+Openroad – First opening 04
+
+=== SLIDE 13 (ppt/slides/slide13.xml) ===
+Window – Hierarchy Browser 04
+
+=== SLIDE 14 (ppt/slides/slide14.xml) ===
+Window-Timing Report 04
+
+=== SLIDE 15 (ppt/slides/slide15.xml) ===
+Window-Charts 04
+
+=== SLIDE 16 (ppt/slides/slide16.xml) ===
+Inspector 04
+
+=== SLIDE 17 (ppt/slides/slide17.xml) ===
+Transistor – DFF - sky130_fd_sc_hd__dfxtp_2 04
+
+=== SLIDE 18 (ppt/slides/slide18.xml) ===
+Transistor - DFF 04
+
+=== SLIDE 19 (ppt/slides/slide19.xml) ===
+Transistor - DFF 04
+
+=== SLIDE 20 (ppt/slides/slide20.xml) ===
+Metal1 04
+
+=== SLIDE 21 (ppt/slides/slide21.xml) ===
+Metal1 04
+
+=== SLIDE 22 (ppt/slides/slide22.xml) ===
+Metal2 04
+
+=== SLIDE 23 (ppt/slides/slide23.xml) ===
+Metal3 04
+
+=== SLIDE 24 (ppt/slides/slide24.xml) ===
+Metal4 04
+
+=== SLIDE 25 (ppt/slides/slide25.xml) ===
+Metal4 04
+
+=== SLIDE 26 (ppt/slides/slide26.xml) ===
+IR Drop 04 V2 = V1 - I*R - Dây càng rộng thì điện trở càng nhỏ - Vdrop = I*R, điện trở càng lớn thì càng sụt áp. Vd: 1.8V → 1.72V - Metal4 là net đặc biệt phân bố nguồn cho toàn bộ Các stdcell từ top.  - Metal4 có thể chịu được dòng
+
+=== SLIDE 27 (ppt/slides/slide27.xml) ===
+Heatmap 04
+
+=== SLIDE 28 (ppt/slides/slide28.xml) ===
+Heatmap 04
+
+=== SLIDE 29 (ppt/slides/slide29.xml) ===
+Heatmap 04
+
+=== SLIDE 30 (ppt/slides/slide30.xml) ===
+Heatmap 04
+
+=== SLIDE 31 (ppt/slides/slide31.xml) ===
+Clock tree viewer 04
+
+=== SLIDE 32 (ppt/slides/slide32.xml) ===
+Timing path 04
+
+=== SLIDE 33 (ppt/slides/slide33.xml) ===
+Custom button  04
+

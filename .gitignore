@@ -1,3 +1,18 @@
+# Ignore Web Report local source (deployed directly on Vercel)
+Web_Report/
+/index.html
+
+# Ignore Video recordings
+*.mkv
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.webm
+
+# Ignore Agent / Python / OS temp files
+.agents/
+AGENTS.md
 __pycache__/
 *.pyc
 *.pyo
