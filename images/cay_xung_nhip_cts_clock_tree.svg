@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 560" width="100%" height="100%" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="ctsBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="pllGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrowClk" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowData" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1020" height="560" fill="url(#ctsBgGrad)"/>
+
+  <!-- Header -->
+  <g transform="translate(35, 20)">
+    <rect x="0" y="0" width="950" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="24" fill="#f8fafc" font-size="17" font-weight="bold">MÔ HÌNH CÂY PHÂN PHỐI XUNG NHỊP (CLOCK TREE SYNTHESIS - CTS)</text>
+    <text x="20" y="42" fill="#94a3b8" font-size="12">Minh họa độ lệch pha thực tế: Clock Latency 1 (0.60ns) vs Clock Latency 2 (1.10ns) gây Clock Skew lớn (+500ps)</text>
+  </g>
+
+  <!-- MAIN SCHEMATIC CANVAS -->
+  <g transform="translate(35, 85)">
+    <!-- Canvas Frame -->
+    <rect x="0" y="0" width="950" height="305" rx="10" fill="#1e293b" fill-opacity="0.5" stroke="#475569" stroke-width="1.5"/>
+
+    <!-- ======================================================== -->
+    <!-- 1. PLL / CLOCK SOURCE (LEFT) -->
+    <!-- ======================================================== -->
+    <g transform="translate(25, 105)">
+      <rect x="0" y="0" width="130" height="90" rx="8" fill="url(#pllGrad)" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="22" cy="22" r="6" fill="#38bdf8"/>
+      <text x="36" y="26" fill="#ffffff" font-size="12" font-weight="bold">NGUỒN PLL</text>
+      <text x="65" y="48" fill="#e0f2fe" font-size="10" text-anchor="middle">Bộ tạo dao động</text>
+      <!-- Square wave symbol -->
+      <path d="M 35 72 L 45 72 L 45 58 L 60 58 L 60 72 L 75 72 L 75 58 L 90 58 L 90 72" 
+            fill="none" stroke="#ffffff" stroke-width="2"/>
+      <text x="65" y="85" fill="#bae6fd" font-size="9" text-anchor="middle">Gốc cây (Root)</text>
+    </g>
+
+    <!-- Wire from PLL to CTS Level 1 Buffer -->
+    <line x1="155" y1="150" x2="225" y2="150" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrowClk)"/>
+
+    <!-- ======================================================== -->
+    <!-- 2. CTS LEVEL 1 BUFFER (TRUNK BUFFER) -->
+    <!-- ======================================================== -->
+    <g transform="translate(225, 110)">
+      <!-- Triangular Buffer Symbol -->
+      <polygon points="0,0 0,80 65,40" fill="#0f172a" stroke="#38bdf8" stroke-width="2.5"/>
+      <text x="18" y="45" fill="#38bdf8" font-size="11" font-weight="bold">BUF</text>
+      <!-- Sub-label -->
+      <rect x="-15" y="90" width="100" height="26" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <text x="35" y="103" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">CTS Tầng 1</text>
+      <text x="35" y="113" fill="#7dd3fc" font-size="8.5" text-anchor="middle">(clkbuf_16)</text>
+    </g>
+
+    <!-- Fork branching from Level 1: Upper branch and Lower branch -->
+    <line x1="290" y1="150" x2="335" y2="150" stroke="#38bdf8" stroke-width="2.5"/>
+    <!-- Vertical Split -->
+    <line x1="335" y1="65" x2="335" y2="235" stroke="#38bdf8" stroke-width="2.5"/>
+
+    <!-- ======================================================== -->
+    <!-- UPPER BRANCH (NHÁNH 1 - DÂY NGẮN, ÍT TRỄ T_clk1 = 0.60ns) -->
+    <!-- ======================================================== -->
+    <!-- Direct fast feed to Level 2 Buffer (Top) -->
+    <line x1="335" y1="65" x2="435" y2="65" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowClk)"/>
+
+    <!-- Level 2 Buffer (Branch 1 - Nhánh ngắn) -->
+    <g transform="translate(435, 35)">
+      <polygon points="0,0 0,60 50,30" fill="#0f172a" stroke="#60a5fa" stroke-width="2"/>
+      <text x="14" y="34" fill="#60a5fa" font-size="10" font-weight="bold">BUF</text>
+      <rect x="-10" y="68" width="85" height="20" rx="3" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+      <text x="32" y="82" fill="#93c5fd" font-size="9" text-anchor="middle">Tầng 2 (Nhánh 1)</text>
+    </g>
+
+    <!-- Wire from Buffer Level 2 to FF1 CK pin (Ngắn) -->
+    <line x1="485" y1="65" x2="630" y2="65" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowClk)"/>
+
+    <!-- Clock Latency 1 Dimension Bracket (NHANH) -->
+    <line x1="155" y1="18" x2="630" y2="18" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <rect x="310" y="6" width="220" height="22" rx="4" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="420" y="21" fill="#7dd3fc" font-size="11" font-weight="bold" text-anchor="middle">⚡ T_clk1 = 0.60ns (Đến rất sớm!)</text>
+
+    <!-- FF1 (Launch Flip-Flop) -->
+    <g transform="translate(630, 25)">
+      <rect x="0" y="0" width="85" height="95" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+      <text x="42" y="20" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">FF1</text>
+      <text x="42" y="33" fill="#94a3b8" font-size="9" text-anchor="middle">(Launch)</text>
+      
+      <!-- CK pin with triangle -->
+      <polygon points="2,36 10,40 2,44" fill="#38bdf8"/>
+      <text x="14" y="44" fill="#38bdf8" font-size="10" font-weight="bold">CK</text>
+
+      <!-- Q pin -->
+      <text x="75" y="44" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="end">Q</text>
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- LOWER BRANCH (NHÁNH 2 - DÂY DÀI, TẢI NẶNG T_clk2 = 1.10ns) -->
+    <!-- ======================================================== -->
+    <!-- Long meandering path representing distance across the chip -->
+    <path d="M 335 235 L 380 235 L 380 255 L 430 255 L 430 235 L 460 235" 
+          fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4,2"/>
+    <line x1="460" y1="235" x2="480" y2="235" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowClk)"/>
+
+    <!-- Level 2 Buffer (Branch 2) -->
+    <g transform="translate(480, 205)">
+      <polygon points="0,0 0,60 50,30" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+      <text x="14" y="34" fill="#f59e0b" font-size="10" font-weight="bold">BUF</text>
+      <rect x="-10" y="68" width="95" height="20" rx="3" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="37" y="82" fill="#fde68a" font-size="9" text-anchor="middle">Tầng 2 (Tải nặng)</text>
+    </g>
+
+    <!-- Wire from Buffer Level 2 to FF2 CK pin -->
+    <line x1="530" y1="235" x2="630" y2="235" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowClk)"/>
+
+    <!-- Clock Latency 2 Dimension Bracket (CHẬM) -->
+    <line x1="155" y1="285" x2="630" y2="285" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <rect x="310" y="274" width="220" height="22" rx="4" fill="#451a03" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="420" y="289" fill="#fde68a" font-size="11" font-weight="bold" text-anchor="middle">⏳ T_clk2 = 1.10ns (Đến rất muộn!)</text>
+
+    <!-- FF2 (Capture Flip-Flop) -->
+    <g transform="translate(630, 185)">
+      <rect x="0" y="0" width="85" height="95" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+      <text x="42" y="20" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">FF2</text>
+      <text x="42" y="33" fill="#94a3b8" font-size="9" text-anchor="middle">(Capture)</text>
+      
+      <!-- CK pin with triangle -->
+      <polygon points="2,46 10,50 2,54" fill="#10b981"/>
+      <text x="14" y="54" fill="#10b981" font-size="10" font-weight="bold">CK</text>
+
+      <!-- D pin -->
+      <text x="12" y="80" fill="#fbbf24" font-size="11" font-weight="bold">D</text>
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- DATA PATH (FROM FF1.Q TO FF2.D VIA LOGIC CLOUD) -->
+    <!-- ======================================================== -->
+    <path d="M 715 65 L 775 65 L 775 115 L 800 115" fill="none" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowData)"/>
+
+    <g transform="translate(800, 95)">
+      <rect x="0" y="0" width="125" height="110" rx="8" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
+      <text x="62" y="28" fill="#e0e7ff" font-size="11" font-weight="bold" text-anchor="middle">ĐƯỜNG DATA</text>
+      <text x="62" y="44" fill="#c7d2fe" font-size="9.5" text-anchor="middle">Mạch tổ hợp</text>
+      <rect x="15" y="55" width="95" height="24" rx="4" fill="#1e1b4b"/>
+      <text x="62" y="71" fill="#fde68a" font-size="10" font-weight="bold" text-anchor="middle">T_data</text>
+      <text x="62" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">(Logic + Wire)</text>
+    </g>
+
+    <path d="M 800 185 L 755 185 L 755 265 L 715 265" fill="none" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowData)"/>
+  </g>
+
+  <!-- LOWER EXPLANATION CARDS (SKEW LỚN 500ps & HỆ QUẢ) -->
+  <g transform="translate(35, 405)">
+    <rect x="0" y="0" width="950" height="135" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Card 1: Clock Latency Mismatch -->
+    <g transform="translate(20, 15)">
+      <rect x="0" y="0" width="285" height="105" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="142" y="24" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">1. SỰ LỆCH PHA LATENCY</text>
+      <text x="15" y="48" fill="#94a3b8" font-size="11">Nhánh FF1 (Launch): <strong style="fill:#38bdf8;">T_clk1 = 0.60ns</strong></text>
+      <text x="15" y="68" fill="#94a3b8" font-size="11">Nhánh FF2 (Capture): <strong style="fill:#f59e0b;">T_clk2 = 1.10ns</strong></text>
+      <text x="15" y="90" fill="#cbd5e1" font-size="10.5">Do vị trí đặt cell xa nhau hoặc dây dẫn dài ngắn khác nhau.</text>
+    </g>
+
+    <!-- Card 2: Massive Positive Skew -->
+    <g transform="translate(325, 15)">
+      <rect x="0" y="0" width="300" height="105" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="150" y="24" fill="#f87171" font-size="12" font-weight="bold" text-anchor="middle">2. CLOCK SKEW RẤT LỚN (+500ps)</text>
+      <text x="15" y="48" fill="#fca5a5" font-family="monospace" font-size="13" font-weight="bold">T_skew = 1.10ns - 0.60ns = +0.50ns</text>
+      <text x="15" y="72" fill="#ef4444" font-size="12" font-weight="bold">⚠️ CẢNH BÁO: +500ps LÀ MỨC NGUY HIỂM!</text>
+      <text x="15" y="92" fill="#fca5a5" font-size="10.5">Sườn clock FF2 bị trễ quá lâu so với FF1.</text>
+    </g>
+
+    <!-- Card 3: Hazard To Hold Time -->
+    <g transform="translate(645, 15)">
+      <rect x="0" y="0" width="285" height="105" rx="6" fill="#451a03" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="142" y="24" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="middle">3. TÁC ĐỘNG SỐNG CÒN TAPE-OUT</text>
+      <text x="15" y="46" fill="#fde68a" font-size="11">Dù giúp ích cho Setup Time...</text>
+      <text x="15" y="66" fill="#fca5a5" font-size="11.5" font-weight="bold">❌ CỰC KỲ NGUY HIỂM CHO HOLD TIME!</text>
+      <text x="15" y="90" fill="#cbd5e1" font-size="10">Dữ liệu mới từ FF1 sẽ phi qua đè bẹp dữ liệu cũ của FF2 trước khi FF2 kịp chốt!</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 560" width="100%" height="auto" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ea580c" />
+    </marker>
+
+    <!-- Subtle Shadows -->
+    <filter id="soft-shadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <filter id="card-shadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- MASTER WHITE CANVAS -->
+  <rect width="1560" height="560" fill="#ffffff" rx="14" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- ==================== HEADER & LEGEND ==================== -->
+  <g transform="translate(30, 16)">
+    <!-- Main Title -->
+    <text x="0" y="22" fill="#0369a1" font-size="18" font-weight="800" letter-spacing="0.3">
+      SƠ ĐỒ KHỐI TỔNG QUAN HÀNH TRÌNH BUỔI 3: STATIC TIMING ANALYSIS (STA) &amp; TIMING CLOSURE
+    </text>
+    <text x="0" y="42" fill="#64748b" font-size="12" font-weight="500">
+      Bố cục 5 giai đoạn liên hoàn: Nền tảng vật lý ➔ Thiết kế &amp; SDC ➔ Hiện trường Ép xung 13ns ➔ Hai con đường DSE &amp; RTL Pipelining ➔ Tape-out Signoff
+    </text>
+
+    <!-- Legend -->
+    <g transform="translate(1040, 6)">
+      <rect x="0" y="0" width="460" height="38" fill="#f8fafc" rx="6" stroke="#cbd5e1" stroke-width="1" />
+      <line x1="14" y1="19" x2="38" y2="19" stroke="#0284c7" stroke-width="3" />
+      <circle cx="26" cy="19" r="3" fill="#0284c7" />
+      <text x="46" y="23" fill="#334155" font-size="10.5" font-weight="600">Luồng thiết kế &amp; Dữ liệu chính (Main Flow)</text>
+
+      <line x1="264" y1="19" x2="288" y2="19" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,3" />
+      <circle cx="276" cy="19" r="2.5" fill="#ea580c" />
+      <text x="296" y="23" fill="#334155" font-size="10.5" font-weight="600">Cờ báo vi phạm &amp; Tiêu chí Signoff</text>
+    </g>
+  </g>
+
+  <!-- ==================== CỘT 1: NỀN TẢNG VẬT LÝ & FF-TO-FF ==================== -->
+  <g id="col-1" transform="translate(30, 70)">
+    <!-- Frame -->
+    <rect width="260" height="465" fill="#f8fafc" stroke="#e0f2fe" stroke-width="1.8" rx="10" filter="url(#soft-shadow)" />
+    <!-- Header banner -->
+    <path d="M 0 10 Q 0 0 10 0 L 250 0 Q 260 0 260 10 L 260 38 L 0 38 Z" fill="#e0f2fe" />
+    <rect y="36" width="260" height="2" fill="#38bdf8" />
+    <text x="14" y="24" fill="#0369a1" font-size="13" font-weight="800">1. Nền Tảng Vật Lý &amp; FF-to-FF</text>
+
+    <!-- Card 1.1: Khế ước FF-to-FF -->
+    <g transform="translate(12, 52)">
+      <rect width="236" height="96" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#0369a1" font-size="12" font-weight="700">Khế Ước FF to FF (Launch - Capture)</text>
+      <text x="12" y="42" fill="#475569" font-size="11">Khế ước thời gian giữa 2 thanh ghi:</text>
+      <text x="12" y="62" fill="#15803d" font-size="10.5" font-family="monospace" font-weight="700">Setup: T_arrival &lt;= T_required</text>
+      <text x="12" y="80" fill="#b45309" font-size="10.5" font-family="monospace" font-weight="700">Hold:  T_arrival_min &gt;= T_hold</text>
+    </g>
+
+    <!-- Card 1.2: RTL vs Silicon Thật -->
+    <g transform="translate(12, 162)">
+      <rect width="236" height="96" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#0369a1" font-size="12" font-weight="700">RTL vs Silicon Thật (Ký sinh RC)</text>
+      <text x="12" y="42" fill="#475569" font-size="11">Dây kim loại ký sinh RC gây dốc xung</text>
+      <text x="12" y="62" fill="#0284c7" font-size="10.5" font-family="monospace">Trễ T_rise, T_fall &amp; Slew Rate</text>
+      <text x="12" y="80" fill="#64748b" font-size="10">Không còn sườn xung vuông lý tưởng</text>
+    </g>
+
+    <!-- Card 1.3: Cây Xung Nhịp CTS & Skew -->
+    <g transform="translate(12, 272)">
+      <rect width="236" height="96" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#0369a1" font-size="12" font-weight="700">Cây Xung Nhịp CTS &amp; Skew</text>
+      <text x="12" y="42" fill="#475569" font-size="11">Độ lệch pha nhịp Clock giữa 2 Flip-Flop:</text>
+      <text x="12" y="62" fill="#0284c7" font-size="10.5" font-family="monospace">Clock Latency: T_clk1, T_clk2</text>
+      <text x="12" y="80" fill="#7c3aed" font-size="10.5" font-family="monospace">Clock Skew: ΔT_skew &amp; Uncertainty</text>
+    </g>
+
+    <!-- Footer tag -->
+    <g transform="translate(12, 384)">
+      <rect width="236" height="65" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1" rx="6" />
+      <text x="10" y="20" fill="#0369a1" font-size="11" font-weight="700">💡 Nguyên Lý Bất Biến:</text>
+      <text x="10" y="38" fill="#334155" font-size="10">Setup cứu được bằng cách hạ tần số,</text>
+      <text x="10" y="54" fill="#b91c1c" font-size="10" font-weight="700">Hold làm chết vĩnh viễn con chip!</text>
+    </g>
+  </g>
+
+  <!-- ARROW 1 -> 2 -->
+  <path d="M 290 300 L 326 300" stroke="#0284c7" stroke-width="3" fill="none" marker-end="url(#arrow-blue)" />
+
+  <!-- ==================== CỘT 2: THIẾT KẾ BỘ NHÂN & SDC ==================== -->
+  <g id="col-2" transform="translate(330, 70)">
+    <!-- Frame -->
+    <rect width="260" height="465" fill="#fefce8" stroke="#fde047" stroke-width="1.8" rx="10" filter="url(#soft-shadow)" />
+    <!-- Header banner -->
+    <path d="M 0 10 Q 0 0 10 0 L 250 0 Q 260 0 260 10 L 260 38 L 0 38 Z" fill="#fef9c3" />
+    <rect y="36" width="260" height="2" fill="#facc15" />
+    <text x="14" y="24" fill="#854d0e" font-size="13" font-weight="800">2. Thiết Kế Bộ Nhân &amp; SDC</text>
+
+    <!-- Card 2.1: Baseline 15ns PASS -->
+    <g transform="translate(12, 52)">
+      <rect width="236" height="96" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#166534" font-size="12" font-weight="800">✅ Baseline 15ns: ALL PASS</text>
+      <text x="12" y="42" fill="#15803d" font-size="11" font-weight="700">Setup Slack WNS: +1.4523 ns</text>
+      <text x="12" y="60" fill="#15803d" font-size="11" font-weight="700">Hold Slack Worst: +2.5096 ns</text>
+      <text x="12" y="78" fill="#334155" font-size="10.5">Tất cả 9 PVT Corners đều sạch vi phạm</text>
+      <text x="12" y="90" fill="#166534" font-size="9.5" font-style="italic">Chuẩn thương mại tại 66.67 MHz</text>
+    </g>
+
+    <!-- Card 2.2: mult.v -->
+    <g transform="translate(12, 162)">
+      <rect width="236" height="96" fill="#ffffff" stroke="#ca8a04" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#854d0e" font-size="12" font-weight="700">mult.v (8-bit In tổ hợp ➔ 16-bit DFF)</text>
+      <text x="12" y="42" fill="#475569" font-size="11">Chân vào a[7:0], b[7:0] thuần tổ hợp</text>
+      <text x="12" y="60" fill="#475569" font-size="11">Ngõ ra p[15:0] qua 16 Flip-Flop</text>
+      <text x="12" y="80" fill="#b45309" font-size="10.5" font-family="monospace" font-weight="600">Đường Path 1: In2Reg (Critical)</text>
+    </g>
+
+    <!-- Card 2.3: mult.sdc -->
+    <g transform="translate(12, 272)">
+      <rect width="236" height="96" fill="#ffffff" stroke="#ca8a04" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#854d0e" font-size="12" font-weight="700">mult.sdc (Chu kỳ gốc 15ns / 66.7MHz)</text>
+      <text x="12" y="42" fill="#475569" font-size="11">create_clock -period 15.0 [get_ports clk]</text>
+      <text x="12" y="60" fill="#475569" font-size="11">set_input_delay 3.0 ns (Cõng trễ ngoài)</text>
+      <text x="12" y="80" fill="#0284c7" font-size="10.5" font-family="monospace">Biên an toàn Timing Margin = 2.0ns</text>
+    </g>
+
+    <!-- Footer tag -->
+    <g transform="translate(12, 384)">
+      <rect width="236" height="65" fill="#fffbeb" stroke="#fde68a" stroke-width="1" rx="6" />
+      <text x="10" y="20" fill="#854d0e" font-size="11" font-weight="700">🎯 Mục Tiêu Giai Đoạn 1:</text>
+      <text x="10" y="38" fill="#334155" font-size="10">Xác lập Golden Baseline hoàn hảo,</text>
+      <text x="10" y="54" fill="#334155" font-size="10">sẵn sàng bước vào thử thách ép xung!</text>
+    </g>
+  </g>
+
+  <!-- ARROW 2 -> 3 -->
+  <path d="M 590 300 L 630 300" stroke="#0284c7" stroke-width="3" fill="none" marker-end="url(#arrow-blue)" />
+
+  <!-- ==================== CỘT 3: TRUNG TÂM PHÂN TÍCH STA & ÉP XUNG 13NS ==================== -->
+  <g id="col-3" transform="translate(634, 70)">
+    <!-- Frame -->
+    <rect width="286" height="465" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.8" rx="10" filter="url(#soft-shadow)" />
+    <!-- Header banner -->
+    <path d="M 0 10 Q 0 0 10 0 L 276 0 Q 286 0 286 10 L 286 38 L 0 38 Z" fill="#ffe4e6" />
+    <rect y="36" width="286" height="2" fill="#fb7185" />
+    <text x="12" y="24" fill="#9f1239" font-size="12.5" font-weight="800">3. Trung Tâm Phân Tích STA &amp; Ép Xung 13ns</text>
+
+    <!-- Card 3.1: Chẩn đoán vi phạm (Red Box) -->
+    <g transform="translate(12, 48)">
+      <rect width="262" height="76" fill="#fee2e2" stroke="#e11d48" stroke-width="2" rx="8" filter="url(#card-shadow)" />
+      <text x="10" y="20" fill="#9f1239" font-size="11" font-weight="800">🚨 Chẩn đoán: WNS = -0.1477ns (max_ss)</text>
+      <text x="10" y="38" fill="#b91c1c" font-size="10.5" font-family="monospace" font-weight="700">WNS = -0.1477 ns | TNS = -0.1766 ns</text>
+      <text x="10" y="54" fill="#b91c1c" font-size="10" font-family="monospace">Vi phạm: 3 bit cao (b[6], b[7], _646_)</text>
+      <text x="10" y="69" fill="#881337" font-size="9.5" font-weight="700">👉 Phán quyết: Vết thương nông &amp; cực kỳ cục bộ!</text>
+    </g>
+
+    <!-- Card 3.2: Ép xung 13ns -->
+    <g transform="translate(12, 132)">
+      <rect width="262" height="60" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="10" y="20" fill="#9f1239" font-size="11.5" font-weight="700">⚡ Ép xung 13ns (76.92 MHz)</text>
+      <text x="10" y="37" fill="#475569" font-size="10.5">Rút ngắn chu kỳ từ 15.0ns xuống 13.0ns</text>
+      <text x="10" y="53" fill="#e11d48" font-size="10" font-weight="600">Bóp nghẹt toàn bộ 2.0ns Timing Margin!</text>
+    </g>
+
+    <!-- Card 3.3: Ma Trận 9 PVT Corners -->
+    <g transform="translate(12, 200)">
+      <rect width="262" height="88" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" rx="8" filter="url(#card-shadow)" />
+      <text x="10" y="20" fill="#5b21b6" font-size="11.5" font-weight="700">Ma Trận 9 PVT Corners Signoff</text>
+      <text x="10" y="37" fill="#15803d" font-size="10" font-family="monospace">nom_tt_025C_1v80: Slack +4.99ns (PASS lab)</text>
+      <text x="10" y="53" fill="#0284c7" font-size="10" font-family="monospace">min_ff_n40C_1v95: Slack +6.93ns (Siêu tốc)</text>
+      <text x="10" y="69" fill="#b91c1c" font-size="10" font-family="monospace" font-weight="700">max_ss_100C_1v60: Slack -0.15ns (GÓC TỬ THẦN)</text>
+      <text x="10" y="82" fill="#64748b" font-size="9" font-style="italic">Minh chứng không thể chỉ test ở phòng lab!</text>
+    </g>
+
+    <!-- Card 3.4: Tử thần Hold An toàn (Mint Safe) -->
+    <g transform="translate(12, 296)">
+      <rect width="262" height="60" fill="#d1fae5" stroke="#059669" stroke-width="1.6" rx="8" filter="url(#card-shadow)" />
+      <text x="10" y="20" fill="#065f46" font-size="11" font-weight="800">🛡️ Tử thần Hold: An toàn (+2.51ns)</text>
+      <text x="10" y="37" fill="#047857" font-size="10.5" font-weight="700">Hold Worst Slack: +2.5096 ns (min_ff)</text>
+      <text x="10" y="53" fill="#334155" font-size="10">Hold Violation = 0 ➔ Chip an toàn tuyệt đối!</text>
+    </g>
+
+    <!-- Card 3.5: Bộ Điều Phối Hai Chiến Lược Timing -->
+    <g transform="translate(12, 364)">
+      <rect width="262" height="88" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.8" rx="8" filter="url(#card-shadow)" />
+      <text x="10" y="20" fill="#854d0e" font-size="11.5" font-weight="800">⚖️ Bộ Điều Phối Hai Chiến Lược Timing</text>
+      <text x="10" y="38" fill="#334155" font-size="10.5">Phân nhánh giải quyết theo mục tiêu PPA:</text>
+      <text x="10" y="56" fill="#0369a1" font-size="10" font-weight="700">• Nhánh A: Sức mạnh công cụ Tool EDA (DSE)</text>
+      <text x="10" y="74" fill="#6d28d9" font-size="10" font-weight="700">• Nhánh B: Đỉnh cao Kiến trúc Vi mạch (RTL)</text>
+    </g>
+  </g>
+
+  <!-- ARROW 3 -> 4 -->
+  <path d="M 920 300 L 956 300" stroke="#7c3aed" stroke-width="3" fill="none" marker-end="url(#arrow-purple)" />
+
+  <!-- ==================== CỘT 4: HAI CON ĐƯỜNG ĐỘT PHÁ ==================== -->
+  <g id="col-4" transform="translate(960, 70)">
+    <!-- Frame -->
+    <rect width="286" height="465" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.8" rx="10" filter="url(#soft-shadow)" />
+    <!-- Header banner -->
+    <path d="M 0 10 Q 0 0 10 0 L 276 0 Q 286 0 286 10 L 286 38 L 0 38 Z" fill="#f3e8ff" />
+    <rect y="36" width="286" height="2" fill="#c084fc" />
+    <text x="14" y="24" fill="#5b21b6" font-size="13" font-weight="800">4. Hai Con Đường Đột Phá</text>
+
+    <!-- Card 4.1: Hướng 1: Tool DSE Sweep -->
+    <g transform="translate(12, 52)">
+      <rect width="262" height="175" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="22" fill="#0369a1" font-size="12" font-weight="800">Hướng 1: Tool DSE Sweep (DELAY 1 - 4)</text>
+      <text x="12" y="40" fill="#334155" font-size="11">Tool tự động Upsize cell logic nắn đường trễ</text>
+
+      <g transform="translate(8, 48)">
+        <rect width="246" height="52" fill="#ffffff" stroke="#bae6fd" rx="6" />
+        <text x="8" y="18" fill="#0369a1" font-size="10.5" font-weight="700">DELAY 3: Tối thượng tốc độ (WNS +1.082ns)</text>
+        <text x="8" y="34" fill="#b91c1c" font-size="10" font-weight="700">⚠️ Trả giá diện tích: 10,185 um2 (+17.1%)</text>
+        <text x="8" y="46" fill="#64748b" font-size="9">Ép xung được tới 85MHz nhưng phình to chip</text>
+      </g>
+
+      <g transform="translate(8, 108)">
+        <rect width="246" height="54" fill="#ffffff" stroke="#bae6fd" rx="6" />
+        <text x="8" y="18" fill="#0369a1" font-size="10.5" font-weight="700">DELAY 1: Cân bằng PPA (WNS +0.785ns)</text>
+        <text x="8" y="34" fill="#15803d" font-size="10" font-weight="700">✅ Diện tích chỉ tăng nhẹ +5.9% (Khuyên dùng)</text>
+        <text x="8" y="48" fill="#334155" font-size="9">Phương án tối ưu nếu không sửa code RTL</text>
+      </g>
+    </g>
+
+    <!-- Card 4.2: Hướng 2: RTL Pipelining + AREA 0 -->
+    <g transform="translate(12, 238)">
+      <rect width="262" height="214" fill="#ffffff" stroke="#7c3aed" stroke-width="2.2" rx="8" filter="url(#card-shadow)" />
+      <text x="12" y="24" fill="#5b21b6" font-size="12.5" font-weight="800">👑 Hướng 2: RTL Pipelining + AREA 0</text>
+      <text x="12" y="44" fill="#334155" font-size="11">Thêm thanh ghi đệm đầu vào (a_p, b_p)</text>
+
+      <g transform="translate(8, 52)">
+        <rect width="246" height="66" fill="#f5f3ff" stroke="#ddd6fe" rx="6" />
+        <text x="8" y="18" fill="#5b21b6" font-size="10.5" font-weight="700">Biến đổi cấu trúc luồng thời gian:</text>
+        <text x="8" y="34" fill="#b91c1c" font-size="10">Cũ (In2Reg): Cõng 3ns trễ ngoài ➔ LỖI SETUP</text>
+        <text x="8" y="50" fill="#15803d" font-size="10" font-weight="700">Mới (Reg2Reg): Chuỗi trễ chỉ còn 7.0ns ➔ KHỎE</text>
+        <text x="8" y="62" fill="#6d28d9" font-size="8.5" font-style="italic">Bật cờ tổng hợp AREA 0 ép diện tích nhỏ nhất!</text>
+      </g>
+
+      <g transform="translate(8, 126)">
+        <rect width="246" height="74" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" rx="6" />
+        <text x="8" y="18" fill="#065f46" font-size="11" font-weight="800">KẾT QUẢ ĐỈNH CAO THỜI GIAN:</text>
+        <text x="8" y="36" fill="#047857" font-size="10.5" font-weight="700">• Setup WNS: +1.5302 ns (Pre-PnR)</text>
+        <text x="8" y="52" fill="#047857" font-size="10.5" font-weight="800">• Post-PnR: WNS +2.709 ns | Fmax = 87.2 MHz</text>
+        <text x="8" y="68" fill="#065f46" font-size="9.5" font-style="italic">Tuyệt đối không làm phình diện tích die size!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ARROW 4 -> 5 -->
+  <path d="M 1246 300 L 1282 300" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#arrow-green)" />
+
+  <!-- ==================== CỘT 5: BÀN GIAO & TAPE-OUT ==================== -->
+  <g id="col-5" transform="translate(1286, 70)">
+    <!-- Frame -->
+    <rect width="244" height="465" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.8" rx="10" filter="url(#soft-shadow)" />
+    <!-- Header banner -->
+    <path d="M 0 10 Q 0 0 10 0 L 234 0 Q 244 0 244 10 L 244 38 L 0 38 Z" fill="#d1fae5" />
+    <rect y="36" width="244" height="2" fill="#34d399" />
+    <text x="14" y="24" fill="#065f46" font-size="13" font-weight="800">5. Bàn Giao &amp; Tape-out</text>
+
+    <!-- Card 5.1: Đánh giá tam giác PPA toàn diện -->
+    <g transform="translate(12, 52)">
+      <rect width="220" height="155" fill="#ffffff" stroke="#059669" stroke-width="1.8" rx="8" filter="url(#card-shadow)" />
+      <text x="10" y="22" fill="#065f46" font-size="11.5" font-weight="800">Đánh giá tam giác PPA toàn diện</text>
+      
+      <text x="10" y="44" fill="#334155" font-size="10.5" font-weight="700">⚡ Hiệu Năng (Performance):</text>
+      <text x="10" y="60" fill="#0284c7" font-size="10" font-family="monospace">WNS = +2.709ns | 87.2 MHz</text>
+
+      <text x="10" y="80" fill="#334155" font-size="10.5" font-weight="700">🔋 Công Suất (Power):</text>
+      <text x="10" y="96" fill="#0284c7" font-size="10" font-family="monospace">Tổng công suất: 0.401 mW</text>
+
+      <text x="10" y="116" fill="#334155" font-size="10.5" font-weight="700">📐 Diện Tích (Area):</text>
+      <text x="10" y="132" fill="#0284c7" font-size="10" font-family="monospace">10,185 um2 (AREA 0 chuẩn)</text>
+
+      <text x="10" y="148" fill="#15803d" font-size="9.5" font-weight="700">9 Corners Pass | DRC/LVS Clean</text>
+    </g>
+
+    <!-- Circular Target: BÀN GIAO GDSII TAPEOUT (Matching the circular target node from chat and reference!) -->
+    <g transform="translate(122, 335)">
+      <!-- Outer glow ring -->
+      <circle cx="0" cy="0" r="74" fill="#d1fae5" stroke="#10b981" stroke-width="3" />
+      <circle cx="0" cy="0" r="64" fill="#ffffff" stroke="#059669" stroke-width="2" />
+      <text x="0" y="-24" fill="#059669" font-size="18" text-anchor="middle">🎯</text>
+      <text x="0" y="-4" fill="#065f46" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.5">BÀN GIAO GDSII</text>
+      <text x="0" y="16" fill="#047857" font-size="14" font-weight="900" text-anchor="middle">TAPEOUT</text>
+      <text x="0" y="32" fill="#065f46" font-size="9.5" font-weight="700" text-anchor="middle">SkyWater 130nm</text>
+      <text x="0" y="46" fill="#059669" font-size="8.5" font-style="italic" text-anchor="middle">Foundry MPW Ready</text>
+    </g>
+
+    <!-- Signoff Stamp -->
+    <g transform="translate(12, 420)">
+      <rect width="220" height="28" fill="#dcfce7" stroke="#16a34a" rx="5" />
+      <text x="110" y="18" fill="#15803d" font-size="10" font-weight="800" text-anchor="middle">⭐ 100% TIMING CLOSURE PASSED</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="hatchRed2" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
+    </pattern>
+    <pattern id="hatchGreen2" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#10b981" stroke-width="2" opacity="0.4"/>
+    </pattern>
+    <marker id="arrowRed2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowGreen2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrowCyan2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="560" fill="url(#bgGrad2)"/>
+
+  <!-- Header -->
+  <g transform="translate(35, 20)">
+    <rect x="0" y="0" width="890" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="24" fill="#f8fafc" font-size="17" font-weight="bold">HIỆN TƯỢNG NHIỄU GLITCH TRÊN SILICON VÀ HIỂM HỌA BẤT ĐỊNH (METASTABILITY)</text>
+    <text x="20" y="42" fill="#94a3b8" font-size="12">Tại sao tín hiệu trước khi hội tụ không thể coi là ổn định và hậu quả nghiêm trọng khi Clock chốt dở dang</text>
+  </g>
+
+  <!-- TIMELINE GRID (Scale: 0 to 22ns, Origin X=130, 1ns = 35px) -->
+  <g transform="translate(35, 85)">
+    <!-- Main Card Container -->
+    <rect x="0" y="0" width="890" height="445" rx="10" fill="#1e293b" fill-opacity="0.5" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Vertical Grid Lines -->
+    <g stroke="#334155" stroke-width="1" stroke-dasharray="2,2">
+      <!-- 0ns = 130, 5ns = 305, 10ns = 480, 12ns = 550, 15ns = 655, 20ns = 830 -->
+      <line x1="130" y1="20" x2="130" y2="400"/>
+      <line x1="305" y1="20" x2="305" y2="400"/>
+      <line x1="480" y1="20" x2="480" y2="400" stroke="#ef4444" stroke-width="1.5"/> <!-- 10ns -->
+      <line x1="550" y1="20" x2="550" y2="400" stroke="#10b981" stroke-width="1.5"/> <!-- 12ns -->
+      <line x1="655" y1="20" x2="655" y2="400"/>
+      <line x1="830" y1="20" x2="830" y2="400" stroke="#38bdf8" stroke-width="1.5"/> <!-- 20ns -->
+    </g>
+
+    <!-- Time Labels -->
+    <text x="130" y="15" fill="#94a3b8" font-size="11" text-anchor="middle">0ns</text>
+    <text x="305" y="15" fill="#64748b" font-size="11" text-anchor="middle">5ns</text>
+    <text x="480" y="15" fill="#f87171" font-size="11" font-weight="bold" text-anchor="middle">10ns (Latch 100M)</text>
+    <text x="550" y="15" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">12ns (Hội tụ 1)</text>
+    <text x="655" y="15" fill="#64748b" font-size="11" text-anchor="middle">15ns</text>
+    <text x="830" y="15" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">20ns (Latch 50M)</text>
+
+    <!-- ========================================== -->
+    <!-- ROW 1: CLOCK SIGNALS -->
+    <!-- ========================================== -->
+    <text x="15" y="55" fill="#38bdf8" font-size="12" font-weight="bold">CLK (Xung nhịp)</text>
+    <text x="15" y="70" fill="#94a3b8" font-size="10">Kích hoạt sườn dương</text>
+
+    <!-- 100MHz clock waveform (dashed) -->
+    <!-- 0->5 high (35), 5->10 low (70), 10->15 high, 15->20 low, 20->22 high -->
+    <path d="M 130 35 L 305 35 L 305 70 L 480 70 L 480 35 L 655 35 L 655 70 L 830 70 L 830 35 L 870 35" 
+          fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Launch Edge at 0ns -->
+    <line x1="130" y1="80" x2="130" y2="40" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen2)"/>
+    <text x="135" y="90" fill="#34d399" font-size="10.5" font-weight="bold">Launch Edge (t=0)</text>
+
+    <!-- Latch Edge 100MHz at 10ns -->
+    <line x1="480" y1="80" x2="480" y2="40" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed2)"/>
+    <text x="485" y="90" fill="#f87171" font-size="10.5" font-weight="bold">Clock đập lúc 10ns ⚠️</text>
+
+    <!-- Latch Edge 50MHz at 20ns -->
+    <line x1="830" y1="80" x2="830" y2="40" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan2)"/>
+    <text x="825" y="90" fill="#38bdf8" font-size="10.5" font-weight="bold" text-anchor="end">Clock đập lúc 20ns ✅</text>
+
+    <!-- ========================================== -->
+    <!-- ROW 2: DATA AT PIN D (REAL SILICON GLITCHES) -->
+    <!-- ========================================== -->
+    <text x="15" y="150" fill="#fbbf24" font-size="12" font-weight="bold">DATA D (Silicon)</text>
+    <text x="15" y="165" fill="#f59e0b" font-size="10">Mạch cộng/nhân thật</text>
+
+    <!-- Glitch Path: High=130, Low=170, Threshold=150 -->
+    <!-- From 0 to 12ns: ripples through intermediate states -->
+    <path d="M 130 170 
+             L 200 170 
+             L 215 130 L 250 130 
+             L 265 170 L 320 170 
+             L 335 135 L 370 135 
+             L 385 170 L 440 170 
+             L 455 145 L 490 145 
+             L 505 170 L 535 170 
+             L 550 130 L 870 130" 
+          fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+
+    <!-- Glitch Annotations -->
+    <rect x="220" y="180" width="280" height="26" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+    <text x="360" y="197" fill="#fca5a5" font-size="10.5" font-weight="bold" text-anchor="middle">⚡ VÙNG GLITCH / DAO ĐỘNG RIPPLE: Chưa hội tụ kết quả!</text>
+
+    <!-- Point at 10ns (During glitch!) -->
+    <circle cx="480" cy="145" r="5" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="475" y="132" fill="#ef4444" font-size="10.5" font-weight="bold" text-anchor="end">Lơ lửng ~0.8V!</text>
+
+    <!-- Settling Point at 12ns -->
+    <circle cx="550" cy="130" r="5" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="560" y="125" fill="#34d399" font-size="10.5" font-weight="bold">Hội tụ ổn định Logic 1 (1.8V)</text>
+
+    <!-- Stable Corridor from 12ns to 20ns -->
+    <rect x="550" y="120" width="280" height="20" fill="url(#hatchGreen2)"/>
+    <line x1="550" y1="110" x2="830" y2="110" stroke="#10b981" stroke-width="1.5"/>
+    <text x="690" y="105" fill="#a7f3d0" font-size="10.5" font-weight="bold" text-anchor="middle">Dữ liệu đứng im vững như bàn thạch suốt 8.0ns</text>
+
+    <!-- ========================================== -->
+    <!-- ROW 3: OUTPUT Q OF FLIP-FLOP 2 -->
+    <!-- ========================================== -->
+    <text x="15" y="270" fill="#e2e8f0" font-size="12" font-weight="bold">NGÕ RA Q (FF2)</text>
+    <text x="15" y="285" fill="#94a3b8" font-size="10">Kết quả chốt thực tế</text>
+
+    <!-- Scenario A: Metastability at 10ns -->
+    <g transform="translate(0, 230)">
+      <rect x="130" y="10" width="340" height="70" rx="6" fill="#1e293b" stroke="#334155"/>
+      <text x="140" y="30" fill="#94a3b8" font-size="10.5">Trước 10ns: Giữ giá trị cũ Q = 0</text>
+      <line x1="140" y1="60" x2="470" y2="60" stroke="#94a3b8" stroke-width="2"/>
+
+      <!-- Metastable oscillation at 10ns to 13ns -->
+      <path d="M 480 60 Q 490 20 500 60 T 520 60 T 540 60 T 560 60 L 600 60" 
+            fill="none" stroke="#ef4444" stroke-width="2.5"/>
+      <rect x="470" y="5" width="200" height="42" rx="4" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+      <text x="478" y="22" fill="#fecaca" font-size="11" font-weight="bold">❌ BẤT ĐỊNH (METASTABILITY)</text>
+      <text x="478" y="37" fill="#fca5a5" font-size="9.5">Điện áp lơ lửng 0.9V, rung lắc làm sập chip!</text>
+    </g>
+
+    <!-- Scenario B: Clean latch at 20ns -->
+    <g transform="translate(0, 310)">
+      <rect x="130" y="20" width="690" height="60" rx="6" fill="#064e3b" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/>
+      <line x1="140" y1="65" x2="825" y2="65" stroke="#94a3b8" stroke-width="2"/>
+      <!-- Sharp clean rise at 20ns -->
+      <path d="M 825 65 L 835 35 L 870 35" fill="none" stroke="#10b981" stroke-width="3"/>
+      <circle cx="835" cy="35" r="4" fill="#10b981"/>
+      <text x="650" y="45" fill="#34d399" font-size="11" font-weight="bold">✅ CHỐT MỨC 1 HOÀN HẢO TẠI 20ns (CHIP CHẠY ĐÚNG 100%)</text>
+    </g>
+  </g>
+</svg>

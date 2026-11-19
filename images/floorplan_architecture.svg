@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 950" width="100%" height="100%" style="background-color: #0b1120; font-family: 'Segoe UI', 'Consolas', monospace;">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arr-cyan" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arr-emerald" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#34d399"/>
+    </marker>
+    <marker id="arr-rose" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f43f5e"/>
+    </marker>
+
+    <!-- Filters -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0284c7" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect x="15" y="15" width="1350" height="920" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- ================= HEADER ================= -->
+  <text x="45" y="52" fill="#38bdf8" font-size="22" font-weight="bold" letter-spacing="0.5">SƠ ĐỒ QUY HOẠCH MẶT BẰNG VẬT LÝ (FLOORPLAN ARCHITECTURE)</text>
+  <text x="45" y="76" fill="#94a3b8" font-size="13">Giải mã Tọa độ Die BBox, Core BBox, Khoảng đệm Core Space &amp; Cấu trúc 10 Rows x 59 Sites (SkyWater 130nm)</text>
+
+  <!-- ================= KHU VỰC 1: BẢN ĐỒ TOÀN CẢNH DIE & CORE (BÊN TRÁI) ================= -->
+  <g transform="translate(30, 95)">
+    <!-- Tiêu đề phân khu -->
+    <rect x="15" y="10" width="570" height="800" rx="10" fill="#0b1329" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="35" y="38" fill="#f8fafc" font-size="15" font-weight="bold">I. BẢN ĐỒ TỌA ĐỘ VẬT LÝ TRÊN LÁT CẮT SILICON</text>
+    <text x="35" y="56" fill="#64748b" font-size="11">Gốc tọa độ (0, 0) đặt tại góc Dưới-Trái theo chuẩn OpenROAD</text>
+
+    <!-- TRỤC TỌA ĐỘ CARTESIAN (X, Y) -->
+    <!-- Trục Y -->
+    <line x1="60" y1="760" x2="60" y2="90" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-cyan)"/>
+    <text x="40" y="85" fill="#38bdf8" font-size="12" font-weight="bold">Y (µm)</text>
+    
+    <!-- Trục X -->
+    <line x1="60" y1="760" x2="540" y2="760" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arr-cyan)"/>
+    <text x="545" y="765" fill="#38bdf8" font-size="12" font-weight="bold">X (µm)</text>
+
+    <!-- Gốc tọa độ (0, 0) -->
+    <circle cx="95" cy="725" r="4" fill="#38bdf8"/>
+    <text x="80" y="748" fill="#38bdf8" font-size="11" font-weight="bold">(0.000, 0.000)</text>
+
+    <!-- ================= 1. DIE AREA BOX ================= -->
+    <rect x="95" y="233" width="385" height="492" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="2.5" fill-opacity="0.3" filter="url(#shadow)"/>
+    
+    <!-- Nhãn Die Area -->
+    <rect x="105" y="243" width="220" height="26" rx="4" fill="#1e3a8a" fill-opacity="0.8"/>
+    <text x="115" y="261" fill="#93c5fd" font-size="12" font-weight="bold">DIE AREA: 38.485 × 49.205 µm</text>
+    <text x="115" y="280" fill="#60a5fa" font-size="10">S_die = 1,893.65 µm² (Đường cắt cưa Wafer)</text>
+
+    <!-- Tọa độ đỉnh trên-phải của Die -->
+    <circle cx="480" cy="233" r="4" fill="#38bdf8"/>
+    <text x="360" y="225" fill="#38bdf8" font-size="11" font-weight="bold">(38.485, 49.205) µm</text>
+
+    <!-- ================= 2. POWER RING & MARGINS (CORE SPACE) ================= -->
+    <rect x="125" y="290" width="325" height="380" rx="3" fill="none" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="6,4"/>
+    <rect x="135" y="300" width="305" height="360" rx="3" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-dasharray="6,4"/>
+    <text x="210" y="314" fill="#ef4444" font-size="9" font-weight="bold">VDD Ring (1.8V)</text>
+    <text x="295" y="314" fill="#06b6d4" font-size="9" font-weight="bold">VSS Ring (GND)</text>
+
+    <!-- Các chân ngoại vi IO Pins -->
+    <g fill="#f59e0b" stroke="#78350f" stroke-width="1">
+      <rect x="87" y="390" width="16" height="10" rx="2"/><text x="65" y="398" fill="#f59e0b" font-size="9">clk</text>
+      <rect x="87" y="450" width="16" height="10" rx="2"/><text x="65" y="458" fill="#f59e0b" font-size="9">rst</text>
+      <rect x="87" y="510" width="16" height="10" rx="2"/><text x="65" y="518" fill="#f59e0b" font-size="9">en</text>
+      <!-- Cạnh phải: count[0..7] -->
+      <rect x="472" y="370" width="16" height="8" rx="2"/>
+      <rect x="472" y="400" width="16" height="8" rx="2"/>
+      <rect x="472" y="430" width="16" height="8" rx="2"/>
+      <rect x="472" y="460" width="16" height="8" rx="2"/>
+      <rect x="472" y="490" width="16" height="8" rx="2"/>
+      <rect x="472" y="520" width="16" height="8" rx="2"/>
+      <rect x="472" y="550" width="16" height="8" rx="2"/>
+      <rect x="472" y="580" width="16" height="8" rx="2"/>
+      <text x="495" y="480" fill="#f59e0b" font-size="10">count[7:0]</text>
+    </g>
+
+    <!-- ================= 3. CORE AREA BOX & 10 ROWS ================= -->
+    <rect x="150" y="344" width="271" height="272" rx="3" fill="#0f172a" stroke="#10b981" stroke-width="2.5"/>
+    
+    <!-- 10 Rows bên trong Core -->
+    <g>
+      <rect x="152" y="345" width="267" height="26" fill="#1e293b" stroke="#334155" stroke-width="0.5"/><text x="158" y="362" fill="#64748b" font-size="9">Row 9</text>
+      <rect x="152" y="372" width="267" height="26" fill="#0f172a" stroke="#334155" stroke-width="0.5"/><text x="158" y="389" fill="#64748b" font-size="9">Row 8</text>
+      <rect x="152" y="399" width="267" height="26" fill="#1e293b" stroke="#334155" stroke-width="0.5"/><text x="158" y="416" fill="#64748b" font-size="9">Row 7</text>
+      <rect x="152" y="426" width="267" height="26" fill="#0f172a" stroke="#334155" stroke-width="0.5"/><text x="158" y="443" fill="#64748b" font-size="9">Row 6</text>
+      <rect x="152" y="453" width="267" height="26" fill="#1e293b" stroke="#334155" stroke-width="0.5"/><text x="158" y="470" fill="#64748b" font-size="9">Row 5</text>
+      <rect x="152" y="480" width="267" height="26" fill="#0f172a" stroke="#334155" stroke-width="0.5"/><text x="158" y="497" fill="#64748b" font-size="9">Row 4</text>
+      <rect x="152" y="507" width="267" height="26" fill="#1e293b" stroke="#334155" stroke-width="0.5"/><text x="158" y="524" fill="#64748b" font-size="9">Row 3</text>
+      <rect x="152" y="534" width="267" height="26" fill="#0f172a" stroke="#334155" stroke-width="0.5"/><text x="158" y="551" fill="#64748b" font-size="9">Row 2</text>
+      <rect x="152" y="561" width="267" height="26" fill="#1e293b" stroke="#334155" stroke-width="0.5"/><text x="158" y="578" fill="#64748b" font-size="9">Row 1</text>
+      <rect x="152" y="588" width="267" height="26" fill="#0f172a" stroke="#334155" stroke-width="0.5"/><text x="158" y="605" fill="#64748b" font-size="9">Row 0 (Hàng đáy)</text>
+    </g>
+
+    <!-- Tọa độ Core BBox -->
+    <circle cx="150" cy="616" r="4" fill="#10b981"/>
+    <text x="155" y="635" fill="#10b981" font-size="11" font-weight="bold">(5.520, 10.880) µm</text>
+
+    <circle cx="421" cy="344" r="4" fill="#10b981"/>
+    <text x="310" y="336" fill="#10b981" font-size="11" font-weight="bold">(32.660, 38.080) µm</text>
+
+    <!-- ================= 4. KÍCH THƯỚC ĐO LƯỜNG ================= -->
+    <line x1="95" y1="670" x2="150" y2="670" stroke="#f59e0b" stroke-width="1.5" marker-start="url(#arr-amber)" marker-end="url(#arr-amber)"/>
+    <text x="100" y="662" fill="#f59e0b" font-size="10" font-weight="bold">5.52 µm</text>
+    <text x="96" y="685" fill="#fbbf24" font-size="8">Left Margin</text>
+
+    <line x1="210" y1="725" x2="210" y2="616" stroke="#f59e0b" stroke-width="1.5" marker-start="url(#arr-amber)" marker-end="url(#arr-amber)"/>
+    <text x="216" y="675" fill="#f59e0b" font-size="10" font-weight="bold">10.88 µm</text>
+    <text x="216" y="690" fill="#fbbf24" font-size="8">Bottom Margin</text>
+
+    <line x1="150" y1="650" x2="421" y2="650" stroke="#34d399" stroke-width="1.5" marker-start="url(#arr-emerald)" marker-end="url(#arr-emerald)"/>
+    <text x="220" y="644" fill="#34d399" font-size="11" font-weight="bold">Core Width = 27.14 µm (ĐÚNG 59 SITES)</text>
+
+    <line x1="435" y1="616" x2="435" y2="344" stroke="#34d399" stroke-width="1.5" marker-start="url(#arr-emerald)" marker-end="url(#arr-emerald)"/>
+    <text x="442" y="485" fill="#34d399" font-size="11" font-weight="bold" transform="rotate(90, 442, 485)">Core Height = 27.20 µm (10 ROWS)</text>
+  </g>
+
+  <!-- ================= KHU VỰC 2: CẤU TRÚC CHI TIẾT 1 HÀNG (FULL 59 SITES + ZOOM) ================= -->
+  <g transform="translate(630, 95)">
+    <rect x="0" y="10" width="710" height="425" rx="10" fill="#0b1329" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="20" y="36" fill="#f8fafc" font-size="15" font-weight="bold">II. CẤU TRÚC TOÀN HÀNG: 59 SITES &amp; TRÍCH ĐOẠN PHÓNG ĐẠI</text>
+    <text x="20" y="54" fill="#64748b" font-size="11">Minh họa rõ ràng giữa Toàn bộ 59 Sites (Full Row) và Trích đoạn phóng đại các cổng logic</text>
+
+    <!-- A. THANH TOÀN CẢNH TOÀN BỘ 59 SITES (TỶ LỆ CHUẨN 100%) -->
+    <g transform="translate(25, 75)">
+      <rect x="0" y="0" width="660" height="48" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+      <text x="10" y="18" fill="#34d399" font-size="11" font-weight="bold">TOÀN CẢNH 1 HÀNG NGUYÊN VẸN TRÊN CHIP (ĐỦ 59 SITES = 27.14 µm):</text>
+      
+      <!-- Minh họa thước đo 59 sites -->
+      <g transform="translate(10, 24)">
+        <!-- Đầy đủ 59 vạch site (mỗi vạch 10.8px x 18px) -->
+        <rect x="0" y="0" width="640" height="16" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+        <!-- Đoạn đầu: 25 sites (được phóng đại bên dưới) -->
+        <rect x="0" y="0" width="271" height="16" fill="#4338ca" fill-opacity="0.5" stroke="#818cf8" stroke-width="1"/>
+        <text x="35" y="12" fill="#c7d2fe" font-size="9" font-weight="bold">Đoạn 1: 25 sites (Phóng đại bên dưới)</text>
+        
+        <!-- Đoạn sau: 34 sites còn lại -->
+        <rect x="271" y="0" width="369" height="16" fill="#064e3b" fill-opacity="0.3" stroke="#059669" stroke-width="0.8"/>
+        <text x="350" y="12" fill="#6ee7b7" font-size="9">Đoạn 2: 34 sites còn lại kéo dài đến biên phải</text>
+      </g>
+      <!-- Nhãn số site đầu và cuối -->
+      <text x="8" y="58" fill="#94a3b8" font-size="9">Site #0 (x = 5.52 µm)</text>
+      <text x="260" y="58" fill="#818cf8" font-size="9">Site #24</text>
+      <text x="560" y="58" fill="#34d399" font-size="9">Site #58 (x = 32.66 µm)</text>
+    </g>
+
+    <!-- Đường nét đứt trỏ xuống phần phóng đại -->
+    <path d="M 35 150 L 35 175 M 305 150 L 520 175" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+    <!-- B. TRÍCH ĐOẠN PHÓNG ĐẠI 25 SITES ĐẦU TIÊN (ZOOM-IN CALLOUT) -->
+    <g transform="translate(25, 185)">
+      <text x="10" y="-8" fill="#a5b4fc" font-size="11" font-weight="bold">🔍 KÍNH LÚP: PHÓNG ĐẠI TRÍCH ĐOẠN 25 SITES ĐẦU TIÊN ĐỂ SOI CELL &amp; LƯỚI:</text>
+      
+      <!-- Thanh cấp nguồn VDD ở đỉnh hàng -->
+      <rect x="0" y="0" width="660" height="12" fill="#991b1b" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="10" fill="#ffffff" font-size="9" font-weight="bold">VDD Power Rail (1.8V Metal 1)</text>
+
+      <!-- Thân hàng -->
+      <rect x="0" y="12" width="660" height="135" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+
+      <!-- ĐẶT CÁC TẾ BÀO TRONG TRÍCH ĐOẠN -->
+      <!-- 1. D-Flip-Flop (12 sites = 5.52 um = 240px) -->
+      <rect x="0" y="12" width="240" height="135" fill="#312e81" stroke="#6366f1" stroke-width="2" rx="3" fill-opacity="0.85"/>
+      <text x="25" y="65" fill="#c7d2fe" font-size="13" font-weight="bold">sky130_fd_sc_hd__dfxtp_2</text>
+      <text x="45" y="85" fill="#818cf8" font-size="11">D-Flip-Flop Cell (12 sites = 5.52 µm)</text>
+      <text x="70" y="105" fill="#a5b4fc" font-size="10">Diện tích = 15.01 µm²</text>
+
+      <!-- 2. Cổng MUX o21a_2 (5 sites = 2.30 um = 100px) -->
+      <rect x="240" y="12" width="100" height="135" fill="#064e3b" stroke="#10b981" stroke-width="2" rx="3" fill-opacity="0.85"/>
+      <text x="250" y="70" fill="#a7f3d0" font-size="11" font-weight="bold">__o21a_2 (MUX)</text>
+      <text x="250" y="90" fill="#34d399" font-size="10">5 sites = 2.30 µm</text>
+
+      <!-- 3. Khoảng trống Whitespace (8 sites = 3.68 um = 160px) -->
+      <rect x="340" y="12" width="160" height="135" fill="#1e293b" fill-opacity="0.4" stroke="#eab308" stroke-width="1.5" stroke-dasharray="4,4"/>
+      <text x="360" y="70" fill="#facc15" font-size="11" font-weight="bold">WHITESPACE TRỐNG</text>
+      <text x="355" y="90" fill="#fde047" font-size="9">8 sites = 3.68 µm (Chừa cho CTS)</text>
+
+      <!-- 4. DẤU NGẮT QUÃNG CẮT LÁT (BREAKLINE) CHỈ 34 SITES CÒN LẠI -->
+      <g transform="translate(500, 12)">
+        <rect x="0" y="0" width="160" height="135" fill="#111827" stroke="#475569" stroke-width="1"/>
+        <!-- Dấu ngắt sóng // -->
+        <path d="M 15 0 L 5 135 M 35 0 L 25 135" stroke="#ef4444" stroke-width="2.5"/>
+        <text x="45" y="60" fill="#f87171" font-size="11" font-weight="bold">DẤU NGẮT QUÃNG // </text>
+        <text x="45" y="78" fill="#cbd5e1" font-size="10">Kéo dài tiếp tục</text>
+        <text x="45" y="94" fill="#38bdf8" font-size="10" font-weight="bold">+34 SITES NỮA</text>
+        <text x="45" y="110" fill="#94a3b8" font-size="9">tới hết viền Core (Site 58)</text>
+      </g>
+
+      <!-- Thanh nối đất VSS ở đáy hàng -->
+      <rect x="0" y="147" width="660" height="12" fill="#155e75" stroke="#06b6d4" stroke-width="1"/>
+      <text x="10" y="157" fill="#ffffff" font-size="9" font-weight="bold">VSS Ground Rail (0V Metal 1)</text>
+
+      <!-- Kích thước Site Width -->
+      <line x1="20" y1="172" x2="40" y2="172" stroke="#38bdf8" stroke-width="1.5" marker-start="url(#arr-cyan)" marker-end="url(#arr-cyan)"/>
+      <text x="48" y="175" fill="#38bdf8" font-size="10" font-weight="bold">Site Width = 0.46 µm (1 bước ô lưới cơ sở)</text>
+
+      <!-- Kích thước Row Height -->
+      <line x1="675" y1="12" x2="675" y2="147" stroke="#f43f5e" stroke-width="1.5" marker-start="url(#arr-rose)" marker-end="url(#arr-rose)"/>
+      <text x="682" y="80" fill="#f43f5e" font-size="10" font-weight="bold">Row Height</text>
+      <text x="682" y="94" fill="#f43f5e" font-size="10" font-weight="bold">= 2.72 µm</text>
+    </g>
+
+    <!-- Tổng kết số học 59 sites -->
+    <rect x="25" y="380" width="660" height="38" rx="4" fill="#1e1b4b" stroke="#6366f1" stroke-width="1"/>
+    <text x="35" y="403" fill="#c7d2fe" font-size="11">
+      <tspan fill="#facc15" font-weight="bold">TỔNG KẾT TOÁN HỌC:</tspan> 12 sites (DFF) + 5 sites (MUX) + 8 sites (Whitespace) + <tspan fill="#38bdf8" font-weight="bold">34 sites còn lại</tspan> = <tspan fill="#4ade80" font-weight="bold">ĐÚNG 59 SITES (27.14 µm)</tspan>!
+    </text>
+  </g>
+
+  <!-- ================= KHU VỰC 3: BẢNG TỔNG HỢP TOÁN HỌC (GÓC PHẢI DƯỚI) ================= -->
+  <g transform="translate(630, 540)">
+    <rect x="0" y="0" width="710" height="355" rx="10" fill="#0b1329" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#f8fafc" font-size="15" font-weight="bold">III. BẢNG ĐỐI CHIẾU THÔNG SỐ VÀ CƠ CHẾ TOÁN HỌC KHỞI TẠO</text>
+    <text x="20" y="46" fill="#64748b" font-size="11">Khớp nối từng dòng lệnh `initialize_floorplan` với kết quả xuất xưởng của OpenROAD</text>
+
+    <!-- Khối so sánh 2 cột -->
+    <!-- Cột 1: Thông số đầu vào lệnh -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="325" height="275" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="24" fill="#38bdf8" font-size="13" font-weight="bold">1. Lệnh Khởi tạo (Input TCL):</text>
+      
+      <rect x="15" y="38" width="295" height="95" rx="4" fill="#0f172a" stroke="#475569" stroke-width="0.8"/>
+      <text x="25" y="56" fill="#f1f5f9" font-size="11">initialize_floorplan \</text>
+      <text x="45" y="74" fill="#a5f3fc" font-size="11">-site unithd \</text>
+      <text x="45" y="92" fill="#fde047" font-size="11">-utilization 50.0 \</text>
+      <text x="45" y="110" fill="#86efac" font-size="11">-aspect_ratio 1.0 \</text>
+      <text x="45" y="128" fill="#fca5a5" font-size="11">-core_space 10.88 10.88 5.52 5.52</text>
+
+      <text x="15" y="152" fill="#cbd5e1" font-size="11" font-weight="bold">Ý nghĩa kỹ thuật:</text>
+      <text x="15" y="172" fill="#94a3b8" font-size="10">• <tspan fill="#a5f3fc">-site unithd</tspan>: Lưới chuẩn 2.72µm × 0.46µm.</text>
+      <text x="15" y="190" fill="#94a3b8" font-size="10">• <tspan fill="#fde047">-utilization 50.0</tspan>: 31 cổng chiếm 50% Core.</text>
+      <text x="15" y="208" fill="#94a3b8" font-size="10">• <tspan fill="#86efac">-aspect_ratio 1.0</tspan>: Core hình vuông (27.14 × 27.20).</text>
+      <text x="15" y="226" fill="#94a3b8" font-size="10">• <tspan fill="#fca5a5">-core_space</tspan>: Lề Bottom/Top=10.88, Left/Right=5.52.</text>
+      <text x="15" y="250" fill="#64748b" font-size="10">Mục đích: Chừa chỗ cho Power Ring &amp; IO Pads.</text>
+    </g>
+
+    <!-- Cột 2: Kết quả đo đạc thực tế -->
+    <g transform="translate(365, 60)">
+      <rect x="0" y="0" width="325" height="275" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="24" fill="#34d399" font-size="13" font-weight="bold">2. Báo cáo Log &amp; Công thức Vật lý:</text>
+
+      <rect x="15" y="38" width="295" height="125" rx="4" fill="#0f172a" stroke="#475569" stroke-width="0.8"/>
+      <text x="25" y="56" fill="#6ee7b7" font-size="10">Core Area = 10 rows × 59 sites</text>
+      <text x="35" y="72" fill="#f1f5f9" font-size="10">= (10 × 2.72) × (59 × 0.46)</text>
+      <text x="35" y="88" fill="#f1f5f9" font-size="10">= 27.20 µm × 27.14 µm = <tspan fill="#34d399" font-weight="bold">738.208 µm²</tspan></text>
+      
+      <text x="25" y="110" fill="#6ee7b7" font-size="10">Die BBox: (0, 0) đến (38.485, 49.205) µm</text>
+      <text x="35" y="126" fill="#f1f5f9" font-size="10">S_die = 38.485 × 49.205 = <tspan fill="#38bdf8" font-weight="bold">1,893.65 µm²</tspan></text>
+      <text x="35" y="142" fill="#fde047" font-size="10">Mật độ thực tế: 376.611 / 738.208 = 51.0%</text>
+
+      <!-- Lời khuyên vàng của Architect -->
+      <rect x="15" y="175" width="295" height="90" rx="4" fill="#1e1b4b" stroke="#6366f1" stroke-width="1"/>
+      <text x="25" y="195" fill="#a5b4fc" font-size="10" font-weight="bold">QUY TẮC BẤT BIẾN CỦA ARCHITECT:</text>
+      <text x="25" y="213" fill="#c7d2fe" font-size="9">1. Luôn để 50–60% Whitespace cho CTS chèn</text>
+      <text x="35" y="227" fill="#c7d2fe" font-size="9">Hold Buffers, tránh tuyệt đối nổ lỗi DPL-0036!</text>
+      <text x="25" y="247" fill="#facc15" font-size="9">2. Chiều cao mọi cell đều là 2.72µm (bội số 0.46µm).</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 580" width="100%" height="100%" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <marker id="arrowCyan3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowGreen3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="980" height="580" fill="url(#bgGrad3)"/>
+
+  <!-- Header -->
+  <g transform="translate(35, 18)">
+    <rect x="0" y="0" width="910" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="24" fill="#f8fafc" font-size="17" font-weight="bold">PHƯƠNG PHÁP LUẬN STA: PHÂN TÍCH ĐỒ THỊ THỜI GIAN ĐỘC LẬP VỚI DỮ LIỆU</text>
+    <text x="20" y="42" fill="#94a3b8" font-size="12">Sự kết hợp giữa Năng lực vật lý phần cứng (Silicon) và Ý muốn ràng buộc của kỹ sư (File SDC / config.json)</text>
+  </g>
+
+  <!-- MAIN CIRCUIT & TIMING GRAPH -->
+  <g transform="translate(35, 82)">
+    <!-- Circuit Container Box -->
+    <rect x="0" y="0" width="910" height="295" rx="10" fill="#1e293b" fill-opacity="0.5" stroke="#475569" stroke-width="1.5"/>
+
+    <!-- ======================================================== -->
+    <!-- CLOCK TREE SOURCE INJECTION (SDC CONSTRAINT ORIGIN) -->
+    <!-- ======================================================== -->
+    <!-- External Clock Port Generator Box -->
+    <g transform="translate(340, 15)">
+      <rect x="0" y="0" width="240" height="42" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+      <circle cx="18" cy="21" r="5" fill="#38bdf8"/>
+      <text x="32" y="19" fill="#38bdf8" font-size="11" font-weight="bold">CỔNG CLOCK NGOÀI (Cây CTS)</text>
+      <text x="32" y="34" fill="#7dd3fc" font-size="10">Khai báo SDC: T_clk = 10ns (hoặc 20ns)</text>
+    </g>
+
+    <!-- Clock Distribution Lines (Branching left to FF1 and right to FF2) -->
+    <!-- Stem down from clock source -->
+    <line x1="460" y1="57" x2="460" y2="78" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Horizontal trunk -->
+    <line x1="90" y1="78" x2="815" y2="78" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Drop down to FF1 CLK pin (x=90, y=190) -->
+    <line x1="90" y1="78" x2="90" y2="185" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan3)"/>
+    <text x="96" y="100" fill="#7dd3fc" font-size="10" font-weight="bold">Sườn 1: Launch (t=0)</text>
+
+    <!-- Drop down to FF2 CLK pin (x=815, y=190) -->
+    <line x1="815" y1="78" x2="815" y2="185" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan3)"/>
+    <text x="805" y="100" fill="#7dd3fc" font-size="10" font-weight="bold" text-anchor="end">Sườn 2: Latch (t=T_clk)</text>
+
+    <!-- 1. FLIP-FLOP 1 (LAUNCH FLIP-FLOP) -->
+    <g transform="translate(35, 95)">
+      <rect x="0" y="0" width="110" height="150" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+      <text x="55" y="24" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">LAUNCH FF</text>
+      <text x="55" y="38" fill="#94a3b8" font-size="10" text-anchor="middle">(Tế bào phát)</text>
+
+      <!-- Pin D -->
+      <text x="12" y="75" fill="#64748b" font-size="11">D</text>
+      <!-- Pin CLK with triangle -->
+      <polygon points="5,90 15,95 5,100" fill="#38bdf8"/>
+      <text x="18" y="99" fill="#38bdf8" font-size="10">CLK</text>
+
+      <!-- Pin Q -->
+      <text x="95" y="75" fill="#fbbf24" font-size="11" text-anchor="end">Q</text>
+
+      <!-- T_cq badge -->
+      <rect x="8" y="158" width="94" height="24" rx="4" fill="#0369a1"/>
+      <text x="55" y="174" fill="#e0f2fe" font-size="10" font-weight="bold" text-anchor="middle">T_cq = 0.40ns</text>
+    </g>
+
+    <!-- Arrow from Launch to Logic Cloud -->
+    <line x1="145" y1="165" x2="205" y2="165" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowAmber3)"/>
+
+    <!-- 2. COMBINATIONAL LOGIC CLOUD (CRITICAL PATH) -->
+    <g transform="translate(205, 90)">
+      <!-- Cloud boundary -->
+      <rect x="0" y="0" width="470" height="185" rx="14" fill="url(#cloudGrad)" stroke="#6366f1" stroke-width="2"/>
+      
+      <!-- Cloud Title -->
+      <text x="235" y="22" fill="#c7d2fe" font-size="12" font-weight="bold" text-anchor="middle">MẠNG LOGIC TỔ HỢP CỰC ĐẠI (CRITICAL PATH)</text>
+      <text x="235" y="37" fill="#a5b4fc" font-size="10" text-anchor="middle">Tra cứu độ trễ từng cổng từ file Liberty Sky130 (.lib)</text>
+
+      <!-- Gate 1: XOR -->
+      <rect x="25" y="55" width="80" height="45" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+      <text x="65" y="76" fill="#e0e7ff" font-size="11" font-weight="bold" text-anchor="middle">XOR2</text>
+      <text x="65" y="91" fill="#fcd34d" font-size="10" text-anchor="middle">+0.35ns</text>
+
+      <!-- Gate 2: Full Adder Stage -->
+      <rect x="135" y="55" width="110" height="45" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+      <text x="190" y="76" fill="#e0e7ff" font-size="11" font-weight="bold" text-anchor="middle">Full Adder (FA)</text>
+      <text x="190" y="91" fill="#fcd34d" font-size="10" text-anchor="middle">+0.50ns</text>
+
+      <!-- Dots representing cascaded ripple path -->
+      <text x="268" y="80" fill="#a5b4fc" font-size="18" font-weight="bold">•••</text>
+
+      <!-- Gate 3: AND / MUX -->
+      <rect x="295" y="55" width="85" height="45" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+      <text x="337" y="76" fill="#e0e7ff" font-size="11" font-weight="bold" text-anchor="middle">AND2 / MUX</text>
+      <text x="337" y="91" fill="#fcd34d" font-size="10" text-anchor="middle">+0.25ns</text>
+
+      <!-- Wire RC Parasitic -->
+      <rect x="400" y="55" width="55" height="45" rx="6" fill="#1e1b4b" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="427" y="76" fill="#7dd3fc" font-size="10" font-weight="bold" text-anchor="middle">Dây RC</text>
+      <text x="427" y="91" fill="#fcd34d" font-size="10" text-anchor="middle">+0.10ns</text>
+
+      <!-- Connectors between gates -->
+      <line x1="105" y1="77" x2="135" y2="77" stroke="#e0e7ff" stroke-width="2"/>
+      <line x1="245" y1="77" x2="260" y2="77" stroke="#e0e7ff" stroke-width="2"/>
+      <line x1="280" y1="77" x2="295" y2="77" stroke="#e0e7ff" stroke-width="2"/>
+      <line x1="380" y1="77" x2="400" y2="77" stroke="#e0e7ff" stroke-width="2"/>
+
+      <!-- Total Logic Delay Sum Badge -->
+      <rect x="85" y="125" width="300" height="35" rx="6" fill="#312e81" stroke="#fbbf24" stroke-width="1.5"/>
+      <text x="235" y="147" fill="#fde68a" font-size="12" font-weight="bold" text-anchor="middle">Tổng trễ logic: T_data = 11.60ns</text>
+    </g>
+
+    <!-- Arrow from Logic Cloud to Capture FF -->
+    <line x1="675" y1="165" x2="745" y2="165" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowAmber3)"/>
+
+    <!-- 3. FLIP-FLOP 2 (CAPTURE FLIP-FLOP) -->
+    <g transform="translate(745, 95)">
+      <rect x="0" y="0" width="110" height="150" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+      <text x="55" y="24" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">CAPTURE FF</text>
+      <text x="55" y="38" fill="#94a3b8" font-size="10" text-anchor="middle">(Tế bào đón)</text>
+
+      <!-- Pin D -->
+      <text x="12" y="75" fill="#fbbf24" font-size="11">D</text>
+      <!-- Pin CLK with triangle -->
+      <polygon points="5,90 15,95 5,100" fill="#10b981"/>
+      <text x="18" y="99" fill="#10b981" font-size="10">CLK</text>
+
+      <!-- Pin Q -->
+      <text x="95" y="75" fill="#64748b" font-size="11" text-anchor="end">Q</text>
+
+      <!-- T_setup badge -->
+      <rect x="8" y="158" width="94" height="24" rx="4" fill="#b91c1c"/>
+      <text x="55" y="174" fill="#fee2e2" font-size="10" font-weight="bold" text-anchor="middle">T_setup = 0.20ns</text>
+    </g>
+  </g>
+
+  <!-- LOWER PANEL: THE STA MATHEMATICAL VERDICT -->
+  <g transform="translate(35, 395)">
+    <rect x="0" y="0" width="910" height="160" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Left Box: Physical Arrival Time -->
+    <g transform="translate(20, 15)">
+      <rect x="0" y="0" width="265" height="130" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="132" y="25" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="middle">1. NĂNG LỰC VẬT LÝ THỰC TẾ</text>
+      <text x="15" y="55" fill="#94a3b8" font-size="11">T_arrival = T_cq + T_data</text>
+      <text x="15" y="75" fill="#94a3b8" font-size="11">= 0.40ns + 11.60ns</text>
+      <text x="132" y="108" fill="#fde68a" font-size="17" font-weight="bold" text-anchor="middle">T_arrival = 12.00ns</text>
+      <text x="132" y="122" fill="#94a3b8" font-size="9.5" text-anchor="middle">(Bất biến - Do Silicon &amp; Netlist quyết định)</text>
+    </g>
+
+    <!-- Middle Box: 100MHz Budget & Violation Verdict -->
+    <g transform="translate(310, 15)">
+      <rect x="0" y="0" width="275" height="130" rx="6" fill="#450a0a" fill-opacity="0.4" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="137" y="25" fill="#f87171" font-size="12" font-weight="bold" text-anchor="middle">2. FILE SDC: 100MHz (T_clk = 10ns)</text>
+      <text x="15" y="50" fill="#fca5a5" font-size="11">Ngân sách: T_clk - T_setup</text>
+      <text x="15" y="68" fill="#fca5a5" font-size="11">= 10.00ns - 0.20ns = 9.80ns</text>
+      <line x1="15" y1="80" x2="260" y2="80" stroke="#7f1d1d" stroke-width="1"/>
+      <text x="137" y="102" fill="#ef4444" font-size="15" font-weight="bold" text-anchor="middle">Slack = 9.8 - 12 = -2.20ns</text>
+      <text x="137" y="120" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">❌ VI PHẠM SETUP VIOLATION!</text>
+    </g>
+
+    <!-- Right Box: 50MHz Budget & Pass Verdict -->
+    <g transform="translate(610, 15)">
+      <rect x="0" y="0" width="280" height="130" rx="6" fill="#064e3b" fill-opacity="0.3" stroke="#10b981" stroke-width="1.5"/>
+      <text x="140" y="25" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">3. FILE SDC: 50MHz (T_clk = 20ns)</text>
+      <text x="15" y="50" fill="#a7f3d0" font-size="11">Ngân sách: T_clk - T_setup</text>
+      <text x="15" y="68" fill="#a7f3d0" font-size="11">= 20.00ns - 0.20ns = 19.80ns</text>
+      <line x1="15" y1="80" x2="265" y2="80" stroke="#065f46" stroke-width="1"/>
+      <text x="140" y="102" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">Slack = 19.8 - 12 = +7.80ns</text>
+      <text x="140" y="120" fill="#6ee7b7" font-size="11" font-weight="bold" text-anchor="middle">✅ ĐẠT CHUẨN TIMING MET (CHIP SỐNG)</text>
+    </g>
+  </g>
+</svg>

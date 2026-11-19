@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 620" width="100%" height="100%" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="ctsBgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="badTreeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#450a0a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="goodTreeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrowCyan4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowGreen4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrowRed4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="620" fill="url(#ctsBgGrad2)"/>
+
+  <!-- Master Header -->
+  <g transform="translate(35, 18)">
+    <rect x="0" y="0" width="1010" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="24" fill="#f8fafc" font-size="17" font-weight="bold">CƠ CHẾ CÂN BẰNG CÂY XUNG NHỊP CỦA CÔNG CỤ CTS: TRƯỚC VÀ SAU KHI TỐI ƯU</text>
+    <text x="20" y="42" fill="#94a3b8" font-size="12">Phương pháp chèn Delay-Matching Buffers và định tuyến đối xứng để kéo Skew từ +500ps về xấp xỉ 0ps</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LEFT COLUMN: BEFORE CTS (UNBALANCED TREE - SKEW = +500ps) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(35, 82)">
+    <rect x="0" y="0" width="495" height="395" rx="10" fill="url(#badTreeGrad)" fill-opacity="0.3" stroke="#ef4444" stroke-width="1.5"/>
+
+    <!-- Column Title Badge -->
+    <rect x="15" y="14" width="270" height="28" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+    <text x="25" y="33" fill="#fecaca" font-size="12" font-weight="bold">❌ TRƯỚC CTS: CÂY LỆCH PHA NẶNG</text>
+
+    <!-- Source PLL -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="75" height="55" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="37" y="24" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">PLL</text>
+      <text x="37" y="42" fill="#94a3b8" font-size="9" text-anchor="middle">Gốc Root</text>
+    </g>
+
+    <!-- Root wire & Split -->
+    <line x1="95" y1="102" x2="135" y2="102" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="135" y1="65" x2="135" y2="155" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Nhánh 1 (Ngắn, chỉ có 1 buffer) -> FF1 -->
+    <line x1="135" y1="65" x2="185" y2="65" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan4)"/>
+    <polygon points="185,50 185,80 215,65" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="215" y1="65" x2="330" y2="65" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan4)"/>
+
+    <!-- FF1 Box -->
+    <rect x="330" y="45" width="60" height="40" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="360" y="65" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">FF1</text>
+    <text x="360" y="78" fill="#7dd3fc" font-size="9" text-anchor="middle">CK</text>
+
+    <!-- Badge Trễ Nhánh 1 -->
+    <rect x="400" y="52" width="85" height="24" rx="4" fill="#0369a1"/>
+    <text x="442" y="68" fill="#e0f2fe" font-size="10.5" font-weight="bold" text-anchor="middle">0.60ns</text>
+
+    <!-- Nhánh 2 (Dài ngoằn ngoèo, xa nguồn) -> FF2 -->
+    <path d="M 135 155 L 170 155 L 170 180 L 220 180 L 220 155 L 245 155" 
+          fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,2"/>
+    <polygon points="245,140 245,170 275,155" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+    <path d="M 275 155 L 305 155 L 305 175 L 330 175" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowAmber4)"/>
+
+    <!-- FF2 Box -->
+    <rect x="330" y="155" width="60" height="40" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <text x="360" y="175" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">FF2</text>
+    <text x="360" y="188" fill="#a7f3d0" font-size="9" text-anchor="middle">CK</text>
+
+    <!-- Badge Trễ Nhánh 2 -->
+    <rect x="400" y="162" width="85" height="24" rx="4" fill="#78350f"/>
+    <text x="442" y="178" fill="#fde68a" font-size="10.5" font-weight="bold" text-anchor="middle">1.10ns</text>
+
+    <!-- Skew Alert Box -->
+    <rect x="20" y="215" width="455" height="42" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+    <text x="247" y="234" fill="#f87171" font-size="12" font-weight="bold" text-anchor="middle">CHÊNH LỆCH SKEW = 1.10ns - 0.60ns = +500ps!</text>
+    <text x="247" y="248" fill="#fca5a5" font-size="10" text-anchor="middle">⚠️ Sườn clock nhánh FF2 đến muộn nửa chu kỳ so với FF1</text>
+
+    <!-- Waveform Comparison Panel (Before) -->
+    <g transform="translate(20, 275)">
+      <rect x="0" y="0" width="455" height="105" rx="6" fill="#0f172a" stroke="#334155"/>
+      <text x="15" y="20" fill="#94a3b8" font-size="10" font-weight="bold">DẠNG SÓNG TẠI CHÂN CK CỦA 2 FLIP-FLOP (CHƯA CÂN BẰNG):</text>
+
+      <!-- Time Axis -->
+      <line x1="90" y1="88" x2="430" y2="88" stroke="#475569" stroke-width="1"/>
+      <text x="130" y="100" fill="#64748b" font-size="9" text-anchor="middle">0.60ns</text>
+      <text x="310" y="100" fill="#64748b" font-size="9" text-anchor="middle">1.10ns</text>
+
+      <!-- Waveform CK_FF1 -->
+      <text x="15" y="48" fill="#38bdf8" font-size="10" font-weight="bold">CK_FF1</text>
+      <path d="M 90 55 L 130 55 L 130 35 L 200 35 L 200 55 L 270 55" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+      <!-- Waveform CK_FF2 -->
+      <text x="15" y="78" fill="#f59e0b" font-size="10" font-weight="bold">CK_FF2</text>
+      <path d="M 90 80 L 310 80 L 310 60 L 380 60 L 380 80 L 430 80" fill="none" stroke="#f59e0b" stroke-width="2"/>
+
+      <!-- Skew Gap Indicator -->
+      <rect x="130" y="28" width="180" height="58" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
+      <line x1="130" y1="42" x2="310" y2="42" stroke="#ef4444" stroke-width="1.5" marker-start="url(#arrowRed4)" marker-end="url(#arrowRed4)"/>
+      <text x="220" y="38" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="middle">Khoảng hở Skew = 500ps (Nguy cơ Hold!)</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- RIGHT COLUMN: AFTER CTS (BALANCED TREE - SKEW ≈ 15ps) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(550, 82)">
+    <rect x="0" y="0" width="495" height="395" rx="10" fill="url(#goodTreeGrad)" fill-opacity="0.3" stroke="#10b981" stroke-width="1.5"/>
+
+    <!-- Column Title Badge -->
+    <rect x="15" y="14" width="290" height="28" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="25" y="33" fill="#a7f3d0" font-size="12" font-weight="bold">✅ SAU CTS: CÔNG CỤ ĐIỀU CHỈNH CÂN BẰNG</text>
+
+    <!-- Source PLL -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="75" height="55" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="37" y="24" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">PLL</text>
+      <text x="37" y="42" fill="#94a3b8" font-size="9" text-anchor="middle">Gốc Root</text>
+    </g>
+
+    <!-- Root wire & Symmetrical Split -->
+    <line x1="95" y1="102" x2="135" y2="102" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="135" y1="65" x2="135" y2="155" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Nhánh 1 ĐƯỢC CHÈN THÊM DELAY-MATCHING BUFFERS -->
+    <line x1="135" y1="65" x2="165" y2="65" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Buffer gốc -->
+    <polygon points="165,52 165,78 190,65" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="190" y1="65" x2="215" y2="65" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- DELAY BUFFER 1 (CHÈN THÊM) -->
+    <polygon points="215,52 215,78 240,65" fill="#1e1b4b" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="240" y1="65" x2="265" y2="65" stroke="#fbbf24" stroke-width="2"/>
+
+    <!-- DELAY BUFFER 2 (CHÈN THÊM) -->
+    <polygon points="265,52 265,78 290,65" fill="#1e1b4b" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="290" y1="65" x2="330" y2="65" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowCyan4)"/>
+
+    <!-- Chú thích Delay Matching -->
+    <rect x="210" y="32" width="85" height="16" rx="3" fill="#78350f"/>
+    <text x="252" y="43" fill="#fde68a" font-size="8.5" font-weight="bold" text-anchor="middle">+Chèn Đệm Trễ</text>
+
+    <!-- FF1 Box -->
+    <rect x="330" y="45" width="60" height="40" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="360" y="65" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">FF1</text>
+    <text x="360" y="78" fill="#7dd3fc" font-size="9" text-anchor="middle">CK</text>
+
+    <!-- Badge Trễ Mới Nhánh 1 -->
+    <rect x="400" y="52" width="85" height="24" rx="4" fill="#065f46"/>
+    <text x="442" y="68" fill="#a7f3d0" font-size="10.5" font-weight="bold" text-anchor="middle">1.085ns</text>
+
+    <!-- Nhánh 2 ĐƯỢC UPSIZE BUFFER VÀ LUỒN DÂY TỐI ƯU -->
+    <line x1="135" y1="155" x2="210" y2="155" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Buffer Upsize cỡ lớn -->
+    <polygon points="210,135 210,175 255,155" fill="#0f172a" stroke="#10b981" stroke-width="2.5"/>
+    <line x1="255" y1="155" x2="330" y2="155" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrowGreen4)"/>
+
+    <rect x="205" y="180" width="95" height="16" rx="3" fill="#064e3b"/>
+    <text x="252" y="191" fill="#6ee7b7" font-size="8.5" font-weight="bold" text-anchor="middle">+Upsize Lái Dòng</text>
+
+    <!-- FF2 Box -->
+    <rect x="330" y="135" width="60" height="40" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <text x="360" y="155" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">FF2</text>
+    <text x="360" y="168" fill="#a7f3d0" font-size="9" text-anchor="middle">CK</text>
+
+    <!-- Badge Trễ Mới Nhánh 2 -->
+    <rect x="400" y="142" width="85" height="24" rx="4" fill="#065f46"/>
+    <text x="442" y="158" fill="#a7f3d0" font-size="10.5" font-weight="bold" text-anchor="middle">1.100ns</text>
+
+    <!-- Skew Resolved Box -->
+    <rect x="20" y="215" width="455" height="42" rx="6" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+    <text x="247" y="234" fill="#34d399" font-size="12" font-weight="bold" text-anchor="middle">SKEW MỚI = 1.100ns - 1.085ns = +15ps (≈ 0ps)!</text>
+    <text x="247" y="248" fill="#a7f3d0" font-size="10" text-anchor="middle">✅ CÂY CÂN BẰNG HOÀN HẢO (ZERO-SKEW ACHIEVED)</text>
+
+    <!-- Waveform Comparison Panel (After) -->
+    <g transform="translate(20, 275)">
+      <rect x="0" y="0" width="455" height="105" rx="6" fill="#0f172a" stroke="#334155"/>
+      <text x="15" y="20" fill="#94a3b8" font-size="10" font-weight="bold">DẠNG SÓNG TẠI CHÂN CK CỦA 2 FLIP-FLOP (ĐÃ CÂN BẰNG CTS):</text>
+
+      <!-- Time Axis -->
+      <line x1="90" y1="88" x2="430" y2="88" stroke="#475569" stroke-width="1"/>
+      <text x="280" y="100" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">≈ 1.09ns (Trùng khít!)</text>
+
+      <!-- Waveform CK_FF1 (Dời sang phải nhờ delay buffer) -->
+      <text x="15" y="48" fill="#38bdf8" font-size="10" font-weight="bold">CK_FF1</text>
+      <path d="M 90 55 L 275 55 L 275 35 L 345 35 L 345 55 L 420 55" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+      <!-- Waveform CK_FF2 -->
+      <text x="15" y="78" fill="#10b981" font-size="10" font-weight="bold">CK_FF2</text>
+      <path d="M 90 80 L 285 80 L 285 60 L 355 60 L 355 80 L 420 80" fill="none" stroke="#10b981" stroke-width="2"/>
+
+      <!-- Alignment Indicator -->
+      <line x1="280" y1="28" x2="280" y2="85" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <rect x="300" y="32" width="140" height="24" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="370" y="48" fill="#6ee7b7" font-size="10" font-weight="bold" text-anchor="middle">Đồng pha: Skew ≈ 15ps</text>
+    </g>
+  </g>
+
+  <!-- LOWER STRIP: 3 CTS OPTIMIZATION WEAPONS -->
+  <g transform="translate(35, 495)">
+    <rect x="0" y="0" width="1010" height="105" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Weapon 1 -->
+    <g transform="translate(20, 12)">
+      <rect x="0" y="0" width="300" height="80" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1.2"/>
+      <text x="150" y="24" fill="#fde68a" font-size="11.5" font-weight="bold" text-anchor="middle">1. CHÈN ĐỆM TRỄ (DELAY PADDING)</text>
+      <text x="15" y="46" fill="#cbd5e1" font-size="10">Tool chèn thêm buffer vào nhánh nhanh (FF1)</text>
+      <text x="15" y="62" fill="#94a3b8" font-size="9.5">để cố tình làm chậm nó, cân bằng với nhánh chậm.</text>
+    </g>
+
+    <!-- Weapon 2 -->
+    <g transform="translate(355, 12)">
+      <rect x="0" y="0" width="300" height="80" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="150" y="24" fill="#7dd3fc" font-size="11.5" font-weight="bold" text-anchor="middle">2. THAY ĐỔI KÍCH CỠ (CELL SIZING)</text>
+      <text x="15" y="46" fill="#cbd5e1" font-size="10">Upsize buffer ở nhánh chậm (từ _4 lên _16)</text>
+      <text x="15" y="62" fill="#94a3b8" font-size="9.5">để nạp tụ nhanh hơn, rút ngắn độ trễ nhánh chậm.</text>
+    </g>
+
+    <!-- Weapon 3 -->
+    <g transform="translate(690, 12)">
+      <rect x="0" y="0" width="300" height="80" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+      <text x="150" y="24" fill="#6ee7b7" font-size="11.5" font-weight="bold" text-anchor="middle">3. ĐỊNH TUYẾN ĐỐI XỨNG (H-TREE)</text>
+      <text x="15" y="46" fill="#cbd5e1" font-size="10">Đi dây đối xứng hình chữ H từ tâm chip</text>
+      <text x="15" y="62" fill="#94a3b8" font-size="9.5">đảm bảo mọi nhánh dây có chiều dài RC bằng nhau.</text>
+    </g>
+  </g>
+</svg>

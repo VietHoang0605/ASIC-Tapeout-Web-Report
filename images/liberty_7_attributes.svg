@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="100%" height="100%" style="background: #080d1a; border-radius: 16px; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="pBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e172e" />
+      <stop offset="100%" stop-color="#070c17" />
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="1096" height="476" rx="14" fill="url(#pBg2)" stroke="rgba(245, 158, 11, 0.3)" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(40, 28)">
+    <rect x="0" y="0" width="160" height="24" rx="6" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="1" />
+    <text x="80" y="16.5" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">LIBERTY (.LIB) DEEP-DIVE</text>
+    <text x="175" y="18" fill="#ffffff" font-size="16" font-weight="800">MẮT THẦN CỦA ABC: 7 THUỘC TÍNH CỐT TỬ QUYẾT ĐỊNH VIỆC CHỌN CELL</text>
+    <text x="175" y="36" fill="#94a3b8" font-size="12">Các thông số vật lý then chốt giúp cỗ máy Technology Mapping đánh đổi giữa Diện tích (Area) và Thời gian (Delay)</text>
+  </g>
+
+  <!-- Left: File Liberty Hub -->
+  <g transform="translate(40, 110)">
+    <rect x="0" y="0" width="220" height="320" rx="14" fill="#1e1638" stroke="#a855f7" stroke-width="2" />
+    <text x="110" y="38" fill="#c084fc" font-size="28" text-anchor="middle">📚</text>
+    <text x="110" y="70" fill="#ffffff" font-size="15" font-weight="800" text-anchor="middle">FILE LIBERTY</text>
+    <text x="110" y="90" fill="#e9d5ff" font-size="12" font-family="'JetBrains Mono', monospace" text-anchor="middle">sky130_fd_sc_hd.lib</text>
+
+    <text x="20" y="130" fill="#cbd5e1" font-size="11.5" font-weight="600">• Giao ước vật lý:</text>
+    <text x="20" y="148" fill="#94a3b8" font-size="11">Do Foundry SkyWater cung cấp.</text>
+
+    <text x="20" y="180" fill="#cbd5e1" font-size="11.5" font-weight="600">• Điều kiện PVT Corner:</text>
+    <text x="20" y="198" fill="#94a3b8" font-size="11">Điện áp: 1.80V</text>
+    <text x="20" y="214" fill="#94a3b8" font-size="11">Nhiệt độ: 25°C</text>
+    <text x="20" y="230" fill="#94a3b8" font-size="11">Tiến trình: TT (Typical)</text>
+
+    <text x="20" y="265" fill="#f43f5e" font-size="11.5" font-weight="600">⚠️ Nếu thiếu file .lib:</text>
+    <text x="20" y="282" fill="#94a3b8" font-size="11">Synthesis không thể diễn ra!</text>
+  </g>
+
+  <!-- Right: 7 Attributes Cards -->
+  <!-- Attr 1: Boolean function -->
+  <g transform="translate(300, 90)">
+    <rect x="0" y="0" width="360" height="74" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="14" y="24" fill="#38bdf8" font-size="12" font-weight="800">1. HÀM BOOLEAN (Boolean Function)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Định nghĩa logic toán học: <tspan fill="#f59e0b" font-family="'JetBrains Mono', monospace">function: "(A &amp; B) | C";</tspan></text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Xác định cell nào có thể đảm đương được cụm logic của thiết kế.</text>
+  </g>
+
+  <!-- Attr 2: Area -->
+  <g transform="translate(680, 90)">
+    <rect x="0" y="0" width="380" height="74" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
+    <text x="14" y="24" fill="#10b981" font-size="12" font-weight="800">2. DIỆN TÍCH Ô CHUẨN (Area Cost - μm²)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Kích thước hình học thực tế trên silicon của từng ô chuẩn.</text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Khi đặt <tspan fill="#6ee7b7">SYNTH_STRATEGY = AREA</tspan>, ABC sẽ ép chọn cell diện tích nhỏ nhất.</text>
+  </g>
+
+  <!-- Attr 3: Timing arcs (NLDM) -->
+  <g transform="translate(300, 175)">
+    <rect x="0" y="0" width="360" height="74" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2" />
+    <text x="14" y="24" fill="#fbbf24" font-size="12" font-weight="800">3. CUNG TRỄ TÍN HIỆU (Timing Arcs - NLDM)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Mô hình trễ phi tuyến: <tspan fill="#38bdf8" font-family="'JetBrains Mono', monospace">t_pd = f(Input Slew, Output Load)</tspan></text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Độ trễ không cố định mà tra cứu từ bảng 2 chiều theo độ dốc xung &amp; tải.</text>
+  </g>
+
+  <!-- Attr 4: Pin Capacitance -->
+  <g transform="translate(680, 175)">
+    <rect x="0" y="0" width="380" height="74" rx="8" fill="#0f172a" stroke="#c084fc" stroke-width="1.2" />
+    <text x="14" y="24" fill="#c084fc" font-size="12" font-weight="800">4. ĐIỆN DUNG CHÂN ĐẦU VÀO (Pin Capacitance)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Tải điện dung ký sinh tại mỗi chân ngõ vào (vài fF đến chục fF).</text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Quyết định tải mà tầng cổng phía trước (Driver) phải gánh.</text>
+  </g>
+
+  <!-- Attr 5: Driving Cell -->
+  <g transform="translate(300, 260)">
+    <rect x="0" y="0" width="360" height="74" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="14" y="24" fill="#38bdf8" font-size="12" font-weight="800">5. KHẢ NĂNG LÁI NGUỒN VÀO (Driving Cell)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Mô hình hóa nội trở và sườn dốc tín hiệu từ bên ngoài bơm vào.</text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Giúp tính toán độ méo xung khi đi vào các cổng đầu vào của chip.</text>
+  </g>
+
+  <!-- Attr 6: Output Load -->
+  <g transform="translate(680, 260)">
+    <rect x="0" y="0" width="380" height="74" rx="8" fill="#0f172a" stroke="#ec4899" stroke-width="1.2" />
+    <text x="14" y="24" fill="#f472b6" font-size="12" font-weight="800">6. TẢI ĐIỆN DUNG NGÕ RA (Output Load)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Giá trị tụ điện giả định mà các chân ngõ ra phải kéo.</text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Dùng để tính toán sườn dốc và độ trễ của các cell ở tầng cuối cùng.</text>
+  </g>
+
+  <!-- Attr 7: Allowed Cell Set (Full Width) -->
+  <g transform="translate(300, 345)">
+    <rect x="0" y="0" width="760" height="74" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="1.2" />
+    <text x="14" y="24" fill="#f87171" font-size="12" font-weight="800">7. TẬP TẾ BÀO HỢP LỆ &amp; RÀNG BUỘC CẤM DÙNG (Allowed Cell Set / dont_use)</text>
+    <text x="14" y="44" fill="#e2e8f0" font-size="11.5">Những cell bị đánh dấu <tspan fill="#fca5a5" font-family="'JetBrains Mono', monospace">dont_use</tspan> (do rủi ro quang khắc hoặc timing) sẽ bị ABC gạch tên khỏi danh sách lựa chọn.</text>
+    <text x="14" y="62" fill="#94a3b8" font-size="10.5">Kỹ sư có thể chủ động cấm các cell lái quá yếu hoặc cell quá phức tạp để đảm bảo an toàn vật lý.</text>
+  </g>
+</svg>

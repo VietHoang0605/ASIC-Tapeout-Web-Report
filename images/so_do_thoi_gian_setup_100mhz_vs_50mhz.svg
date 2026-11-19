@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" width="100%" height="100%" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="clkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="dataGradFail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="dataGradPass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <pattern id="hatchRed" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#f87171" stroke-width="2.5" opacity="0.6"/>
+    </pattern>
+    <pattern id="hatchGreen" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#34d399" stroke-width="2" opacity="0.4"/>
+    </pattern>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowYellow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#fbbf24"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1000" height="760" fill="url(#bgGrad)"/>
+
+  <!-- Title Header -->
+  <g transform="translate(40, 36)">
+    <rect x="-10" y="-8" width="940" height="54" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="15" y="24" fill="#f8fafc" font-size="19" font-weight="bold">ĐỐI CHIẾU SƠ ĐỒ THỜI GIAN: TẠI SAO HẠ TẦN SỐ CLOCK SẼ CỨU ĐƯỢC LỖI SETUP?</text>
+    <text x="15" y="42" fill="#94a3b8" font-size="12">Mô hình đường truyền logic trễ cố định T_data = 12ns | T_setup = 0.2ns (Cố định nội tại cell)</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- BIỂU ĐỒ 1: TẦN SỐ 100MHz (CHU KỲ T = 10ns) -> VI PHẠM SETUP -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 110)">
+    <!-- Container Card -->
+    <rect x="-20" y="0" width="900" height="270" rx="12" fill="#1e293b" fill-opacity="0.6" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,4"/>
+    
+    <!-- Header Badge -->
+    <rect x="0" y="14" width="220" height="28" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+    <text x="12" y="33" fill="#fecaca" font-size="13" font-weight="bold">❌ 1. TẦN SỐ 100MHz (T = 10ns)</text>
+
+    <rect x="640" y="14" width="220" height="28" rx="6" fill="#450a0a" stroke="#dc2626" stroke-width="1"/>
+    <text x="652" y="33" fill="#f87171" font-size="13" font-weight="bold">KẾT QUẢ: VI PHẠM SETUP (-2.2ns)</text>
+
+    <!-- Time Grid Axis (Scale: 0ns to 22ns, 1ns = 35px. Origin X=100) -->
+    <!-- X-Origin: 100px. X(t) = 100 + t * 35 -->
+    <!-- Grid markings: 0, 5, 9.8, 10, 12, 15, 20ns -->
+    <g stroke="#334155" stroke-width="1" stroke-dasharray="3,3">
+      <line x1="100" y1="55" x2="100" y2="245"/> <!-- 0ns -->
+      <line x1="275" y1="55" x2="275" y2="245"/> <!-- 5ns -->
+      <line x1="443" y1="55" x2="443" y2="245" stroke="#ef4444" stroke-dasharray="2,2"/> <!-- 9.8ns -->
+      <line x1="450" y1="55" x2="450" y2="245" stroke="#38bdf8" stroke-width="1.5"/> <!-- 10ns -->
+      <line x1="520" y1="55" x2="520" y2="245" stroke="#f59e0b" stroke-width="1.5"/> <!-- 12ns -->
+      <line x1="625" y1="55" x2="625" y2="245"/> <!-- 15ns -->
+      <line x1="800" y1="55" x2="800" y2="245"/> <!-- 20ns -->
+    </g>
+
+    <!-- Timeline Labels -->
+    <text x="100" y="68" fill="#94a3b8" font-size="11" text-anchor="middle">0ns</text>
+    <text x="275" y="68" fill="#64748b" font-size="11" text-anchor="middle">5ns</text>
+    <text x="443" y="68" fill="#f87171" font-size="10" text-anchor="end">9.8ns</text>
+    <text x="450" y="68" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">10ns</text>
+    <text x="520" y="68" fill="#f59e0b" font-size="11" font-weight="bold" text-anchor="middle">12ns</text>
+    <text x="625" y="68" fill="#64748b" font-size="11" text-anchor="middle">15ns</text>
+    <text x="800" y="68" fill="#94a3b8" font-size="11" text-anchor="middle">20ns</text>
+
+    <!-- Signal 1: CLK 100MHz (High: 85, Low: 125) -->
+    <text x="15" y="110" fill="#38bdf8" font-size="13" font-weight="bold">CLK (100M)</text>
+    <!-- Waveform: 0->5 high, 5->10 low, 10->15 high, 15->20 low, 20->22 high -->
+    <path d="M 100 85 L 275 85 L 275 125 L 450 125 L 450 85 L 625 85 L 625 125 L 800 125 L 800 85 L 870 85" 
+          fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+
+    <!-- Launch Edge Marker at 0ns -->
+    <line x1="100" y1="135" x2="100" y2="85" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    <text x="105" y="148" fill="#34d399" font-size="11" font-weight="bold">Launch Edge (t=0)</text>
+
+    <!-- Latch Edge Marker at 10ns -->
+    <line x1="450" y1="135" x2="450" y2="85" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+    <text x="455" y="148" fill="#f87171" font-size="11" font-weight="bold">Latch Edge (t=10ns) ⚠️</text>
+
+    <!-- Setup Window (9.8ns to 10ns = 443 to 450px) -->
+    <rect x="435" y="80" width="15" height="120" fill="url(#hatchRed)"/>
+    <rect x="435" y="80" width="15" height="120" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1"/>
+    <text x="430" y="195" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="end">Vùng cấm T_setup (0.2ns)</text>
+
+    <!-- Signal 2: DATA (Arrival at 12ns) (High: 165, Low: 205) -->
+    <text x="15" y="190" fill="#fbbf24" font-size="13" font-weight="bold">DATA (D)</text>
+    <!-- Waveform: low from 0 to 11.5ns (100 to 502), rising to 12ns (520), then high -->
+    <path d="M 100 205 L 502 205 L 520 165 L 870 165" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+
+    <!-- T_data bracket from 0ns (100) to 12ns (520) -->
+    <line x1="100" y1="225" x2="520" y2="225" stroke="#fbbf24" stroke-width="1.5" marker-start="url(#arrowYellow)" marker-end="url(#arrowYellow)"/>
+    <text x="310" y="221" fill="#fde68a" font-size="11" font-weight="bold" text-anchor="middle">Quãng đường logic T_data = 12ns</text>
+
+    <!-- Arrival Point Callout at 12ns -->
+    <circle cx="520" cy="165" r="5" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="520" y1="165" x2="570" y2="135" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="570" y="120" width="280" height="42" rx="4" fill="#450a0a" stroke="#dc2626" stroke-width="1"/>
+    <text x="578" y="136" fill="#fca5a5" font-size="11" font-weight="bold">Dữ liệu đến lúc 12ns (ĐẾN MUỘN 2ns)!</text>
+    <text x="578" y="152" fill="#f87171" font-size="10">Clock chốt lúc 10ns khi D vẫn đang ở mức 0!</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- BIỂU ĐỒ 2: TẦN SỐ 50MHz (CHU KỲ T = 20ns) -> CỨU SỐNG CHIP (PASS) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 410)">
+    <!-- Container Card -->
+    <rect x="-20" y="0" width="900" height="300" rx="12" fill="#1e293b" fill-opacity="0.6" stroke="#10b981" stroke-width="1.5"/>
+
+    <!-- Header Badge -->
+    <rect x="0" y="14" width="220" height="28" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="12" y="33" fill="#a7f3d0" font-size="13" font-weight="bold">✅ 2. HẠ TẦN SỐ 50MHz (T = 20ns)</text>
+
+    <rect x="620" y="14" width="240" height="28" rx="6" fill="#022c22" stroke="#059669" stroke-width="1"/>
+    <text x="632" y="33" fill="#34d399" font-size="13" font-weight="bold">KẾT QUẢ: THỎA MÃN (Slack = +7.8ns)</text>
+
+    <!-- Time Grid Axis (Same Scale: X(t) = 100 + t * 35) -->
+    <g stroke="#334155" stroke-width="1" stroke-dasharray="3,3">
+      <line x1="100" y1="55" x2="100" y2="275"/> <!-- 0ns -->
+      <line x1="275" y1="55" x2="275" y2="275"/> <!-- 5ns -->
+      <line x1="450" y1="55" x2="450" y2="275"/> <!-- 10ns (Falling edge) -->
+      <line x1="520" y1="55" x2="520" y2="275" stroke="#10b981" stroke-width="1.5"/> <!-- 12ns -->
+      <line x1="793" y1="55" x2="793" y2="275" stroke="#fbbf24" stroke-dasharray="2,2"/> <!-- 19.8ns -->
+      <line x1="800" y1="55" x2="800" y2="275" stroke="#38bdf8" stroke-width="2"/> <!-- 20ns (Latch) -->
+    </g>
+
+    <!-- Timeline Labels -->
+    <text x="100" y="68" fill="#94a3b8" font-size="11" text-anchor="middle">0ns</text>
+    <text x="275" y="68" fill="#64748b" font-size="11" text-anchor="middle">5ns</text>
+    <text x="450" y="68" fill="#64748b" font-size="11" text-anchor="middle">10ns (Sườn âm)</text>
+    <text x="520" y="68" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">12ns (Dữ liệu tới)</text>
+    <text x="793" y="68" fill="#fbbf24" font-size="10" text-anchor="end">19.8ns</text>
+    <text x="800" y="68" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">20ns</text>
+
+    <!-- Signal 1: CLK 50MHz (High: 85, Low: 125. Period = 20ns -> 0-10ns high, 10-20ns low) -->
+    <text x="15" y="110" fill="#38bdf8" font-size="13" font-weight="bold">CLK (50M)</text>
+    <path d="M 100 85 L 450 85 L 450 125 L 800 125 L 800 85 L 870 85" 
+          fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+
+    <!-- Launch Edge Marker at 0ns -->
+    <line x1="100" y1="135" x2="100" y2="85" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    <text x="105" y="148" fill="#34d399" font-size="11" font-weight="bold">Launch Edge (t=0)</text>
+
+    <!-- New Latch Edge Marker at 20ns (Moved far right!) -->
+    <line x1="800" y1="135" x2="800" y2="85" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+    <text x="795" y="148" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="end">Latch Edge mới (t=20ns) ✅</text>
+
+    <!-- Setup Window at 19.8ns to 20ns (793 to 800px) -->
+    <rect x="786" y="80" width="14" height="145" fill="url(#hatchRed)"/>
+    <rect x="786" y="80" width="14" height="145" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1"/>
+    <text x="780" y="220" fill="#fca5a5" font-size="10" font-weight="bold" text-anchor="end">T_setup (0.2ns)</text>
+
+    <!-- Signal 2: DATA (Arrival at 12ns, EXACT SAME LOGIC DELAY!) -->
+    <text x="15" y="190" fill="#34d399" font-size="13" font-weight="bold">DATA (D)</text>
+    <path d="M 100 205 L 502 205 L 520 165 L 870 165" fill="none" stroke="#10b981" stroke-width="3"/>
+
+    <!-- STABLE SLACK HIGHLIGHT REGION (From 12ns=520 to 19.8ns=793) -->
+    <rect x="520" y="155" width="266" height="45" fill="url(#hatchGreen)"/>
+    <rect x="520" y="155" width="266" height="45" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+    <!-- Arrival Point Marker at 12ns -->
+    <circle cx="520" cy="165" r="5" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- Slack Bracket -->
+    <line x1="520" y1="245" x2="786" y2="245" stroke="#34d399" stroke-width="2" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
+    <text x="653" y="240" fill="#6ee7b7" font-size="12" font-weight="bold" text-anchor="middle">KHOẢNG DƯ DẢ AN TOÀN (Setup Slack = +7.8ns)</text>
+    <text x="653" y="260" fill="#a7f3d0" font-size="11" text-anchor="middle">Dữ liệu đứng im vững như bàn thạch suốt 7.8ns trước khi vùng cấm Setup bắt đầu!</text>
+
+    <!-- T_data Bracket -->
+    <line x1="100" y1="245" x2="520" y2="245" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="310" y="260" fill="#94a3b8" font-size="10" text-anchor="middle">T_data = 12ns (Không đổi)</text>
+  </g>
+</svg>
